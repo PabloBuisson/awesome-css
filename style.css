@@ -10,12 +10,14 @@
 
 :root,
 :root[theme="light"] {
+    --header-height: 90px;
     --background-color: hsl(45, 0%, 95%);
     --background-color-toggle: hsl(211, 30%, 80%);
     --title-color: hsl(211, 60%, 15%);
 }
 
 :root[theme="dark"] {
+    --header-height: 90px;
     --background-color: hsl(211, 60%, 15%);
     --background-color-toggle: hsl(211, 70%, 30%);
     --title-color: hsl(45, 0%, 95%);
@@ -58,7 +60,7 @@ nav ul li a {
 /* HOME SECTION */
 
 header {
-    height: 90px;
+    height: var(--header-height);
 }
 
 #container-theme {
@@ -125,7 +127,8 @@ header {
 }
 
 #section-home {
-    height: calc(100vh - 90px);
+    scroll-margin-top: var(--header-height);
+    height: calc(100vh - var(--header-height));
     background-color: var(--background-color);
     display: grid;
     place-content: center;
