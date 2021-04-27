@@ -10,16 +10,6 @@
 </head>
 
 <body>
-    <header>
-        <div id="container-theme">
-            <button id="btn-theme" type="button" aria-pressed="false" aria-label="Activate dark mode"
-                title="Activate dark mode">
-                <span id="icon-light-mode" aria-hidden="true">🌞</span>
-                <span id="slider-theme" aria-hidden="true"></span>
-                🌙
-            </button>
-        </div>
-    </header>
     <nav>
         <ul>
             <li><a href="#section-home">Section 1</a></li>
@@ -27,15 +17,32 @@
             <li><a href="#section-3">Section 3</a></li>
         </ul>
     </nav>
-    <section id="section-home">
-        <h1>CSS IS AWESOME</h1>
-        <div id="scroll-indicator">
-        <div>↓</div>
-        <div>Scroll</div>
-        </div>
-    </section>
-    <section id="section-2"><h2>Section 2</h2></section>
-    <section id="section-3"><h2>Section 3</h2></section>
+    <main>
+        <header>
+            <div id="container-theme">
+                <button id="btn-theme" type="button" aria-pressed="false" aria-label="Activate dark mode"
+                    title="Activate dark mode">
+                    <span id="icon-light-mode" aria-hidden="true">🌞</span>
+                    <span id="slider-theme" aria-hidden="true"></span>
+                    🌙
+                </button>
+            </div>
+        </header>
+        <section id="section-home">
+            <h1>CSS IS AWESOME</h1>
+            <div id="scroll-indicator">
+                <div>Scroll</div>
+                <div>👇</div>
+            </div>
+        </section>
+        <section id="section-2">
+            <h2>Section 2</h2>
+        </section>
+        <section id="section-3">
+            <h2>Section 3</h2>
+        </section>
+    </main>
+
     <script src="main.js"></script>
 </body>
 

@@ -1,3 +1,17 @@
+/* ON START */
+
+document.addEventListener("DOMContentLoaded", function (event) {
+    // enable theme
+    if (localStorage.getItem("theme") === "dark") {
+        setTheme(true, "dark", activateLightModeMessage);
+    } else {
+        setTheme(false, "light", activateDarkModeMessage);
+    }
+    // activate display on current navigation
+    checkCurrentNavigation();
+});
+
+
 /* TOGGLE THEME */
 
 const buttonTheme = document.querySelector("#btn-theme");
@@ -23,10 +37,26 @@ function setTheme(isButtonPressed, themeName, themeMessage) {
     localStorage.setItem("theme", themeName);
 }
 
-document.addEventListener("DOMContentLoaded", function (event) {
-    if (localStorage.getItem("theme") === "dark") {
-        setTheme(true, "dark", activateLightModeMessage);
-    } else {
-        setTheme(false, "light", activateDarkModeMessage);
-    }
-});
+/* NAVIGATION LINKS */
+
+window.addEventListener("scroll", checkCurrentNavigation);
+
+function checkCurrentNavigation() {
+    const navLinks = document.querySelectorAll("nav ul li a");
+    const mainSections = document.querySelectorAll("main section");
+    const scrollFromTop = window.scrollY;
+    const halfOfWindow = document.documentElement.clientHeight / 2;
+
+    navLinks.forEach(link => {
+        const sectionAnchor = document.querySelector(link.hash);
+
+        if (
+            sectionAnchor.offsetTop - halfOfWindow <= scrollFromTop &&
+            sectionAnchor.offsetTop + sectionAnchor.offsetHeight - halfOfWindow >= scrollFromTop
+        ) {
+            link.classList.add("current");
+        } else {
+            link.classList.remove("current");
+        }
+    });
+}
