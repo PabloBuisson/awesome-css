@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     } else {
         setTheme(false, "light", activateDarkModeMessage);
     }
-    // activate display on current navigation
+    // activate highlight on current navigation
     checkCurrentNavigation();
 });
 
@@ -43,7 +43,6 @@ window.addEventListener("scroll", checkCurrentNavigation);
 
 function checkCurrentNavigation() {
     const navLinks = document.querySelectorAll("nav ul li a");
-    const mainSections = document.querySelectorAll("main section");
     const scrollFromTop = window.scrollY;
     const halfOfWindow = document.documentElement.clientHeight / 2;
 
@@ -54,9 +53,9 @@ function checkCurrentNavigation() {
             sectionAnchor.offsetTop - halfOfWindow <= scrollFromTop &&
             sectionAnchor.offsetTop + sectionAnchor.offsetHeight - halfOfWindow >= scrollFromTop
         ) {
-            link.classList.add("current");
+            link.classList.add("selected-nav");
         } else {
-            link.classList.remove("current");
+            link.classList.remove("selected-nav");
         }
     });
 }
