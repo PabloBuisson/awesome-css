@@ -88,6 +88,7 @@ nav .nav-label {
     display: inline-block;
     margin-left: 1rem;
     opacity: 0;
+    transform-origin: -50%;
     transition: transform 0.2s, opacity 0.5s;
 }
 
@@ -190,7 +191,7 @@ header {
     font-size: 1.4rem;
 }
 
-#scroll-button .bouncing-hand {
+.bouncing-hand {
     margin-left: 0.5rem;
     display: inline-block;
     animation: bounce 1s ease infinite alternate;
@@ -203,6 +204,13 @@ header {
 
     to {
         transform: translateY(-1rem);
+    }
+}
+
+/* Respecting motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .bouncing-hand {
+        animation: none;
     }
 }
 
