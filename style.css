@@ -14,6 +14,8 @@
     --background-color: hsl(45, 0%, 95%);
     --background-color-toggle: hsl(211, 30%, 80%);
     --title-color: hsl(211, 60%, 15%);
+    --nav-dot-color: grey;
+    --nav-dot-selected: hsl(211, 60%, 15%);
 }
 
 :root[theme="dark"] {
@@ -21,6 +23,8 @@
     --background-color: hsl(211, 60%, 15%);
     --background-color-toggle: hsl(211, 70%, 30%);
     --title-color: hsl(45, 0%, 95%);
+    --nav-dot-color: grey;
+    --nav-dot-selected: white;
 }
 
 html {
@@ -30,6 +34,11 @@ html {
 
 h1 {
     font-size: calc(3rem + 2vw);
+    color: var(--title-color);
+}
+
+a {
+    text-decoration: none;
     color: var(--title-color);
 }
 
@@ -68,7 +77,7 @@ nav a:hover .nav-label {
 }
 
 nav a.selected-nav .nav-dot {
-    background-color: yellow;
+    background-color: var(--nav-dot-selected);
 }
 
 nav span {
@@ -88,7 +97,7 @@ nav .nav-dot {
     height: 0.8rem;
     width: 0.8rem;
     border-radius: 50%;
-    background-color: white;
+    background-color: var(--nav-dot-color);
     transition: transform 0.5s, background-color 0.5s;
 }
 
@@ -171,12 +180,30 @@ header {
     position: relative;
 }
 
-#scroll-indicator {
+#scroll-button {
+    display: block;
     position: absolute;
     bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 2rem 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2rem;
+    font-size: 1.4rem;
+}
+
+#scroll-button .bouncing-hand {
+    margin-left: 0.5rem;
+    display: inline-block;
+    animation: bounce 1s ease infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-1rem);
+    }
 }
 
 /* SECTION 2 */
