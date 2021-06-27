@@ -8,14 +8,23 @@
     padding: 0;
 }
 
+
 :root,
 :root[theme="light"] {
+    --main-color-hue: 301;
     --header-height: 90px;
     --background-color: hsl(45, 0%, 95%);
     --background-color-toggle: hsl(211, 30%, 80%);
     --title-color: hsl(211, 60%, 15%);
     --nav-dot-color: grey;
     --nav-dot-selected: hsl(211, 60%, 15%);
+    --code-background-color: hsl(var(--main-color-hue), 30%, 90%);
+    --code-color: hsl(var(--main-color-hue), 30%, 40%);
+    --pre-background-color: hsl(var(--main-color-hue), 30%, 10%);
+    --pre-comment-color: hsl(var(--main-color-hue), 0%, 70%);
+    --pre-tag-color: hsl(var(--main-color-hue), 100%, 50%);
+    --pre-selector-color: hsl(125, 80%, 50%);
+    --warning-color: hsl(3, 100%, 40%);
 }
 
 :root[theme="dark"] {
@@ -29,6 +38,7 @@
 
 html {
     color: var(--title-color);
+    font-size: calc(1rem + 0.5vw);
     scroll-behavior: smooth;
 }
 
@@ -40,6 +50,24 @@ h1 {
 a {
     text-decoration: none;
     color: var(--title-color);
+}
+
+p {
+    max-width: 70ch;
+    margin: auto;
+}
+
+code {
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    font-weight: bold;
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+
+.warning {
+    color: var(--warning-color);
+    font-weight: bold;
 }
 
 /* NAV */
@@ -216,14 +244,40 @@ header {
 
 /* SECTION 2 */
 
-#section-2 {
-    height: 100vh;
+#section-relative-units {
+    min-height: 100vh;
     background-color: orange;
     display: grid;
     place-content: center;
     text-align: center;
     position: relative;
 }
+
+.example-em-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    font-size: 20px;
+    background-color: green;
+}
+
+.example-em-child-one {
+    width: 2em;
+    height: 2em;
+    background-color: red;
+}
+
+.example-em-child-two {
+    width: 2em;
+    height: 2em;
+    font-size: 0.5em;
+    background-color: blue;
+}
+
 
 /* SECTION 3 */
 
@@ -234,4 +288,29 @@ header {
     place-content: center;
     text-align: center;
     position: relative;
+}
+
+/* PRE */
+pre {
+    max-width: 60vw;
+    padding: 1em;
+    margin: auto;
+    font-size: 1rem;
+    overflow: auto;
+    text-align: start;
+    background-color: var(--pre-background-color, black);
+    color: white;
+    border-radius: 0.5em;
+}
+
+pre .tag {
+    color: var(--pre-tag-color);
+}
+
+pre .selector {
+    color: var(--pre-selector-color);
+}
+
+pre .comment {
+    color: var(--pre-comment-color);
 }

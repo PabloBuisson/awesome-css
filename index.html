@@ -12,8 +12,9 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#section-home"><span class="nav-dot"></span><span class="nav-label">Section 1</span></a></li>
-            <li><a href="#section-2"><span class="nav-dot"></span><span class="nav-label">Section 2</span></a></li>
+            <li><a href="#section-home"><span class="nav-dot"></span><span class="nav-label">Home</span></a></li>
+            <li><a href="#section-relative-units"><span class="nav-dot"></span><span class="nav-label">Relative
+                        units</span></a></li>
             <li><a href="#section-3"><span class="nav-dot"></span><span class="nav-label">Section 3</span></a></li>
         </ul>
     </nav>
@@ -30,12 +31,74 @@
         </header>
         <section id="section-home">
             <h1>CSS IS AWESOME</h1>
-            <a id="scroll-button" href="#section-2">
+            <a id="scroll-button" href="#section-relative-units">
                 Scroll <span aria-hidden="true" class="bouncing-hand">👇</span>
             </a>
         </section>
-        <section id="section-2">
-            <h2>Section 2</h2>
+        <section id="section-relative-units">
+            <h2>Relative units</h2>
+            <p>Relative units are one of the main powerful features of CSS :
+                thank to them, one can easily display responsive and accessible layout.
+                Let's review the most used relative units :
+            </p>
+            <ul>
+                <li>
+                    <h3>EM</h3>
+
+                    <p>An <code>em</code> is equal to the font-size of an element or
+                        the font-size of that element’s nearest ancestor.
+                    </p>
+                    <p>We know now that<code>1em</code> refers to the font size.
+                        So if the parent's value of an element is <code>16px</code>,
+                        <code>1em</code> equals <code>16px</code> for that element. So far, so good.
+                        But <span aria-hidden="true" class="warning">(!)</span> if the element itself declare a
+                        font-size, like <code>12px</code>, then <code>1em</code> equals <code>12px</code>.</p>
+                    <button type="button">Show me an example</button>
+                    <div class="example-em-parent">
+                        <div class="example-em-child-one"></div>
+                        <div class="example-em-child-two"></div>
+                    </div>
+                    <pre>
+<span class="comment">/* green box */</span>
+.parent {
+    font-size: 20px;
+}
+
+<span class="comment">/* red box */</span>
+.child-one {
+    <span class="comment">/* the child hasn't declared a font-size, 
+        so 1em = parent's font-size */</span>
+    width: 2em; <span class="comment">/* 2 * 20px = 40px */</span>
+    height: 2em; <span class="comment">/* 2 * 20px = 40px */</span>
+}
+
+<span class="comment">/* blue box */</span>
+.child-two {
+    font-size: 0.5em; <span class="comment">/* 0.5 * 20px = 10px */</span>
+    <span class="comment">/* the child has declared a font-size, 
+        so 1em = element's font-size */</span>
+    width: 2em; <span class="comment">/* 2 * 10px = 20px */</span>
+    height: 2em; <span class="comment">/* 2 * 10px = 20px */</span>
+}
+                </pre>
+                    <h4>When should we use em ?</h4>
+                    <p>As you can see with the example above, the <code>em</code> unit can be tricky. 
+                    It best to use <code>em</code> for typography and spacing on textual components, like
+                a button or input fields.</p>
+                </li>
+                <li>
+                    <h3>REM</h3>
+                </li>
+                <li>
+                    <h3>VH && VW</h3>
+                </li>
+                <li>
+                    <h3>VMAX && VMIN</h3>
+                </li>
+                <li>
+                    <h3>CH</h3>
+                </li>
+            </ul>
         </section>
         <section id="section-3">
             <h2>Section 3</h2>
