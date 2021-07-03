@@ -35,13 +35,13 @@
                 Scroll <span aria-hidden="true" class="bouncing-hand">👇</span>
             </a>
         </section>
-        <section id="section-relative-units">
-            <h2>Relative units</h2>
-            <p>Relative units are one of the main powerful features of CSS :
+        <section class="section" id="section-relative-units">
+            <h2 class="section-title">Relative units</h2>
+            <p class="section-description">Relative units are one of the main powerful features of CSS :
                 thank to them, one can easily display responsive and accessible layout.
                 Let's review the most used and interesting relative units :
             </p>
-            <h3>EM</h3>
+            <h3 class="section-subtitle">EM</h3>
             <p>An <code>em</code> is equal to the font-size of an element or
                 the font-size of that element’s nearest ancestor.
             </p>
@@ -52,9 +52,11 @@
                 font-size, like <code>12px</code>, then <code>1em</code> equals <code>12px</code>.</p>
             <button type="button" onclick="displayExample(this, 'example-rem')">Show me an example</button>
             <div class="example" id="example-rem">
-                <div class="example-em-parent">
-                    <div class="example-em-child-one"></div>
-                    <div class="example-em-child-two"></div>
+                <div class="example-illustration">
+                    <div class="example-em-parent">
+                        <div class="example-em-child-one"></div>
+                        <div class="example-em-child-two"></div>
+                    </div>
                 </div>
                 <pre>
 <span class="comment">/* green box */</span>
@@ -81,16 +83,16 @@
                 </pre>
             </div>
 
-            <h4>When should we use em ?</h4>
+            <h4 class="section-subtitle-summary">When should we use em ?</h4>
             <p>As you can see with the example above, the <code>em</code> unit can be tricky.
                 It best to use <code>em</code> for typography and spacing on textual components, like
                 a button or input fields.</p>
 
-            <h3>REM</h3>
-            <h3>VH && VW</h3>
-            <h3>VMAX && VMIN</h3>
-            <h3>CH</h3>
-            <h3>Relative units and media queries</h3>
+            <h3 class="section-subtitle">REM</h3>
+            <h3 class="section-subtitle">VH && VW</h3>
+            <h3 class="section-subtitle">VMAX && VMIN</h3>
+            <h3 class="section-subtitle">CH</h3>
+            <h3 class="section-subtitle">Relative units and media queries</h3>
         </section>
         <section id="section-3">
             <h2>Section 3</h2>

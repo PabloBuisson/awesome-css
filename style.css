@@ -130,6 +130,14 @@ nav .nav-dot {
     transition: transform 0.5s, background-color 0.5s;
 }
 
+.example {
+    padding: 2rem 0;
+}
+
+.example-illustration {
+    padding: 1rem 0;
+}
+
 /* UTILS */
 
 .d-none {
@@ -246,6 +254,39 @@ header {
     .bouncing-hand {
         animation: none;
     }
+}
+
+/* SECTIONS */
+
+.section {
+    padding: 3rem 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.section-subtitle {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.section-subtitle-summary {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+}
+
+.section-subtitle-summary + p {
+    margin-bottom: 2rem;
+}
+
+.section-description {
+    margin-bottom: 1rem;
+}
+
+.section button {
+    margin: 2rem 0 1rem 0;
 }
 
 /* SECTION 2 */
