@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
     // activate highlight on current navigation
     checkCurrentNavigation();
+    hideExamples();
 });
 
 
@@ -58,4 +59,28 @@ function checkCurrentNavigation() {
             link.classList.remove("selected-nav");
         }
     });
+}
+
+/* BUTTON ACTIONS */
+
+/**
+ * Hide examples on start
+ */
+function hideExamples() {
+    const examples = document.querySelectorAll(".example");
+    examples.forEach(example => {
+        example.classList.add("d-none");
+    });
+}
+
+/**
+ * Toggle hide/show example
+ */
+function displayExample(button, exampleId) {
+    const example = document.getElementById(exampleId);
+    // change button innerText
+    button.textContent = example.classList.contains("d-none") ? 
+        "Hide example" : "Show me an example";
+    // display/hide example
+    example.classList.toggle("d-none");
 }

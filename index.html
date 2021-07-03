@@ -39,26 +39,24 @@
             <h2>Relative units</h2>
             <p>Relative units are one of the main powerful features of CSS :
                 thank to them, one can easily display responsive and accessible layout.
-                Let's review the most used relative units :
+                Let's review the most used and interesting relative units :
             </p>
-            <ul>
-                <li>
-                    <h3>EM</h3>
-
-                    <p>An <code>em</code> is equal to the font-size of an element or
-                        the font-size of that element’s nearest ancestor.
-                    </p>
-                    <p>We know now that<code>1em</code> refers to the font size.
-                        So if the parent's value of an element is <code>16px</code>,
-                        <code>1em</code> equals <code>16px</code> for that element. So far, so good.
-                        But <span aria-hidden="true" class="warning">(!)</span> if the element itself declare a
-                        font-size, like <code>12px</code>, then <code>1em</code> equals <code>12px</code>.</p>
-                    <button type="button">Show me an example</button>
-                    <div class="example-em-parent">
-                        <div class="example-em-child-one"></div>
-                        <div class="example-em-child-two"></div>
-                    </div>
-                    <pre>
+            <h3>EM</h3>
+            <p>An <code>em</code> is equal to the font-size of an element or
+                the font-size of that element’s nearest ancestor.
+            </p>
+            <p>For example, we know that <code>1em</code> refers to the font size.
+                So if the parent's font-size value of an element is <code>16px</code>,
+                <code>1em</code> equals <code>16px</code> for that element. So far, so good.
+                But <span aria-hidden="true" class="warning">(!)</span> if the element itself declare a
+                font-size, like <code>12px</code>, then <code>1em</code> equals <code>12px</code>.</p>
+            <button type="button" onclick="displayExample(this, 'example-rem')">Show me an example</button>
+            <div class="example" id="example-rem">
+                <div class="example-em-parent">
+                    <div class="example-em-child-one"></div>
+                    <div class="example-em-child-two"></div>
+                </div>
+                <pre>
 <span class="comment">/* green box */</span>
 .parent {
     font-size: 20px;
@@ -81,24 +79,18 @@
     height: 2em; <span class="comment">/* 2 * 10px = 20px */</span>
 }
                 </pre>
-                    <h4>When should we use em ?</h4>
-                    <p>As you can see with the example above, the <code>em</code> unit can be tricky. 
-                    It best to use <code>em</code> for typography and spacing on textual components, like
+            </div>
+
+            <h4>When should we use em ?</h4>
+            <p>As you can see with the example above, the <code>em</code> unit can be tricky.
+                It best to use <code>em</code> for typography and spacing on textual components, like
                 a button or input fields.</p>
-                </li>
-                <li>
-                    <h3>REM</h3>
-                </li>
-                <li>
-                    <h3>VH && VW</h3>
-                </li>
-                <li>
-                    <h3>VMAX && VMIN</h3>
-                </li>
-                <li>
-                    <h3>CH</h3>
-                </li>
-            </ul>
+
+            <h3>REM</h3>
+            <h3>VH && VW</h3>
+            <h3>VMAX && VMIN</h3>
+            <h3>CH</h3>
+            <h3>Relative units and media queries</h3>
         </section>
         <section id="section-3">
             <h2>Section 3</h2>

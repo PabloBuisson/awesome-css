@@ -61,7 +61,7 @@ code {
     background-color: var(--code-background-color);
     color: var(--code-color);
     font-weight: bold;
-    padding: 3px 5px;
+    padding: 0 0.3em;
     border-radius: 3px;
 }
 
@@ -128,6 +128,12 @@ nav .nav-dot {
     border-radius: 50%;
     background-color: var(--nav-dot-color);
     transition: transform 0.5s, background-color 0.5s;
+}
+
+/* UTILS */
+
+.d-none {
+    display: none;
 }
 
 /* HOME SECTION */
@@ -283,7 +289,7 @@ header {
 
 #section-3 {
     height: 100vh;
-    background-color: orangered;
+    background-color: rgb(201, 130, 0);
     display: grid;
     place-content: center;
     text-align: center;
