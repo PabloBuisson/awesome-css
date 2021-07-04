@@ -12,7 +12,7 @@
 :root {
     --header-height: 90px;
     --warning-color: hsl(17, 100%, 40%);
-    --warning-background-color: hsl(17, 100%, 90%);
+    --warning-background-color: hsl(56, 100%, 91%);
     --pre-background-color: #282a36;
     --pre-comment-color: #6272a4;
     --pre-selector-color: #50fa7b;
@@ -27,6 +27,7 @@
     --main-color: hsl(var(--color-hue), 100%, 50%);
     --constrast-color: hsl(var(--color-hue), 60%, 40%);
     --accent-color: hsl(var(--color-hue), 100%, 45%);
+    --decorative-color: hsl(var(--color-hue), 100%, 73%);
     --background-color: hsl(var(--color-hue), 90%, 70%);
     --background-color-odd: hsl(var(--color-hue), 85%, 85%);
     --background-color-toggle: hsl(var(--color-hue), 5%, 80%);
@@ -294,27 +295,45 @@ header {
 
 .section-title {
     position: relative;
-    font-size: 2rem;
-    margin-bottom: 2rem;
     z-index: 1;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2rem;
 }
 
 .section-title::before {
-    background: #ffc862;
+    background: var(--decorative-color, #ffc862);
     bottom: 0.1em;
     content: "";
     height: .4em;
-    width: clamp(30px, 20vw, 150px);
+    width: clamp(30px, 30vw, 10em);
     position: absolute;
-    right: 50%;
-    left: auto;
+    right: auto;
+    left: 50%;
     top: auto;
     z-index: -1;
+    transform: translateX(-50%);
 }
 
 .section-subtitle {
+    position: relative;
+    z-index: 1;
     font-size: 1.5rem;
     margin: 1rem 0;
+    padding-left: 1.5em;
+}
+
+.section-subtitle::before {
+    background: var(--decorative-color, #ffc862);
+    bottom: 0.4em;
+    content: "";
+    height: 0.3em;
+    width: 1em;
+    position: absolute;
+    right: auto;
+    left: 0;
+    top: auto;
+    z-index: -1;
 }
 
 .section-subtitle-summary {
@@ -362,7 +381,6 @@ header {
     min-height: 100vh;
     display: grid;
     place-content: center;
-    text-align: center;
     position: relative;
 }
 
