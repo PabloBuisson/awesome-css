@@ -51,7 +51,7 @@
                 But <span aria-hidden="true" class="warning">(!)</span> if the element itself declare a
                 font-size, like <code>12px</code>, then <code>1em</code> equals <code>12px</code>.</p>
             <button type="button" onclick="displayExample(this, 'example-rem')">Show me an example</button>
-            <div class="example" id="example-rem">
+            <div class="example d-none" id="example-rem">
                 <div class="example-illustration">
                     <div class="example-em-parent">
                         <div class="example-em-child-one"></div>
@@ -59,26 +59,31 @@
                     </div>
                 </div>
                 <pre>
-<span class="comment">/* green box */</span>
-.parent {
-    font-size: 20px;
+<span class="comment">/* big purple box */</span>
+<span class="selector">.parent</span> {
+    <span class="property">font-size</span>: <span class="number">20</span><span class="unit">px</span>;
 }
 
-<span class="comment">/* red box */</span>
-.child-one {
+<span class="comment">/* medium pink box */</span>
+<span class="selector">.child-one</span> {
     <span class="comment">/* the child hasn't declared a font-size, 
         so 1em = parent's font-size */</span>
-    width: 2em; <span class="comment">/* 2 * 20px = 40px */</span>
-    height: 2em; <span class="comment">/* 2 * 20px = 40px */</span>
+    <span class="property">width</span>: <span class="number">2</span><span class="unit">em</span>; 
+    <span class="comment">/* ↑ 2 x 20px = 40px */</span>
+    <span class="property">height</span>: <span class="number">2</span><span class="unit">em</span>; 
+    <span class="comment">/* ↑ 2 x 20px = 40px */</span>
 }
 
-<span class="comment">/* blue box */</span>
-.child-two {
-    font-size: 0.5em; <span class="comment">/* 0.5 * 20px = 10px */</span>
+<span class="comment">/* small green box */</span>
+<span class="selector">.child-two</span> {
+    <span class="property">font-size</span>: <span class="number">0.5</span><span class="unit">em</span>; 
+    <span class="comment">/* ↑ 0.5 x 20px = 10px */</span>
     <span class="comment">/* the child has declared a font-size, 
         so 1em = element's font-size */</span>
-    width: 2em; <span class="comment">/* 2 * 10px = 20px */</span>
-    height: 2em; <span class="comment">/* 2 * 10px = 20px */</span>
+    <span class="property">width</span>: <span class="number">2</span><span class="unit">em</span>; 
+    <span class="comment">/* ↑ 2 x 10px = 20px */</span>
+    <span class="property">height</span>: <span class="number">2</span><span class="unit">em</span>; 
+    <span class="comment">/* ↑ 2 x 10px = 20px */</span>
 }
                 </pre>
             </div>

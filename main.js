@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
     // activate highlight on current navigation
     checkCurrentNavigation();
-    hideExamples();
 });
 
 
@@ -62,16 +61,6 @@ function checkCurrentNavigation() {
 }
 
 /* BUTTON ACTIONS */
-
-/**
- * Hide examples on start
- */
-function hideExamples() {
-    const examples = document.querySelectorAll(".example");
-    examples.forEach(example => {
-        example.classList.add("d-none");
-    });
-}
 
 /**
  * Toggle hide/show example
