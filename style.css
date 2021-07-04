@@ -11,7 +11,8 @@
 
 :root {
     --header-height: 90px;
-    --warning-color: hsl(3, 100%, 40%);
+    --warning-color: hsl(17, 100%, 40%);
+    --warning-background-color: hsl(17, 100%, 90%);
     --pre-background-color: #282a36;
     --pre-comment-color: #6272a4;
     --pre-selector-color: #50fa7b;
@@ -21,23 +22,31 @@
 }
 
 :root[theme="light"] {
-    --main-color-hue: 36;
-    --background-color: hsl(45, 0%, 95%);
-    --background-color-toggle: hsl(211, 30%, 80%);
-    --title-color: hsl(211, 60%, 15%);
-    --code-background-color: hsl(var(--main-color-hue), 30%, 90%);
-    --code-color: hsl(var(--main-color-hue), 30%, 40%);
-    --nav-dot-color: grey;
-    --nav-dot-selected: hsl(211, 60%, 15%);
+    --color-hue: 36;
+    --color-accent-hue: 321;
+    --main-color: hsl(var(--color-hue), 100%, 50%);
+    --constrast-color: hsl(var(--color-hue), 60%, 40%);
+    --accent-color: hsl(var(--color-hue), 100%, 45%);
+    --background-color: hsl(var(--color-hue), 90%, 70%);
+    --background-color-odd: hsl(var(--color-hue), 85%, 85%);
+    --background-color-toggle: hsl(var(--color-hue), 5%, 80%);
+    --title-color: hsl(var(--color-hue), 90%, 10%);
+    --code-background-color: hsl(var(--color-hue), 30%, 100%);
+    --code-color: hsl(var(--color-hue), 60%, 40%);
+    --nav-dot-color: var(--constrast-color);
+    --nav-dot-selected: white;
 }
 
 :root[theme="dark"] {
-    --main-color-hue: 301;
+    --color-hue: 301;
+    --main-color: hsl(var(--color-hue), 100%, 50%);
+    --constrast-color: hsl(var(--color-hue), 60%, 40%);
     --background-color: hsl(211, 60%, 15%);
+    --background-color-odd: hsl(var(--color-hue), 100%, 60%);
     --background-color-toggle: hsl(211, 70%, 30%);
     --title-color: hsl(45, 0%, 95%);
-    --code-background-color: hsl(var(--main-color-hue), 30%, 90%);
-    --code-color: hsl(var(--main-color-hue), 30%, 40%);
+    --code-background-color: hsl(var(--color-hue), 30%, 90%);
+    --code-color: hsl(var(--color-hue), 30%, 40%);
     --nav-dot-color: grey;
     --nav-dot-selected: white;
 }
@@ -45,6 +54,7 @@
 html {
     color: var(--title-color);
     font-size: calc(1rem + 0.5vw);
+    font-family: sans-serif, Arial, Helvetica;
     scroll-behavior: smooth;
 }
 
@@ -60,7 +70,9 @@ a {
 
 p {
     max-width: 70ch;
-    margin: auto;
+    margin: 0 auto 0.75em auto;
+    text-align: left;
+    line-height: 1.7;
 }
 
 code {
@@ -72,8 +84,12 @@ code {
 }
 
 .warning {
+    padding: 0 0 0.15em 0.3em;
     color: var(--warning-color);
     font-weight: bold;
+    background-color: var(--warning-background-color);
+    border-radius: 3px;
+    letter-spacing: 0.3em;
 }
 
 /* NAV */
@@ -137,11 +153,11 @@ nav .nav-dot {
 }
 
 .example {
-    padding: 2rem 0;
+    padding-bottom: 2rem;
 }
 
 .example-illustration {
-    padding: 1rem 0;
+    padding: 1rem 0 2rem 0;
 }
 
 /* UTILS */
@@ -268,9 +284,32 @@ header {
     padding: 3rem 0;
 }
 
+.section-odd {
+    background-color: var(--background-color-odd, orange);
+}
+
+.section-even {
+    background-color: var(--background-color, orange);
+}
+
 .section-title {
+    position: relative;
     font-size: 2rem;
     margin-bottom: 2rem;
+    z-index: 1;
+}
+
+.section-title::before {
+    background: #ffc862;
+    bottom: 0.1em;
+    content: "";
+    height: .4em;
+    width: clamp(30px, 20vw, 150px);
+    position: absolute;
+    right: 50%;
+    left: auto;
+    top: auto;
+    z-index: -1;
 }
 
 .section-subtitle {
@@ -289,6 +328,11 @@ header {
 
 .section-description {
     margin-bottom: 1rem;
+    color: var(--title-color, black);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    border-left: 6px solid var(--main-color, black);
 }
 
 .section button {
@@ -299,7 +343,7 @@ header {
     border: none;
     border-radius: 0.25rem;
     cursor: pointer;
-    background-color: brown;
+    background-color: var(--accent-color);
     color: white;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11),
         0 1px 3px rgba(0, 0, 0, .08);
@@ -316,7 +360,6 @@ header {
 
 #section-relative-units {
     min-height: 100vh;
-    background-color: orange;
     display: grid;
     place-content: center;
     text-align: center;
@@ -357,7 +400,6 @@ header {
 
 #section-3 {
     height: 100vh;
-    background-color: rgb(201, 130, 0);
     display: grid;
     place-content: center;
     text-align: center;
