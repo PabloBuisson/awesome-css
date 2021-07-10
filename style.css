@@ -9,6 +9,7 @@
 }
 
 :root {
+    --color-hue: 36;
     --header-height: 90px;
     --warning-color: hsl(17, 100%, 40%);
     --warning-background-color: hsl(56, 100%, 91%);
@@ -21,8 +22,6 @@
 }
 
 :root[theme="light"] {
-    --color-hue: 36;
-    --color-accent-hue: 321;
     --main-color: hsl(var(--color-hue), 100%, 50%);
     --constrast-color: hsl(var(--color-hue), 60%, 40%);
     --accent-color: hsl(var(--color-hue), 100%, 45%);
@@ -42,7 +41,6 @@
 }
 
 :root[theme="dark"] {
-    --color-hue: 36;
     --main-color: hsl(var(--color-hue), 100%, 50%);
     --constrast-color: hsl(var(--color-hue), 60%, 40%);
     --accent-color: hsl(var(--color-hue), 100%, 45%);
@@ -63,7 +61,7 @@
 
 html {
     color: var(--title-color);
-    font-size: calc(1rem + 0.5vw);
+    /* font-size: calc(1rem + 0.5vw); */
     font-family: sans-serif, Arial, Helvetica;
     scroll-behavior: smooth;
 }
@@ -80,7 +78,7 @@ a {
 
 p {
     max-width: 70ch;
-    margin: 0 auto 0.75em auto;
+    margin-bottom: 0.75em;
     text-align: left;
     line-height: 1.7;
     color: var(--text-color);
@@ -327,7 +325,7 @@ header {
     position: relative;
     z-index: 1;
     font-size: 1.5rem;
-    margin: 1rem 0;
+    margin: 2.5rem 0 1rem 0;
     padding-left: 1.5em;
 }
 
@@ -350,12 +348,8 @@ header {
     margin: 1rem 0;
 }
 
-.section-subtitle-summary+p {
-    margin-bottom: 2rem;
-}
-
 .section-description {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: var(--description-text-color, black);
     background-color: var(--description-background-color, white);
     padding: 1rem;
@@ -431,6 +425,33 @@ header {
     place-content: center;
     text-align: center;
     position: relative;
+}
+
+.example-rem-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 12.5rem;
+    height: 12.5rem;
+    margin: auto;
+    border-radius: 4px;
+    background-color: hsl(270, 57%, 38%);
+}
+
+.example-rem-child-one {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.5rem;
+    border-radius: 2px;
+    background-color: var(--pre-pink);
+}
+
+.example-rem-child-two {
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 2px;
+    background-color: hsl(150, 80%, 65%);
 }
 
 /* PRE */
