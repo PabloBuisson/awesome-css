@@ -236,17 +236,68 @@
                 </pre>
             </div>
             <h4 class="section-subtitle-summary">When should we use the ch unit ?</h4>
-            <p>The <code>ch</code> unit comes handy for setting a max-width or a min-width. 
-                Used with paragraphs and articles, it improves readibility : the optimal line length for a body text is believed to be between 50 and 75 characters.
-                Like the above examples, the <code>ch</code> unit can also be used to set a min-width to buttons or 
+            <p>The <code>ch</code> unit comes handy for setting a max-width or a min-width.
+                Used with paragraphs and articles, it improves readibility : the optimal line length for a body text is
+                believed to be between 50 and 75 characters.
+                Like the above examples, the <code>ch</code> unit can also be used to set a min-width to buttons or
                 navigation items.
             </p>
 
             <!-- SUBSECTION MEDIA QUERIES -->
             <h3 class="section-subtitle">Relative units and media queries</h3>
+            <p>With what we learn so far, we can use the relative units to minimize the use of media queries :</p>
+            <pre>
+<span class="tag">:</span><span class="selector">root</span> {
+  <span class="comment">/* ensures the font-size never drops below the default 
+      (system/browser/user defined) value */</span>
+  <span class="property">font-size</span>: <span class="property">calc</span>(<span class="number">1</span><span
+          class="unit">rem</span> <span class="unit">+</span> <span class="number">0.5</span><span
+          class="unit">vw</span>);
+}
+  
+<span class="comment">/* media queries in pixels */</span>
+<span class="selector">@media</span> (<span class="property">min-width</span> <span class="number">960</span><span
+        class="unit">px</span>) {
+  <span class="tag">:</span><span class="selector">root</span> {
+    <span class="comment">/* ↓ Upscale by 25% at 960px */</span>
+    <span class="property">font-size</span>: <span class="number">125</span><span class="unit">%</span>;
+  }
+}
+
+<span class="tag">h2</span> {
+  <span class="comment">/* ↓ 2.5 × the root font-size */</span>
+  <span class="property">font-size</span>: <span class="number">2.5</span><span class="unit">rem</span>;
+}
+
+<span class="tag">h2 strong</span> {
+  <span class="comment">/* ↓ now 1.125 × 2.5rem */</span>
+  <span class="property">font-size</span>: <span class="number">1.125</span><span class="unit">em</span>;
+}
+
+<span class="tag">article</span>, <span class="tag">p</span> {
+  <span class="comment">/* ↓ better readability */</span>
+  <span class="property">max-width</span>: <span class="number">60</span><span class="unit">ch</span>;
+}
+</pre>
+
 
             <!-- SUBSECTION RESOURCES -->
-            <h3 class="section-subtitle">Resources</h3>
+            <h3 class="section-subtitle section-resources">Resources</h3>
+            <ul>
+                <li><a href="https://dev.to/5t3ph/guide-to-css-units-for-relational-spacing-1mj5">Guide to CSS Units for
+                        Relative Spacing</a></li>
+                <li><a href="https://every-layout.dev/rudiments/units/">Units</a></li>
+                <li><a href="https://dev.to/bytegasm/15-css-relative-units-how-many-do-you-know-em-rem-ex-cap-ch-ic-6m">
+                        15 CSS Relative units, how many do you know? em, rem, ex, cap, ch, ic... </a></li>
+                <li><a href="https://www.sitepoint.com/understanding-and-using-rem-units-in-css/">Rem in CSS:
+                        Understanding and Using rem Units</a></li>
+                <li><a href="https://medium.com/code-better/css-units-for-font-size-px-em-rem-79f7e592bb97">CSS units
+                        for font-size: px | em | rem</a></li>
+                <li><a href="https://www.smashingmagazine.com/2018/02/media-queries-responsive-design-2018/">Using
+                        Media Queries For Responsive Design In 2018</a></li>
+            </ul>
+            </ul>
+
         </section>
         <section id="section-3" class="section-even">
             <h2>Section 3</h2>
