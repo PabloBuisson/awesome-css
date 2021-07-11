@@ -152,8 +152,8 @@
                 <code>vh</code> or <code>vw</code>, and the viewport maximum <code>vmax</code> will return the larger
                 value
                 of
-                <code>vh</code> or <code>vw</code>.</p> 
-                <p>In summary, <code>1vmin</code> = 1% of the smaller value between
+                <code>vh</code> or <code>vw</code>.</p>
+            <p>In summary, <code>1vmin</code> = 1% of the smaller value between
                 <code>1vw</code> or <code>1vh</code>,
                 whereas <code>1vmax</code> = 1% of the larger value between
                 <code>1vw</code> or <code>1vh</code>.</p>
@@ -197,15 +197,55 @@
                 portion of the screen. For example, it can be useful for displaying full-height
                 homepage (with <code>100vh</code>), or to ensure that a certain element stay visible on the screen.</p>
             <p>Viewport units can also be combined with the <code>calc()</code> function, to allow, for example,
-                font-size to scale in response of a change in the window size.</p> 
-            <p>Overall, <strong>viewport units are ideal for creating proportionate and responsive elements</strong>.</p>
+                font-size to scale in response of a change in the window size.</p>
+            <p>Overall, <strong>viewport units are ideal for creating proportionate and responsive elements</strong>.
             </p>
 
-
-
-
+            <!-- SUBSECTION CH -->
             <h3 class="section-subtitle">CH</h3>
+            <p>The <code>ch</code> unit is less used and known than the aforementioned units,
+                but could be just as much useful. It represents <strong>the width of the "0" character of the
+                    selected font</strong>.</p>
+            <p>So <code>1ch</code> equals to roughly one character. How can we use this information, then ? Well, one
+                can use the <code>ch</code> unit to set a max-width or
+                a min-width, for readibility and consistency.</p>
+            <button type="button" onclick="displayExample(this, 'example-ch')">Show me an
+                example</button>
+            <div class="example d-none" id="example-ch">
+                <div class="example-illustration">
+                    <div class="example-ch-one">This is a very long text that use the ch unit to set a max-width to its
+                        box container. Lorem
+                        ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at tempus lacus. Pellentesque eget
+                        sollicitudin urna. Quisque ultrices vitae quam vel imperdiet.
+                    </div>
+                    <div class="example-ch-buttons">
+                        <button type="button" class="example-ch-button-one">Text</button>
+                        <button type="button" class="example-ch-button-two">Very long text with same width</button>
+                    </div>
+                </div>
+                <pre>
+<span class="comment">/* purple box */</span>
+<span class="selector">.element</span> {
+    <span class="property">max-width</span>: <span class="number">50</span><span class="unit">ch</span>;
+}
+
+<span class="comment">/* green buttons */</span>
+<span class="selector">.button</span> {
+    <span class="property">min-width</span>: <span class="number">20</span><span class="unit">ch</span>;
+}
+                </pre>
+            </div>
+            <h4 class="section-subtitle-summary">When should we use the ch unit ?</h4>
+            <p>The <code>ch</code> unit comes handy for setting a max-width or a min-width. 
+                Used with paragraphs and articles, it improves readibility : the optimal line length for a body text is believed to be between 50 and 75 characters.
+                Like the above examples, the <code>ch</code> unit can also be used to set a min-width to buttons or 
+                navigation items.
+            </p>
+
+            <!-- SUBSECTION MEDIA QUERIES -->
             <h3 class="section-subtitle">Relative units and media queries</h3>
+
+            <!-- SUBSECTION RESOURCES -->
             <h3 class="section-subtitle">Resources</h3>
         </section>
         <section id="section-3" class="section-even">
