@@ -19,13 +19,16 @@
     --pre-property-color: #8be9fd;
     --pre-pink: #ff79c6;
     --pre-purple: #bd93f9;
+    --illustration-purple: hsl(270, 57%, 38%);
+    --illustration-green: hsl(150, 80%, 65%);
+    --illustration-pink: var(--pre-pink);
 }
 
 :root[theme="light"] {
     --main-color: hsl(var(--color-hue), 100%, 50%);
     --constrast-color: hsl(var(--color-hue), 60%, 40%);
     --accent-color: hsl(var(--color-hue), 100%, 45%);
-    --decorative-color: hsl(var(--color-hue), 100%, 73%);
+    --decorative-color: hsl(var(--color-hue), 100%, 50%);
     --background-color: hsl(var(--color-hue), 90%, 70%);
     --background-color-odd: hsl(var(--color-hue), 85%, 85%);
     --background-color-toggle: hsl(var(--color-hue), 5%, 80%);
@@ -378,7 +381,7 @@ header {
         0 3px 6px rgba(0, 0, 0, .08);
 }
 
-/* SECTION 2 */
+/* SECTION RELATIVE UNITS */
 
 #section-relative-units {
     min-height: 100vh;
@@ -397,7 +400,7 @@ header {
     margin: auto;
     font-size: 20px;
     border-radius: 4px;
-    background-color: hsl(270, 57%, 38%);
+    background-color: var(--illustration-purple, hsl(270, 57%, 38%));
 }
 
 .example-em-child-one {
@@ -405,7 +408,7 @@ header {
     height: 2em;
     margin-right: 10px;
     border-radius: 2px;
-    background-color: var(--pre-pink);
+    background-color: var(--illustration-pink, --pre-pink);
 }
 
 .example-em-child-two {
@@ -413,18 +416,7 @@ header {
     height: 2em;
     font-size: 0.5em;
     border-radius: 2px;
-    background-color: hsl(150, 80%, 65%);
-}
-
-
-/* SECTION 3 */
-
-#section-3 {
-    height: 100vh;
-    display: grid;
-    place-content: center;
-    text-align: center;
-    position: relative;
+    background-color: var(--illustration-green, hsl(150, 80%, 65%));
 }
 
 .example-rem-parent {
@@ -436,7 +428,7 @@ header {
     height: 12.5rem;
     margin: auto;
     border-radius: 4px;
-    background-color: hsl(270, 57%, 38%);
+    background-color: var(--illustration-purple, hsl(270, 57%, 38%));
 }
 
 .example-rem-child-one {
@@ -444,14 +436,52 @@ header {
     height: 2.5rem;
     margin-right: 0.5rem;
     border-radius: 2px;
-    background-color: var(--pre-pink);
+    background-color: var(--illustration-pink, --pre-pink);
 }
 
 .example-rem-child-two {
     width: 1.125rem;
     height: 1.125rem;
     border-radius: 2px;
-    background-color: hsl(150, 80%, 65%);
+    background-color: var(--illustration-green, hsl(150, 80%, 65%));
+}
+
+.example-viewport-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 19vw;
+    height: 19vw;
+    margin: auto;
+    border-radius: 4px;
+    background-color: var(--illustration-purple, hsl(270, 57%, 38%));
+}
+
+.example-viewport-child-one {
+    width: 4vw;
+    height: 4vw;
+    margin-right: 0.5rem;
+    border-radius: 2px;
+    background-color: var(--illustration-pink, --pre-pink);
+}
+
+.example-viewport-child-two {
+    width: 2vmax;
+    height: 2vmax;
+    border-radius: 2px;
+    background-color: var(--illustration-green, hsl(150, 80%, 65%));
+}
+
+
+/* SECTION 3 */
+
+#section-3 {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    position: relative;
 }
 
 /* PRE */

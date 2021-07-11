@@ -35,12 +35,16 @@
                 Scroll <span aria-hidden="true" class="bouncing-hand">👇</span>
             </a>
         </section>
+
+        <!-- SECTION RELATIVE UNITS -->
         <section class="section section-odd" id="section-relative-units">
             <h2 class="section-title">Relative units</h2>
             <p class="section-description">Relative units are one of the main powerful features of CSS :
                 thank to them, one can easily display responsive and accessible layout.
                 Let's review the most used and interesting relative units.
             </p>
+
+            <!-- SUBSECTION EM -->
             <h3 class="section-subtitle">EM</h3>
             <p>An <code>em</code> is equal to the <strong>font-size of an element</strong> or
                 the font-size of that element’s nearest ancestor.
@@ -93,8 +97,9 @@
                 It best to use <code>em</code> for typography and spacing on textual components, like
                 a button or input fields.</p>
 
+            <!-- SUBSECTION REM -->
             <h3 class="section-subtitle">REM</h3>
-            <p>REM stands for <em>root em</em>.</p>
+            <p>The unit <code>rem</code> stands for <em>root em</em>.</p>
             <p>By "root", it means that <code>1rem</code> equals the <strong>font size of the html element</strong>
                 (which for most browsers has a default value of <code>16px</code>).</p>
             <button type="button" onclick="displayExample(this, 'example-rem')">Show me an
@@ -133,8 +138,72 @@
             <p>For that reason, it best to use <code>rem</code> for properties that will allow elements to keep the same
                 proportion
                 on every viewports : font-size, spacing, box size, etc.</p>
-            <h3 class="section-subtitle">VH && VW</h3>
-            <h3 class="section-subtitle">VMAX && VMIN</h3>
+
+            <!-- SUBSECTION VH, VW, VMIN, VMAX -->
+            <h3 class="section-subtitle">VH, VW, VMIN & VMAX</h3>
+            <p>The units <code>vh</code>, <code>vw</code> <code>vmin</code> and <code>vmax</code>
+                are viewport units. It means that they are <strong>relative to the browser window or the device screen
+                    size.</strong></p>
+            <p>In short, <code>1vh</code> = 1% of the viewport height,
+                whereas <code>1vw</code> = 1% of the viewport width.</p>
+            <p>With the definition of these two units,
+                one can easily guess the role of the other two : the viewport minimum <code>vmin</code> will return the
+                smaller value of
+                <code>vh</code> or <code>vw</code>, and the viewport maximum <code>vmax</code> will return the larger
+                value
+                of
+                <code>vh</code> or <code>vw</code>.</p> 
+                <p>In summary, <code>1vmin</code> = 1% of the smaller value between
+                <code>1vw</code> or <code>1vh</code>,
+                whereas <code>1vmax</code> = 1% of the larger value between
+                <code>1vw</code> or <code>1vh</code>.</p>
+            <button type="button" onclick="displayExample(this, 'example-viewport-units')">Show me an
+                example</button>
+            <div class="example d-none" id="example-viewport-units">
+                <div class="example-illustration">
+                    <div class="example-viewport-parent">
+                        <div class="example-viewport-child-one"></div>
+                        <div class="example-viewport-child-two"></div>
+                    </div>
+                </div>
+                <pre>
+<span class="comment">/* 💡 the boxes will update their sizes 
+        as you resize your browser window  */</span>
+
+<span class="comment">/* big purple box */</span>
+<span class="selector">.parent</span> {
+    <span class="property">width</span>: <span class="number">19</span><span class="unit">vw</span>;
+    <span class="property">height</span>: <span class="number">19</span><span class="unit">vw</span>;
+    <span class="comment">/* ↑ we use vw (and not vh), because we want a square */</span>
+    <span class="comment">/* and the height and the width of a viewport are always different */</span>
+}
+
+<span class="comment">/* medium pink box */</span>
+<span class="selector">.child-one</span> {
+    <span class="property">width</span>: <span class="number">4</span><span class="unit">vw</span>;
+    <span class="property">height</span>: <span class="number">4</span><span class="unit">vw</span>;
+}
+
+<span class="comment">/* small green box */</span>
+<span class="selector">.child-two</span> {
+    <span class="property">width</span>: <span class="number">2</span><span class="unit">vmax</span>;
+    <span class="comment">/* ↑ In short, it will chose 2vw on desktop and 2vh on mobile */</span>
+    <span class="property">height</span>: <span class="number">2</span><span class="unit">vmax</span>;
+}
+                </pre>
+            </div>
+            <h4 class="section-subtitle-summary">When should we use viewport units ?</h4>
+            <p>Viewport units are useful for creating elements that will occupy a constant
+                portion of the screen. For example, it can be useful for displaying full-height
+                homepage (with <code>100vh</code>), or to ensure that a certain element stay visible on the screen.</p>
+            <p>Viewport units can also be combined with the <code>calc()</code> function, to allow, for example,
+                font-size to scale in response of a change in the window size.</p> 
+            <p>Overall, <strong>viewport units are ideal for creating proportionate and responsive elements</strong>.</p>
+            </p>
+
+
+
+
             <h3 class="section-subtitle">CH</h3>
             <h3 class="section-subtitle">Relative units and media queries</h3>
             <h3 class="section-subtitle">Resources</h3>
