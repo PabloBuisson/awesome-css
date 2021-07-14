@@ -364,6 +364,11 @@ header {
     margin: 1rem 0;
 }
 
+.section-subtitle-example {
+    font-size: 1.25rem;
+    margin: 1.5rem 0;
+}
+
 .section-description {
     margin-bottom: 0.5rem;
     color: var(--description-text-color, black);
@@ -515,15 +520,53 @@ header {
     background-color: var(--illustration-green, lightgreen);
 }
 
+/* SECTION LAYOUT */
 
-/* SECTION 3 */
-
-#section-3 {
-    height: 100vh;
-    display: grid;
-    place-content: center;
+.grid-item-number {
+    color: hsl(270, 80%, 10%);
+    font-size: 1.25em;
+    font-weight: bold;
     text-align: center;
-    position: relative;
+    display: block;
+}
+
+#grid-container-one {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 1fr 1fr 1fr => 3 columns of 33% */
+    grid-template-rows: 8rem auto minmax(auto, 50%);
+    width: 60vw;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background-color: hsl(270, 30%, 90%);
+    border-radius: 0.5rem;
+}
+
+.grid-items-one {
+    min-height: 5rem;
+    padding: 1rem;
+    color: hsl(270, 30%, 90%);
+    background-color: var(--illustration-purple, purple);
+    border-radius: 0.25rem;
+}
+
+.grid-items-one:nth-child(1) {
+    justify-self: start;
+    align-self: start;
+}
+
+.grid-items-one:nth-child(2) {
+    justify-self: center;
+    align-self: center;
+}
+
+.grid-items-one:nth-child(3) {
+    justify-self: end;
+    align-self: end;
+}
+
+.grid-items-one:nth-child(4) {
+    justify-self: stretch;
+    grid-column-start: 2;
 }
 
 /* PRE */
