@@ -523,7 +523,7 @@ header {
 /* SECTION LAYOUT */
 
 .grid-item-number {
-    color: hsl(270, 80%, 10%);
+    color: hsl(36, 100%, 65%);
     font-size: 1.25em;
     font-weight: bold;
     text-align: center;
@@ -571,7 +571,7 @@ header {
 
 /* PRE */
 pre {
-    max-width: 60vw;
+    width: 60vw;
     padding: 1em;
     margin: auto;
     font-size: 1rem;
@@ -591,7 +591,7 @@ pre .unit {
     color: var(--pre-pink, #ff79c6);
 }
 
-pre .number {
+pre .number, pre .value {
     color: var(--pre-purple, #bd93f9)
 }
 
