@@ -522,7 +522,7 @@ header {
 
 /* SECTION LAYOUT */
 
-.grid-item-number {
+.grid-items .grid-item-number {
     color: hsl(36, 100%, 65%);
     font-size: 1.25em;
     font-weight: bold;
@@ -530,9 +530,27 @@ header {
     display: block;
 }
 
+.grid-items-odd .grid-item-number {
+    color: var(--illustration-purple, purple);
+}
+
+.grid-items {
+    min-height: 5rem;
+    padding: 1rem;
+    color: hsl(270, 30%, 90%);
+    background-color: var(--illustration-purple, purple);
+    border-radius: 0.25rem;
+}
+
+.grid-items-odd {
+    background-color: hsl(36, 70%, 65%);
+    color: hsl(36, 100%, 18%);
+}
+
 #grid-container-one {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 1fr 1fr 1fr => 3 columns of 33% */
+    grid-template-columns: repeat(3, 1fr);
+    /* 1fr 1fr 1fr => 3 columns of 33% */
     grid-template-rows: 8rem auto minmax(auto, 50%);
     width: 60vw;
     gap: 0.5rem;
@@ -541,32 +559,45 @@ header {
     border-radius: 0.5rem;
 }
 
-.grid-items-one {
-    min-height: 5rem;
-    padding: 1rem;
-    color: hsl(270, 30%, 90%);
-    background-color: var(--illustration-purple, purple);
-    border-radius: 0.25rem;
-}
-
-.grid-items-one:nth-child(1) {
+#grid-container-one .grid-items:nth-child(1) {
     justify-self: start;
     align-self: start;
 }
 
-.grid-items-one:nth-child(2) {
+#grid-container-one .grid-items:nth-child(2) {
     justify-self: center;
     align-self: center;
 }
 
-.grid-items-one:nth-child(3) {
+#grid-container-one .grid-items:nth-child(3) {
     justify-self: end;
     align-self: end;
 }
 
-.grid-items-one:nth-child(4) {
+#grid-container-one .grid-items:nth-child(4) {
     justify-self: stretch;
     grid-column-start: 2;
+}
+
+#grid-container-two {
+    --minColWidth: 15rem;
+    resize: horizontal;
+    overflow: scroll;
+    width: 60vw;
+    padding: 0.5rem;
+    background-color: hsl(270, 30%, 90%);
+    border-radius: 0.5rem;
+}
+
+.grid-container-two {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--minColWidth), 1fr));
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.grid-container-two:last-child {
+    margin-bottom: 0;
 }
 
 /* PRE */
@@ -591,7 +622,8 @@ pre .unit {
     color: var(--pre-pink, #ff79c6);
 }
 
-pre .number, pre .value {
+pre .number,
+pre .value {
     color: var(--pre-purple, #bd93f9)
 }
 
