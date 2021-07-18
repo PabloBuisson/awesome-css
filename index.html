@@ -418,8 +418,8 @@
                 <div class="grid-container-two">
                     <div class="grid-items grid-items-odd">
                         <span class="grid-item-number">2</span>
-                        We are two children. Give us equal space. 
-                        When it's too narrow, give us all the space, separately 
+                        We are two children. Give us equal space.
+                        When it's too narrow, give us all the space, separately
                     </div>
                     <div class="grid-items grid-items-odd">
                         <span class="grid-item-number">2</span>
@@ -440,7 +440,7 @@
                     </div>
                     <div class="grid-items">
                         <span class="grid-item-number">3</span>
-                        I'm the third child. In some occasions, I'm left alone, and, on top of that, 
+                        I'm the third child. In some occasions, I'm left alone, and, on top of that,
                         I can't take advantage of all the available space 😥
                     </div>
                 </div>
@@ -466,6 +466,77 @@
                         I can't take advantage of all the available space 😥
                     </div>
                 </div>
+            </div>
+            <pre>
+<span class="comment">/* white container */</span>
+<span class="selector">#grid-container</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="property">repeat</span>(<span class="number">3</span>, <span class="number">1</span><span class="unit">fr</span>);
+    <span class="comment">/* ↑ 1fr(action) 1fr 1fr => 3 columns of 33% */</span>
+    <span class="property">grid-template-rows</span>: <span class="number">8</span><span class="unit">rem</span> <span
+            class="value">auto</span> <span class="property">minmax</span>(<span class="value">auto</span>, <span
+                class="number">50</span><span
+                    class="unit">%</span>);
+    <span class="comment">/* ↑ 3 different rows */</span>
+    <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
+    <span class="comment">/* ↑ gutters */</span>
+}
+
+<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">1</span>) {
+    <span class="property">justify-self</span>: <span class="value">start</span>;
+    <span class="property">align-self</span>: <span class="value">start</span>;
+}
+
+<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">2</span>) {
+    <span class="property">justify-self</span>: <span class="value">center</span>;
+    <span class="property">align-self</span>: <span class="value">center</span>;
+}
+
+<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">3</span>) {
+    <span class="property">justify-self</span>: <span class="value">end</span>;
+    <span class="property">align-self</span>: <span class="value">end</span>;
+}
+
+<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">4</span>) {
+    <span class="property">justify-self</span>: <span class="value">stretch</span>;
+    <span class="property">grid-column-start</span> <span class="number">2</span>;
+}
+            </pre>
+            <!-- Third example Grid -->
+            <h4 class="section-subtitle-example">CSS Grid Positioning and Spanning</h4>
+            <div id="grid-container-three">
+                <div class="grid-items">
+                    <span class="grid-item-number">1</span>
+                    order: 0; (by default)
+                </div>
+                <div class="grid-items grid-items-odd">
+                    <span class="grid-item-number">2</span>
+                    order: 1;<br />
+                    grid-column: 2 / span 2;
+                </div>
+                <div class="grid-items">
+                    <span class="grid-item-number">3</span>
+                    grid-column: 1;<br />
+                    grid-row: 2 / 4;
+                </div>
+                <div class="grid-items">
+                    <span class="grid-item-number">4</span>
+                    grid-column: 3;<br />
+                    grid-row: 2;
+                </div>
+                <div class="grid-items grid-items-odd">
+                    <span class="grid-item-number">5</span>
+                    grid-area: 1 / 1 / 2 / 3;
+                </div>
+                <div class="grid-items">
+                    <span class="grid-item-number">6</span>
+                </div>
+                <div class="grid-items">
+                    <span class="grid-item-number">7</span>
+                    order: 2;<br />
+                    grid-column: span 3;
+                </div>
+            </div>
             </div>
             <pre>
 <span class="comment">/* white container */</span>
