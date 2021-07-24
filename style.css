@@ -105,6 +105,10 @@ code {
     border-radius: 3px;
 }
 
+.text-right {
+    text-align: right !important;
+}
+
 ul {
     line-height: 2;
 }
@@ -619,6 +623,98 @@ header {
 #grid-container-three .grid-items:nth-child(7) {
     order: 2;
     grid-column: span 3;
+}
+
+#grid-container-four {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "header header header header"
+        "main main . sidebar"
+        "main main . sidebar"
+        "footer footer footer footer";
+    gap: 0.5rem;
+    resize: horizontal;
+    overflow: scroll;
+    padding: 0.5rem;
+    background-color: hsl(270, 30%, 90%);
+    border-radius: 0.5rem;
+}
+
+#grid-container-four .grid-items:first-child {
+    grid-area: header;
+}
+
+#grid-container-four .grid-items:nth-child(2) {
+    grid-area: main;
+}
+
+#grid-container-four .grid-items:nth-child(3) {
+    grid-area: sidebar;
+}
+
+#grid-container-four .grid-items:nth-child(4) {
+    grid-area: 3 / 2;
+}
+
+#grid-container-four .grid-items:nth-child(5) {
+    z-index: 1;
+    grid-column: footer-start / span 2;
+    grid-row-start: footer-start;
+}
+
+#grid-container-four .grid-items:last-child {
+    grid-area: footer;
+}
+
+@media (max-width: 700px) {
+    #grid-container-four {
+        grid-template-columns: auto 30%;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "header header"
+            "main sidebar"
+            "main sidebar"
+            ".  ."
+            "footer footer"
+            "footer footer"
+            "footer footer";
+    }
+
+    #grid-container-four .grid-items:nth-child(4) {
+        grid-row-start: main-end;
+        grid-column: 1 / span 2;
+    }
+
+    #grid-container-four .grid-items:nth-child(5) {
+        z-index: 1;
+        grid-column: footer-start / span 1;
+        grid-row: 7 / span 1;
+    }
+}
+
+@media (max-width: 500px) {
+    #grid-container-four {
+        grid-template-columns: initial;
+        grid-template-rows: initial;
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "."
+            "footer"
+            "footer";
+    }
+
+    #grid-container-four .grid-items:nth-child(4) {
+        grid-row-start: sidebar-end;
+        grid-column: 1 / 2;
+    }
+
+    #grid-container-four .grid-items:nth-child(5) {
+        grid-row-end: footer-end;
+        grid-column: 1 / 2;
+    }
 }
 
 /* PRE */

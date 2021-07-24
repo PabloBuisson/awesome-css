@@ -308,7 +308,6 @@
                 <li><a href="https://www.smashingmagazine.com/2018/02/media-queries-responsive-design-2018/">Using
                         Media Queries For Responsive Design In 2018</a></li>
             </ul>
-            </ul>
 
         </section>
         <section id="section-variables" class="section section-even">
@@ -376,14 +375,16 @@
 <span class="selector">#grid-container</span> {
     <span class="property">display</span>: <span class="value">grid</span>;
     <span class="property">grid-template-columns</span>: <span class="property">repeat</span>(<span class="number">3</span>, <span class="number">1</span><span class="unit">fr</span>);
-    <span class="comment">/* ↑ 1fr(action) 1fr 1fr => 3 columns of 33% */</span>
+    <span class="comment">/* 💡 ↑ defines width of columns */</span>
+    <span class="comment">/* 1fr(action) 1fr 1fr => 3 columns of 33% */</span>
     <span class="property">grid-template-rows</span>: <span class="number">8</span><span class="unit">rem</span> <span
             class="value">auto</span> <span class="property">minmax</span>(<span class="value">auto</span>, <span
                 class="number">50</span><span
                     class="unit">%</span>);
-    <span class="comment">/* ↑ 3 different rows */</span>
+    <span class="comment">/* 💡 ↑ defines height of rows */</span>
+    <span class="comment">/* 3 different-sized rows */</span>
     <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
-    <span class="comment">/* ↑ gutters */</span>
+    <span class="comment">/* 💡 ↑ gutters */</span>
 }
 
 <span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">1</span>) {
@@ -573,6 +574,85 @@
     <span class="property">grid-column-start</span> <span class="number">2</span>;
 }
             </pre>
+
+            <!-- Fourth example Grid -->
+            <h4 class="section-subtitle-example">CSS Grid Area (with Media Queries)</h4>
+            <div id="grid-container-four">
+                <div class="grid-items">
+                    <span class="grid-item-number">HEADER</span>
+                    grid-area: header;
+                </div>
+                <div class="grid-items grid-items-odd">
+                    <span class="grid-item-number">MAIN</span>
+                    grid-area: main;
+                </div>
+                <div class="grid-items">
+                    <span class="grid-item-number">SIDEBAR</span>
+                    grid-area: sidebar;
+                </div>
+                <div class="grid-items">
+                    <span class="grid-item-number">4</span>
+                    grid-area: 3 / 2;
+                </div>
+                <div class="grid-items grid-items-odd">
+                    <span class="grid-item-number">5</span>
+                    z-index: 1;<br />
+                    grid-column: footer-start / span 2;<br />
+                    grid-row-start: footer-start;
+                </div>
+                <div class="grid-items">
+                    <span class="grid-item-number text-right">FOOTER</span>
+                    <div class="text-right">grid-area: footer;</div>
+                </div>
+            </div>
+            </div>
+            <pre>
+<span class="comment">/* white container */</span>
+<span class="selector">#grid-container</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="property">repeat</span>(<span class="number">3</span>, <span class="number">1</span><span class="unit">fr</span>);
+    <span class="comment">/* ↑ 1fr(action) 1fr 1fr => 3 columns of 33% */</span>
+    <span class="property">grid-template-rows</span>: <span class="number">8</span><span class="unit">rem</span> <span
+            class="value">auto</span> <span class="property">minmax</span>(<span class="value">auto</span>, <span
+                class="number">50</span><span
+                    class="unit">%</span>);
+    <span class="comment">/* ↑ 3 different rows */</span>
+    <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
+    <span class="comment">/* ↑ gutters */</span>
+}
+
+<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">1</span>) {
+    <span class="property">justify-self</span>: <span class="value">start</span>;
+    <span class="property">align-self</span>: <span class="value">start</span>;
+}
+
+<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">2</span>) {
+    <span class="property">justify-self</span>: <span class="value">center</span>;
+    <span class="property">align-self</span>: <span class="value">center</span>;
+}
+
+<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">3</span>) {
+    <span class="property">justify-self</span>: <span class="value">end</span>;
+    <span class="property">align-self</span>: <span class="value">end</span>;
+}
+
+<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">4</span>) {
+    <span class="property">justify-self</span>: <span class="value">stretch</span>;
+    <span class="property">grid-column-start</span> <span class="number">2</span>;
+}
+            </pre>
+
+            <!-- SUBSECTION RESOURCES -->
+            <h3 class="section-subtitle section-resources">Further resources</h3>
+            <ul>
+                <li><a href="https://thoughtbot.com/blog/concise-media-queries-with-css-grid"> Concise Media Queries
+                        with CSS Grid</a></li>
+                <li><a href="https://gridbyexample.com/examples/example13/">Redefining Grid Areas with Media Queries</a>
+                </li>
+                <li><a href="https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/"> Look
+                        Ma, No Media Queries! Responsive Layouts
+                        Using CSS Grid </a></li>
+            </ul>
         </section>
     </main>
 
