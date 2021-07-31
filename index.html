@@ -42,31 +42,34 @@
 
         <!-- SECTION RELATIVE UNITS -->
         <section class="section section-odd" id="section-relative-units">
-            <h2 class="section-title">Relative units</h2>
-            <p class="section-description">Relative units are one of the main powerful features of CSS :
-                thank to them, one can easily display responsive and accessible layout.
-                Let's review the most used and interesting relative units.
-            </p>
-
-            <!-- SUBSECTION EM -->
-            <h3 class="section-subtitle">EM</h3>
-            <p>An <code>em</code> is equal to the <strong>font-size of an element</strong> or
-                the font-size of that element’s nearest ancestor.
-            </p>
-            <p>For example, we know that <code>1em</code> refers to the font size.
-                So if the parent's font-size value of an element is <code>16px</code>,
-                <code>1em</code> equals <code>16px</code> for that element. So far, so good.
-                But <span aria-hidden="true" class="warning">💡</span> if the element itself declare a
-                font-size, like <code>12px</code>, then <code>1em</code> equals <code>12px</code>.</p>
-            <button type="button" onclick="displayExample(this, 'example-em')">Show me an example</button>
-            <div class="example d-none" id="example-em">
-                <div class="example-illustration">
-                    <div class="example-em-parent">
-                        <div class="example-em-child-one"></div>
-                        <div class="example-em-child-two"></div>
-                    </div>
+            <div class="section-container">
+                <h2 class="section-title">Relative units</h2>
+                <div class="section-description">
+                    <p>Relative units are one of the main powerful features of CSS :
+                        thank to them, one can easily display responsive and accessible layout.
+                        Let's review the most used and interesting relative units.
+                    </p>
                 </div>
-                <pre>
+
+                <!-- SUBSECTION EM -->
+                <h3 class="section-subtitle">EM</h3>
+                <p>An <code>em</code> is equal to the <strong>font-size of an element</strong> or
+                    the font-size of that element’s nearest ancestor.
+                </p>
+                <p>For example, we know that <code>1em</code> refers to the font size.
+                    So if the parent's font-size value of an element is <code>16px</code>,
+                    <code>1em</code> equals <code>16px</code> for that element. So far, so good.
+                    But <span aria-hidden="true" class="warning">💡</span> if the element itself declare a
+                    font-size, like <code>12px</code>, then <code>1em</code> equals <code>12px</code>.</p>
+                <button type="button" onclick="displayExample(this, 'example-em')">Show me an example</button>
+                <div class="example d-none" id="example-em">
+                    <div class="example-illustration">
+                        <div class="example-em-parent">
+                            <div class="example-em-child-one"></div>
+                            <div class="example-em-child-two"></div>
+                        </div>
+                    </div>
+                    <pre>
 <span class="comment">/* big purple box */</span>
 <span class="selector">.parent</span> {
     <span class="property">font-size</span>: <span class="number">20</span><span class="unit">px</span>;
@@ -94,28 +97,28 @@
     <span class="comment">/* ↑ 2 x 10px = 20px */</span>
 }
                 </pre>
-            </div>
-
-            <h4 class="section-subtitle-summary">When should we use em ?</h4>
-            <p>As you can see with the example above, the <code>em</code> unit can be tricky.
-                It best to use <code>em</code> for typography and spacing on textual components, like
-                a button or input fields.</p>
-
-            <!-- SUBSECTION REM -->
-            <h3 class="section-subtitle">REM</h3>
-            <p>The unit <code>rem</code> stands for <em>root em</em>.</p>
-            <p>By "root", it means that <code>1rem</code> equals the <strong>font size of the html element</strong>
-                (which for most browsers has a default value of <code>16px</code>).</p>
-            <button type="button" onclick="displayExample(this, 'example-rem')">Show me an
-                example</button>
-            <div class="example d-none" id="example-rem">
-                <div class="example-illustration">
-                    <div class="example-rem-parent">
-                        <div class="example-rem-child-one"></div>
-                        <div class="example-rem-child-two"></div>
-                    </div>
                 </div>
-                <pre>
+
+                <h4 class="section-subtitle-summary">When should we use em ?</h4>
+                <p>As you can see with the example above, the <code>em</code> unit can be tricky.
+                    It best to use <code>em</code> for typography and spacing on textual components, like
+                    a button or input fields.</p>
+
+                <!-- SUBSECTION REM -->
+                <h3 class="section-subtitle">REM</h3>
+                <p>The unit <code>rem</code> stands for <em>root em</em>.</p>
+                <p>By "root", it means that <code>1rem</code> equals the <strong>font size of the html element</strong>
+                    (which for most browsers has a default value of <code>16px</code>).</p>
+                <button type="button" onclick="displayExample(this, 'example-rem')">Show me an
+                    example</button>
+                <div class="example d-none" id="example-rem">
+                    <div class="example-illustration">
+                        <div class="example-rem-parent">
+                            <div class="example-rem-child-one"></div>
+                            <div class="example-rem-child-two"></div>
+                        </div>
+                    </div>
+                    <pre>
 <span class="comment">/* big purple box */</span>
 <span class="selector">.parent</span> {
     <span class="property">width</span>: <span class="number">12.5</span><span class="unit">rem</span>;
@@ -135,42 +138,46 @@
     <span class="property">height</span>: <span class="number">1.125</span><span class="unit">rem</span>;
 }
                 </pre>
-            </div>
-            <h4 class="section-subtitle-summary">When should we use rem ?</h4>
-            <p>Unlike the <code>em</code> unit, the <code>rem</code> unit is a global and constant unit.
-                It means that its value will not change, no matter how deeply the element is nested.</p>
-            <p>For that reason, it best to use <code>rem</code> for properties that will allow elements to keep the same
-                proportion
-                on every viewports : font-size, spacing, box size, etc.</p>
-
-            <!-- SUBSECTION VH, VW, VMIN, VMAX -->
-            <h3 class="section-subtitle">VH, VW, VMIN & VMAX</h3>
-            <p>The units <code>vh</code>, <code>vw</code> <code>vmin</code> and <code>vmax</code>
-                are viewport units. It means that they are <strong>relative to the browser window or the device screen
-                    size.</strong></p>
-            <p>In short, <code>1vh</code> = 1% of the viewport height,
-                whereas <code>1vw</code> = 1% of the viewport width.</p>
-            <p>With the definition of these two units,
-                one can easily guess the role of the other two : the viewport minimum <code>vmin</code> will return the
-                smaller value of
-                <code>vh</code> or <code>vw</code>, and the viewport maximum <code>vmax</code> will return the larger
-                value
-                of
-                <code>vh</code> or <code>vw</code>.</p>
-            <p>In summary, <code>1vmin</code> = 1% of the smaller value between
-                <code>1vw</code> or <code>1vh</code>,
-                whereas <code>1vmax</code> = 1% of the larger value between
-                <code>1vw</code> or <code>1vh</code>.</p>
-            <button type="button" onclick="displayExample(this, 'example-viewport-units')">Show me an
-                example</button>
-            <div class="example d-none" id="example-viewport-units">
-                <div class="example-illustration">
-                    <div class="example-viewport-parent">
-                        <div class="example-viewport-child-one"></div>
-                        <div class="example-viewport-child-two"></div>
-                    </div>
                 </div>
-                <pre>
+                <h4 class="section-subtitle-summary">When should we use rem ?</h4>
+                <p>Unlike the <code>em</code> unit, the <code>rem</code> unit is a global and constant unit.
+                    It means that its value will not change, no matter how deeply the element is nested.</p>
+                <p>For that reason, it best to use <code>rem</code> for properties that will allow elements to keep the
+                    same
+                    proportion
+                    on every viewports : font-size, spacing, box size, etc.</p>
+
+                <!-- SUBSECTION VH, VW, VMIN, VMAX -->
+                <h3 class="section-subtitle">VH, VW, VMIN & VMAX</h3>
+                <p>The units <code>vh</code>, <code>vw</code> <code>vmin</code> and <code>vmax</code>
+                    are viewport units. It means that they are <strong>relative to the browser window or the device
+                        screen
+                        size.</strong></p>
+                <p>In short, <code>1vh</code> = 1% of the viewport height,
+                    whereas <code>1vw</code> = 1% of the viewport width.</p>
+                <p>With the definition of these two units,
+                    one can easily guess the role of the other two : the viewport minimum <code>vmin</code> will return
+                    the
+                    smaller value of
+                    <code>vh</code> or <code>vw</code>, and the viewport maximum <code>vmax</code> will return the
+                    larger
+                    value
+                    of
+                    <code>vh</code> or <code>vw</code>.</p>
+                <p>In summary, <code>1vmin</code> = 1% of the smaller value between
+                    <code>1vw</code> or <code>1vh</code>,
+                    whereas <code>1vmax</code> = 1% of the larger value between
+                    <code>1vw</code> or <code>1vh</code>.</p>
+                <button type="button" onclick="displayExample(this, 'example-viewport-units')">Show me an
+                    example</button>
+                <div class="example d-none" id="example-viewport-units">
+                    <div class="example-illustration">
+                        <div class="example-viewport-parent">
+                            <div class="example-viewport-child-one"></div>
+                            <div class="example-viewport-child-two"></div>
+                        </div>
+                    </div>
+                    <pre>
 <span class="comment">/* 💡 the boxes will update their sizes 
         as you resize your browser window  */</span>
 
@@ -195,39 +202,44 @@
     <span class="property">height</span>: <span class="number">2</span><span class="unit">vmax</span>;
 }
                 </pre>
-            </div>
-            <h4 class="section-subtitle-summary">When should we use viewport units ?</h4>
-            <p>Viewport units are useful for creating elements that will occupy a constant
-                portion of the screen. For example, it can be useful for displaying full-height
-                homepage (with <code>100vh</code>), or to ensure that a certain element stay visible on the screen.</p>
-            <p>Viewport units can also be combined with the <code>calc()</code> function, to allow, for example,
-                font-size to scale in response of a change in the window size.</p>
-            <p>Overall, <strong>viewport units are ideal for creating proportionate and responsive elements</strong>.
-            </p>
-
-            <!-- SUBSECTION CH -->
-            <h3 class="section-subtitle">CH</h3>
-            <p>The <code>ch</code> unit is less used and known than the aforementioned units,
-                but could be just as much useful. It represents <strong>the width of the "0" character of the
-                    selected font</strong>.</p>
-            <p>So <code>1ch</code> equals to roughly one character. How can we use this information, then ? Well, one
-                can use the <code>ch</code> unit to set a max-width or
-                a min-width, for readibility and consistency.</p>
-            <button type="button" onclick="displayExample(this, 'example-ch')">Show me an
-                example</button>
-            <div class="example d-none" id="example-ch">
-                <div class="example-illustration">
-                    <div class="example-ch-one">This is a very long text that use the ch unit to set a max-width to its
-                        box container. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at tempus lacus. Pellentesque eget
-                        sollicitudin urna. Quisque ultrices vitae quam vel imperdiet.
-                    </div>
-                    <div class="example-ch-buttons">
-                        <button type="button" class="example-ch-button-one">Text</button>
-                        <button type="button" class="example-ch-button-two">Very long text with same width</button>
-                    </div>
                 </div>
-                <pre>
+                <h4 class="section-subtitle-summary">When should we use viewport units ?</h4>
+                <p>Viewport units are useful for creating elements that will occupy a constant
+                    portion of the screen. For example, it can be useful for displaying full-height
+                    homepage (with <code>100vh</code>), or to ensure that a certain element stay visible on the screen.
+                </p>
+                <p>Viewport units can also be combined with the <code>calc()</code> function, to allow, for example,
+                    font-size to scale in response of a change in the window size.</p>
+                <p>Overall, <strong>viewport units are ideal for creating proportionate and responsive
+                        elements</strong>.
+                </p>
+
+                <!-- SUBSECTION CH -->
+                <h3 class="section-subtitle">CH</h3>
+                <p>The <code>ch</code> unit is less used and known than the aforementioned units,
+                    but could be just as much useful. It represents <strong>the width of the "0" character of the
+                        selected font</strong>.</p>
+                <p>So <code>1ch</code> equals to roughly one character. How can we use this information, then ? Well,
+                    one
+                    can use the <code>ch</code> unit to set a max-width or
+                    a min-width, for readibility and consistency.</p>
+                <button type="button" onclick="displayExample(this, 'example-ch')">Show me an
+                    example</button>
+                <div class="example d-none" id="example-ch">
+                    <div class="example-illustration">
+                        <div class="example-ch-one">This is a very long text that use the ch unit to set a max-width to
+                            its
+                            box container. Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at tempus lacus. Pellentesque
+                            eget
+                            sollicitudin urna. Quisque ultrices vitae quam vel imperdiet.
+                        </div>
+                        <div class="example-ch-buttons">
+                            <button type="button" class="example-ch-button-one">Text</button>
+                            <button type="button" class="example-ch-button-two">Very long text with same width</button>
+                        </div>
+                    </div>
+                    <pre>
 <span class="comment">/* purple box */</span>
 <span class="selector">.element</span> {
     <span class="property">max-width</span>: <span class="number">50</span><span class="unit">ch</span>;
@@ -238,19 +250,20 @@
     <span class="property">min-width</span>: <span class="number">20</span><span class="unit">ch</span>;
 }
                 </pre>
-            </div>
-            <h4 class="section-subtitle-summary">When should we use the ch unit ?</h4>
-            <p>The <code>ch</code> unit comes handy for setting a max-width or a min-width.
-                Used with paragraphs and articles, it improves readibility : the optimal line length for a body text is
-                believed to be between 50 and 75 characters.
-                Like the above examples, the <code>ch</code> unit can also be used to set a min-width to buttons or
-                navigation items.
-            </p>
+                </div>
+                <h4 class="section-subtitle-summary">When should we use the ch unit ?</h4>
+                <p>The <code>ch</code> unit comes handy for setting a max-width or a min-width.
+                    Used with paragraphs and articles, it improves readibility : the optimal line length for a body text
+                    is
+                    believed to be between 50 and 75 characters.
+                    Like the above examples, the <code>ch</code> unit can also be used to set a min-width to buttons or
+                    navigation items.
+                </p>
 
-            <!-- SUBSECTION MEDIA QUERIES -->
-            <h3 class="section-subtitle">Relative units and media queries</h3>
-            <p>With what we learn so far, we can use the relative units to minimize the use of media queries :</p>
-            <pre>
+                <!-- SUBSECTION MEDIA QUERIES -->
+                <h3 class="section-subtitle">Relative units and media queries</h3>
+                <p>With what we learn so far, we can use the relative units to minimize the use of media queries :</p>
+                <pre>
 <span class="tag">:</span><span class="selector">root</span> {
   <span class="comment">/* ensures the font-size never drops below the default 
       (system/browser/user defined) value */</span>
@@ -292,23 +305,26 @@
 </pre>
 
 
-            <!-- SUBSECTION RESOURCES -->
-            <h3 class="section-subtitle section-resources">Resources</h3>
-            <ul>
-                <li><a href="https://dev.to/5t3ph/guide-to-css-units-for-relational-spacing-1mj5">Guide to CSS Units for
-                        Relative Spacing</a></li>
-                <li><a href="https://codepen.io/5t3ph/pen/KKmdZOK">It's time to upgrade from pixels</a></li>
-                <li><a href="https://every-layout.dev/rudiments/units/">Units</a></li>
-                <li><a href="https://dev.to/bytegasm/15-css-relative-units-how-many-do-you-know-em-rem-ex-cap-ch-ic-6m">
-                        15 CSS Relative units, how many do you know? em, rem, ex, cap, ch, ic... </a></li>
-                <li><a href="https://www.sitepoint.com/understanding-and-using-rem-units-in-css/">Rem in CSS:
-                        Understanding and Using rem Units</a></li>
-                <li><a href="https://medium.com/code-better/css-units-for-font-size-px-em-rem-79f7e592bb97">CSS units
-                        for font-size: px | em | rem</a></li>
-                <li><a href="https://www.smashingmagazine.com/2018/02/media-queries-responsive-design-2018/">Using
-                        Media Queries For Responsive Design In 2018</a></li>
-            </ul>
-
+                <!-- SUBSECTION RESOURCES -->
+                <h3 class="section-subtitle section-resources">Resources</h3>
+                <ul>
+                    <li><a href="https://dev.to/5t3ph/guide-to-css-units-for-relational-spacing-1mj5">Guide to CSS Units
+                            for
+                            Relative Spacing</a></li>
+                    <li><a href="https://codepen.io/5t3ph/pen/KKmdZOK">It's time to upgrade from pixels</a></li>
+                    <li><a href="https://every-layout.dev/rudiments/units/">Units</a></li>
+                    <li><a
+                            href="https://dev.to/bytegasm/15-css-relative-units-how-many-do-you-know-em-rem-ex-cap-ch-ic-6m">
+                            15 CSS Relative units, how many do you know? em, rem, ex, cap, ch, ic... </a></li>
+                    <li><a href="https://www.sitepoint.com/understanding-and-using-rem-units-in-css/">Rem in CSS:
+                            Understanding and Using rem Units</a></li>
+                    <li><a href="https://medium.com/code-better/css-units-for-font-size-px-em-rem-79f7e592bb97">CSS
+                            units
+                            for font-size: px | em | rem</a></li>
+                    <li><a href="https://www.smashingmagazine.com/2018/02/media-queries-responsive-design-2018/">Using
+                            Media Queries For Responsive Design In 2018</a></li>
+                </ul>
+            </div>
         </section>
         <section id="section-variables" class="section section-even">
             <h2 class="section-title">Variables</h2>
@@ -316,61 +332,67 @@
         <section id="section-navigation" class="section section-odd">
             <h2 class="section-title">Navigation</h2>
         </section>
-        <section id="section-layout" class="section section-even">
-            <h2 class="section-title">Layout</h2>
-            <p class="section-description">
-                Modern CSS give us tools to easily display responsive and customized layout,
-                without the help of CSS libraries.
-                Flexbox and Grid are the most powerful ones.
-            </p>
 
-            <!-- SUBSECTION EM -->
-            <h3 class="section-subtitle">GRID</h3>
-            <p>CSS Grid Layout is a tool released in 2017.
-                It's a <strong>two-dimensional grid-based layout system</strong> and was created to solve a common
-                problem :
-                how to control every region of a page, without the need of "hacking" solutions.
-            </p>
-            <p>I won't dive in every feature of the CSS Grid Layout, but I will show you some examples,
-                along with comments.
-            </p>
-            <p>If you want to learn the basics of CSS Grid Layout, I highly recommend this tutorial :
-                <a href="https://learncssgrid.com">Learn CSS Grid - A Guide to Learning CSS Grid</a>
-            </p>
-            <!-- First example Grid -->
-            <h4 class="section-subtitle-example">CSS Grid Basics</h4>
-            <div id="grid-container-one">
-                <div class="grid-items">
-                    <span class="grid-item-number">1</span>
-                    justify-self: start;<br />
-                    align-self: start;
+        <!-- SECTION LAYOUT -->
+        <section id="section-layout" class="section section-even">
+            <div class="section-container">
+                <h2 class="section-title">Layout</h2>
+                <div class="section-description">
+                    <p>
+                        Modern CSS give us tools to easily display responsive and customized layout,
+                        without the help of CSS libraries.
+                        Flexbox and Grid are the most powerful ones.
+                    </p>
                 </div>
-                <div class="grid-items">
-                    <span class="grid-item-number">2</span>
-                    justify-self: center;<br />
-                    align-self: center;
+
+
+                <!-- SUBSECTION GRID -->
+                <h3 class="section-subtitle">GRID</h3>
+                <p>CSS Grid Layout is a tool released in 2017.
+                    It's a <strong>two-dimensional grid-based layout system</strong> and was created to solve a common
+                    problem :
+                    how to control every region of a page, without the need of "hacking" solutions.
+                </p>
+                <p>I won't dive in every feature of the CSS Grid Layout, but I will show you some examples,
+                    along with comments.
+                </p>
+                <p>If you want to learn the basics of CSS Grid Layout, I highly recommend this tutorial :
+                    <a href="https://learncssgrid.com">Learn CSS Grid - A Guide to Learning CSS Grid</a>
+                </p>
+                <!-- First example Grid -->
+                <h4 class="section-subtitle-example">CSS Grid Basics</h4>
+                <div id="grid-container-one">
+                    <div class="grid-items">
+                        <span class="grid-item-number">1</span>
+                        justify-self: start;<br />
+                        align-self: start;
+                    </div>
+                    <div class="grid-items">
+                        <span class="grid-item-number">2</span>
+                        justify-self: center;<br />
+                        align-self: center;
+                    </div>
+                    <div class="grid-items">
+                        <span class="grid-item-number">3</span>
+                        justify-self: end;<br />
+                        align-self: end;
+                    </div>
+                    <div class="grid-items">
+                        <span class="grid-item-number">4</span>
+                        justify-self: stretch;</br>
+                        grid-column-start: 2;
+                    </div>
+                    <div class="grid-items">
+                        <span class="grid-item-number">5</span>
+                        new item, without properties
+                    </div>
+                    <div class="grid-items">
+                        <span class="grid-item-number">6</span>
+                        The items of this row can't be wider than the half of the container height.
+                        The items of this row can't be wider than the half of the container height.
+                    </div>
                 </div>
-                <div class="grid-items">
-                    <span class="grid-item-number">3</span>
-                    justify-self: end;<br />
-                    align-self: end;
-                </div>
-                <div class="grid-items">
-                    <span class="grid-item-number">4</span>
-                    justify-self: stretch;</br>
-                    grid-column-start: 2;
-                </div>
-                <div class="grid-items">
-                    <span class="grid-item-number">5</span>
-                    new item, without properties
-                </div>
-                <div class="grid-items">
-                    <span class="grid-item-number">6</span>
-                    The items of this row can't be wider than the half of the container height.
-                    The items of this row can't be wider than the half of the container height.
-                </div>
-            </div>
-            <pre>
+                <pre>
 <span class="comment">/* white container */</span>
 <span class="selector">#grid-container</span> {
     <span class="property">display</span>: <span class="value">grid</span>;
@@ -407,139 +429,138 @@
     <span class="property">grid-column-start</span> <span class="number">2</span>;
 }
             </pre>
-            <!-- Second example Grid -->
-            <h4 class="section-subtitle-example">CSS Grid Responsive</h4>
-            <div id="grid-container-two">
-                <div class="grid-container-two">
+                <!-- Second example Grid -->
+                <h4 class="section-subtitle-example">CSS Grid Responsive</h4>
+                <div id="grid-container-two">
+                    <div class="grid-container-two">
+                        <div class="grid-items">
+                            <span class="grid-item-number">1</span>
+                            I'm an only child. Give me all the space I need, I deserve it
+                        </div>
+                    </div>
+                    <div class="grid-container-two">
+                        <div class="grid-items grid-items-odd">
+                            <span class="grid-item-number">2</span>
+                            We are two children. Give us equal space.
+                            When it's too narrow, give us all the space, separately
+                        </div>
+                        <div class="grid-items grid-items-odd">
+                            <span class="grid-item-number">2</span>
+                            We are two children. Give us equal space.
+                            When it's too narrow, give us all the space, separately
+                        </div>
+                    </div>
+                    <div class="grid-container-two">
+                        <div class="grid-items">
+                            <span class="grid-item-number">3</span>
+                            We are three children. Give us equal space, but don't forget that we need a minimum space.
+                            When it's too narrow, give us all the space, separately
+                        </div>
+                        <div class="grid-items">
+                            <span class="grid-item-number">3</span>
+                            We are three children. Give us equal space, but don't forget that we need a minimum space.
+                            When it's too narrow, give us all the space, separately
+                        </div>
+                        <div class="grid-items">
+                            <span class="grid-item-number">3</span>
+                            I'm the third child. In some occasions, I'm left alone, and, on top of that,
+                            I can't take advantage of all the available space 😥
+                        </div>
+                    </div>
+                    <div class="grid-container-two">
+                        <div class="grid-items grid-items-odd">
+                            <span class="grid-item-number">4</span>
+                            We are four children. Give us equal space, but don't forget that we need a minimum space.
+                            When it's too narrow, give us all the space, separately
+                        </div>
+                        <div class="grid-items grid-items-odd">
+                            <span class="grid-item-number">4</span>
+                            We are four children. Give us equal space, but don't forget that we need a minimum space.
+                            When it's too narrow, give us all the space, separately
+                        </div>
+                        <div class="grid-items grid-items-odd">
+                            <span class="grid-item-number">4</span>
+                            We are four children. Give us equal space, but don't forget that we need a minimum space.
+                            When it's too narrow, give us all the space, separately
+                        </div>
+                        <div class="grid-items grid-items-odd">
+                            <span class="grid-item-number">4</span>
+                            I'm the fourth child. In some occasions, I'm left alone, and, on top of that,
+                            I can't take advantage of all the available space 😥
+                        </div>
+                    </div>
+                </div>
+                <pre>
+<span class="comment">/* white container */</span>
+<span class="selector">#grid-container</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="property">repeat</span>(<span class="number">3</span>, <span class="number">1</span><span class="unit">fr</span>);
+    <span class="comment">/* ↑ 1fr(action) 1fr 1fr => 3 columns of 33% */</span>
+    <span class="property">grid-template-rows</span>: <span class="number">8</span><span class="unit">rem</span> <span
+            class="value">auto</span> <span class="property">minmax</span>(<span class="value">auto</span>, <span
+                class="number">50</span><span
+                    class="unit">%</span>);
+    <span class="comment">/* ↑ 3 different rows */</span>
+    <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
+    <span class="comment">/* ↑ gutters */</span>
+}
+
+<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">1</span>) {
+    <span class="property">justify-self</span>: <span class="value">start</span>;
+    <span class="property">align-self</span>: <span class="value">start</span>;
+}
+
+<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">2</span>) {
+    <span class="property">justify-self</span>: <span class="value">center</span>;
+    <span class="property">align-self</span>: <span class="value">center</span>;
+}
+
+<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">3</span>) {
+    <span class="property">justify-self</span>: <span class="value">end</span>;
+    <span class="property">align-self</span>: <span class="value">end</span>;
+}
+
+<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">4</span>) {
+    <span class="property">justify-self</span>: <span class="value">stretch</span>;
+    <span class="property">grid-column-start</span> <span class="number">2</span>;
+}
+            </pre>
+                <!-- Third example Grid -->
+                <h4 class="section-subtitle-example">CSS Grid Positioning and Spanning</h4>
+                <div id="grid-container-three">
                     <div class="grid-items">
                         <span class="grid-item-number">1</span>
-                        I'm an only child. Give me all the space I need, I deserve it
-                    </div>
-                </div>
-                <div class="grid-container-two">
-                    <div class="grid-items grid-items-odd">
-                        <span class="grid-item-number">2</span>
-                        We are two children. Give us equal space.
-                        When it's too narrow, give us all the space, separately
+                        order: 0; (by default)
                     </div>
                     <div class="grid-items grid-items-odd">
                         <span class="grid-item-number">2</span>
-                        We are two children. Give us equal space.
-                        When it's too narrow, give us all the space, separately
-                    </div>
-                </div>
-                <div class="grid-container-two">
-                    <div class="grid-items">
-                        <span class="grid-item-number">3</span>
-                        We are three children. Give us equal space, but don't forget that we need a minimum space.
-                        When it's too narrow, give us all the space, separately
+                        order: 1;<br />
+                        grid-column: 2 / span 2;
                     </div>
                     <div class="grid-items">
                         <span class="grid-item-number">3</span>
-                        We are three children. Give us equal space, but don't forget that we need a minimum space.
-                        When it's too narrow, give us all the space, separately
+                        grid-column: 1;<br />
+                        grid-row: 2 / 4;
                     </div>
                     <div class="grid-items">
-                        <span class="grid-item-number">3</span>
-                        I'm the third child. In some occasions, I'm left alone, and, on top of that,
-                        I can't take advantage of all the available space 😥
-                    </div>
-                </div>
-                <div class="grid-container-two">
-                    <div class="grid-items grid-items-odd">
                         <span class="grid-item-number">4</span>
-                        We are four children. Give us equal space, but don't forget that we need a minimum space.
-                        When it's too narrow, give us all the space, separately
+                        grid-column: 3;<br />
+                        grid-row: 2;
                     </div>
                     <div class="grid-items grid-items-odd">
-                        <span class="grid-item-number">4</span>
-                        We are four children. Give us equal space, but don't forget that we need a minimum space.
-                        When it's too narrow, give us all the space, separately
+                        <span class="grid-item-number">5</span>
+                        grid-area: 1 / 1 / 2 / 3;
                     </div>
-                    <div class="grid-items grid-items-odd">
-                        <span class="grid-item-number">4</span>
-                        We are four children. Give us equal space, but don't forget that we need a minimum space.
-                        When it's too narrow, give us all the space, separately
+                    <div class="grid-items">
+                        <span class="grid-item-number">6</span>
                     </div>
-                    <div class="grid-items grid-items-odd">
-                        <span class="grid-item-number">4</span>
-                        I'm the fourth child. In some occasions, I'm left alone, and, on top of that,
-                        I can't take advantage of all the available space 😥
+                    <div class="grid-items">
+                        <span class="grid-item-number">7</span>
+                        order: 2;<br />
+                        grid-column: span 3;
                     </div>
                 </div>
-            </div>
-            <pre>
-<span class="comment">/* white container */</span>
-<span class="selector">#grid-container</span> {
-    <span class="property">display</span>: <span class="value">grid</span>;
-    <span class="property">grid-template-columns</span>: <span class="property">repeat</span>(<span class="number">3</span>, <span class="number">1</span><span class="unit">fr</span>);
-    <span class="comment">/* ↑ 1fr(action) 1fr 1fr => 3 columns of 33% */</span>
-    <span class="property">grid-template-rows</span>: <span class="number">8</span><span class="unit">rem</span> <span
-            class="value">auto</span> <span class="property">minmax</span>(<span class="value">auto</span>, <span
-                class="number">50</span><span
-                    class="unit">%</span>);
-    <span class="comment">/* ↑ 3 different rows */</span>
-    <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
-    <span class="comment">/* ↑ gutters */</span>
-}
-
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">1</span>) {
-    <span class="property">justify-self</span>: <span class="value">start</span>;
-    <span class="property">align-self</span>: <span class="value">start</span>;
-}
-
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">2</span>) {
-    <span class="property">justify-self</span>: <span class="value">center</span>;
-    <span class="property">align-self</span>: <span class="value">center</span>;
-}
-
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">3</span>) {
-    <span class="property">justify-self</span>: <span class="value">end</span>;
-    <span class="property">align-self</span>: <span class="value">end</span>;
-}
-
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">4</span>) {
-    <span class="property">justify-self</span>: <span class="value">stretch</span>;
-    <span class="property">grid-column-start</span> <span class="number">2</span>;
-}
-            </pre>
-            <!-- Third example Grid -->
-            <h4 class="section-subtitle-example">CSS Grid Positioning and Spanning</h4>
-            <div id="grid-container-three">
-                <div class="grid-items">
-                    <span class="grid-item-number">1</span>
-                    order: 0; (by default)
-                </div>
-                <div class="grid-items grid-items-odd">
-                    <span class="grid-item-number">2</span>
-                    order: 1;<br />
-                    grid-column: 2 / span 2;
-                </div>
-                <div class="grid-items">
-                    <span class="grid-item-number">3</span>
-                    grid-column: 1;<br />
-                    grid-row: 2 / 4;
-                </div>
-                <div class="grid-items">
-                    <span class="grid-item-number">4</span>
-                    grid-column: 3;<br />
-                    grid-row: 2;
-                </div>
-                <div class="grid-items grid-items-odd">
-                    <span class="grid-item-number">5</span>
-                    grid-area: 1 / 1 / 2 / 3;
-                </div>
-                <div class="grid-items">
-                    <span class="grid-item-number">6</span>
-                </div>
-                <div class="grid-items">
-                    <span class="grid-item-number">7</span>
-                    order: 2;<br />
-                    grid-column: span 3;
-                </div>
-            </div>
-            </div>
-            <pre>
+                <pre>
 <span class="comment">/* white container */</span>
 <span class="selector">#grid-container</span> {
     <span class="property">display</span>: <span class="value">grid</span>;
@@ -575,38 +596,37 @@
 }
             </pre>
 
-            <!-- Fourth example Grid -->
-            <h4 class="section-subtitle-example">CSS Grid Area (with Media Queries)</h4>
-            <div id="grid-container-four">
-                <div class="grid-items">
-                    <span class="grid-item-number">HEADER</span>
-                    grid-area: header;
+                <!-- Fourth example Grid -->
+                <h4 class="section-subtitle-example">CSS Grid Area (with Media Queries)</h4>
+                <div id="grid-container-four">
+                    <div class="grid-items">
+                        <span class="grid-item-number">HEADER</span>
+                        grid-area: header;
+                    </div>
+                    <div class="grid-items grid-items-odd">
+                        <span class="grid-item-number">MAIN</span>
+                        grid-area: main;
+                    </div>
+                    <div class="grid-items">
+                        <span class="grid-item-number">SIDEBAR</span>
+                        grid-area: sidebar;
+                    </div>
+                    <div class="grid-items">
+                        <span class="grid-item-number">4</span>
+                        grid-area: 3 / 2;
+                    </div>
+                    <div class="grid-items grid-items-odd">
+                        <span class="grid-item-number">5</span>
+                        z-index: 1;<br />
+                        grid-column: footer-start / span 2;<br />
+                        grid-row-start: footer-start;
+                    </div>
+                    <div class="grid-items">
+                        <span class="grid-item-number text-right">FOOTER</span>
+                        <div class="text-right">grid-area: footer;</div>
+                    </div>
                 </div>
-                <div class="grid-items grid-items-odd">
-                    <span class="grid-item-number">MAIN</span>
-                    grid-area: main;
-                </div>
-                <div class="grid-items">
-                    <span class="grid-item-number">SIDEBAR</span>
-                    grid-area: sidebar;
-                </div>
-                <div class="grid-items">
-                    <span class="grid-item-number">4</span>
-                    grid-area: 3 / 2;
-                </div>
-                <div class="grid-items grid-items-odd">
-                    <span class="grid-item-number">5</span>
-                    z-index: 1;<br />
-                    grid-column: footer-start / span 2;<br />
-                    grid-row-start: footer-start;
-                </div>
-                <div class="grid-items">
-                    <span class="grid-item-number text-right">FOOTER</span>
-                    <div class="text-right">grid-area: footer;</div>
-                </div>
-            </div>
-            </div>
-            <pre>
+                <pre>
 <span class="comment">/* white container */</span>
 <span class="selector">#grid-container</span> {
     <span class="property">display</span>: <span class="value">grid</span>;
@@ -642,17 +662,20 @@
 }
             </pre>
 
-            <!-- SUBSECTION RESOURCES -->
-            <h3 class="section-subtitle section-resources">Further resources</h3>
-            <ul>
-                <li><a href="https://thoughtbot.com/blog/concise-media-queries-with-css-grid"> Concise Media Queries
-                        with CSS Grid</a></li>
-                <li><a href="https://gridbyexample.com/examples/example13/">Redefining Grid Areas with Media Queries</a>
-                </li>
-                <li><a href="https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/"> Look
-                        Ma, No Media Queries! Responsive Layouts
-                        Using CSS Grid </a></li>
-            </ul>
+                <!-- SUBSECTION RESOURCES -->
+                <h3 class="section-subtitle section-resources">Further resources</h3>
+                <ul>
+                    <li><a href="https://thoughtbot.com/blog/concise-media-queries-with-css-grid"> Concise Media Queries
+                            with CSS Grid</a></li>
+                    <li><a href="https://gridbyexample.com/examples/example13/">Redefining Grid Areas with Media
+                            Queries</a>
+                    </li>
+                    <li><a href="https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/">
+                            Look
+                            Ma, No Media Queries! Responsive Layouts
+                            Using CSS Grid </a></li>
+                </ul>
+            </div>
         </section>
     </main>
 

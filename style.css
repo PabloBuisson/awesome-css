@@ -22,6 +22,7 @@
     --illustration-purple: hsl(270, 57%, 38%);
     --illustration-green: hsl(150, 80%, 65%);
     --illustration-pink: var(--pre-pink);
+    --max-width-container: 70ch;
 }
 
 :root[theme="light"] {
@@ -83,7 +84,7 @@ a {
 }
 
 p {
-    max-width: 70ch;
+    max-width: var(--max-width-container, 70ch);
     margin-bottom: 0.75em;
     text-align: left;
     line-height: 1.7;
@@ -312,11 +313,17 @@ header {
 }
 
 .section-odd {
-    background-color: var(--background-color-odd, orange);
+    background-color: var(--background-color-odd, grey);
 }
 
 .section-even {
-    background-color: var(--background-color, orange);
+    background-color: var(--background-color, lightgrey);
+}
+
+.section-container {
+    display: grid;
+    place-content: center;
+    max-width: var(--max-width-container, 70ch);
 }
 
 .section-title {
@@ -361,11 +368,14 @@ header {
 
 .section-description {
     margin-bottom: 0.5rem;
-    color: var(--description-text-color, black);
     background-color: var(--description-background-color, white);
     padding: 1rem;
     border-radius: 0.25rem;
     border-left: 6px solid var(--main-color, black);
+}
+
+.section-description p {
+    color: var(--description-text-color, black);
 }
 
 .section button {
@@ -543,7 +553,7 @@ header {
     grid-template-columns: repeat(3, 1fr);
     /* 1fr 1fr 1fr => 3 columns of 33% */
     grid-template-rows: 8rem auto minmax(auto, 50%);
-    width: 60vw;
+    width: 100%;
     gap: 0.5rem;
     padding: 0.5rem;
     background-color: hsl(270, 30%, 90%);
@@ -571,10 +581,10 @@ header {
 }
 
 #grid-container-two {
-    --minColWidth: 15rem;
+    --minColWidth: 30ch;
     resize: horizontal;
     overflow: scroll;
-    width: 60vw;
+    width: 100%;
     padding: 0.5rem;
     background-color: hsl(270, 30%, 90%);
     border-radius: 0.5rem;
@@ -594,7 +604,7 @@ header {
 #grid-container-three {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 60vw;
+    width: 100%;
     gap: 0.5rem;
     padding: 0.5rem;
     background-color: hsl(270, 30%, 90%);
@@ -719,11 +729,11 @@ header {
 
 /* PRE */
 pre {
-    width: 60vw;
+    width: var(--max-width-container, 70ch);
+    overflow-x: auto;
     padding: 1em;
     margin: auto;
     font-size: 1rem;
-    overflow: auto;
     text-align: start;
     background-color: var(--pre-background-color, #282a36);
     color: white;
