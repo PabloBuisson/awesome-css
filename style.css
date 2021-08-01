@@ -63,6 +63,12 @@
     --nav-dot-selected: white;
 }
 
+@media (max-width: 768px) {
+    :root {
+        --max-width-container: 100%;
+    }
+ }
+
 html {
     color: var(--title-color);
     /* font-size: calc(1rem + 0.5vw); */
@@ -309,7 +315,7 @@ header {
     display: grid;
     place-content: center;
     min-height: 100vh;
-    padding: 4rem 0;
+    padding: 4rem 1rem;
 }
 
 .section-odd {
@@ -635,17 +641,20 @@ header {
     grid-column: span 3;
 }
 
+/* for simplicity, we start with the minimum size first */
+/* that way, we don't have to, for bigger sizes and for some properties,
+/* reset the value to "initial" */
+/* we set the basics of the grid and then we add extra features on other sizes*/
 #grid-container-four {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas: "header header header header"
-        "main main . sidebar"
-        "main main . sidebar"
-        "footer footer footer footer";
     gap: 0.5rem;
-    resize: horizontal;
-    overflow: scroll;
+    grid-template-areas: "header"
+        "main"
+        "sidebar"
+        "."
+        "."
+        "footer";
+    width: 100%;
     padding: 0.5rem;
     background-color: hsl(270, 30%, 90%);
     border-radius: 0.5rem;
@@ -664,22 +673,26 @@ header {
 }
 
 #grid-container-four .grid-items:nth-child(4) {
-    grid-area: 3 / 2;
+    grid-row-start: sidebar-end;
+    grid-column: 1 / 1;
 }
 
 #grid-container-four .grid-items:nth-child(5) {
     z-index: 1;
-    grid-column: footer-start / span 2;
-    grid-row-start: footer-start;
+    grid-row-end: footer-start;
+    grid-column: 1 / 1;
 }
 
 #grid-container-four .grid-items:last-child {
     grid-area: footer;
 }
 
-@media (max-width: 700px) {
+/* tablets */
+
+@media (min-width: 768px) {
     #grid-container-four {
         grid-template-columns: auto 30%;
+        /* 30% of the container for the sidebar */
         grid-template-rows: 1fr;
         grid-template-areas:
             "header header"
@@ -703,27 +716,26 @@ header {
     }
 }
 
-@media (max-width: 500px) {
+/* desktop */
+
+@media (min-width: 1200px) {
     #grid-container-four {
-        grid-template-columns: initial;
-        grid-template-rows: initial;
-        grid-template-areas:
-            "header"
-            "main"
-            "sidebar"
-            "."
-            "footer"
-            "footer";
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: "header header header header"
+            "main main . sidebar"
+            "main main . sidebar"
+            "footer footer footer footer";
     }
 
     #grid-container-four .grid-items:nth-child(4) {
-        grid-row-start: sidebar-end;
-        grid-column: 1 / 2;
+        grid-area: 3 / 2;
     }
 
     #grid-container-four .grid-items:nth-child(5) {
-        grid-row-end: footer-end;
-        grid-column: 1 / 2;
+        z-index: 1;
+        grid-column: footer-start / span 2;
+        grid-row-start: footer-start;
     }
 }
 
