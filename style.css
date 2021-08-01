@@ -9,7 +9,7 @@
 }
 
 :root {
-    --color-hue: 36;
+    --hue: 36;
     --header-height: 90px;
     --warning-color: hsl(17, 100%, 40%);
     --warning-background-color: hsl(56, 100%, 91%);
@@ -26,39 +26,39 @@
 }
 
 :root[theme="light"] {
-    --main-color: hsl(var(--color-hue), 100%, 50%);
-    --constrast-color: hsl(var(--color-hue), 60%, 40%);
-    --accent-color: hsl(var(--color-hue), 100%, 45%);
-    --decorative-color: hsl(var(--color-hue), 100%, 50%);
-    --background-color: hsl(var(--color-hue), 35%, 82%);
-    --background-color-odd: hsl(var(--color-hue), 40%, 85%);
-    --background-color-toggle: hsl(var(--color-hue), 5%, 80%);
-    --title-color: hsl(var(--color-hue), 90%, 10%);
-    --text-color: hsl(var(--color-hue), 90%, 10%);
-    --description-text-color: hsl(var(--color-hue), 90%, 20%);
-    --description-background-color: hsl(var(--color-hue), 10%, 96%);
-    --code-background-color: hsla(var(--color-hue), 30%, 100%, 0.6);
+    --main-color: hsl(var(--hue), 100%, 50%);
+    --constrast-color: hsl(var(--hue), 60%, 40%);
+    --accent-color: hsl(var(--hue), 100%, 45%);
+    --decorative-color: hsl(var(--hue), 100%, 50%);
+    --background-color: hsl(var(--hue), 35%, 82%);
+    --background-color-odd: hsl(var(--hue), 40%, 85%);
+    --background-color-toggle: hsl(var(--hue), 5%, 80%);
+    --title-color: hsl(var(--hue), 90%, 10%);
+    --text-color: hsl(var(--hue), 90%, 10%);
+    --description-text-color: hsl(var(--hue), 90%, 20%);
+    --description-background-color: hsl(var(--hue), 10%, 96%);
+    --code-background-color: hsla(var(--hue), 30%, 100%, 0.6);
     --warning-background-color: var(--code-background-color);
-    --code-color: hsl(var(--color-hue), 60%, 40%);
+    --code-color: hsl(var(--hue), 60%, 40%);
     --nav-dot-color: var(--constrast-color);
     --nav-dot-selected: white;
 }
 
 :root[theme="dark"] {
-    --main-color: hsl(var(--color-hue), 100%, 50%);
-    --constrast-color: hsl(var(--color-hue), 60%, 40%);
-    --accent-color: hsl(var(--color-hue), 100%, 45%);
-    --decorative-color: hsl(var(--color-hue), 100%, 45%);
-    --background-color: hsl(var(--color-hue), 20%, 20%);
-    --background-color-odd: hsl(var(--color-hue), 20%, 16%);
-    --background-color-toggle: hsl(var(--color-hue), 5%, 80%);
-    --title-color: hsl(var(--color-hue), 40%, 92%);
-    --text-color: hsl(var(--color-hue), 20%, 80%);
-    --description-text-color: hsl(var(--color-hue), 90%, 10%);
-    --description-background-color: hsl(var(--color-hue), 10%, 90%);
-    --code-background-color: hsla(var(--color-hue), 40%, 12%);
+    --main-color: hsl(var(--hue), 100%, 50%);
+    --constrast-color: hsl(var(--hue), 60%, 40%);
+    --accent-color: hsl(var(--hue), 100%, 45%);
+    --decorative-color: hsl(var(--hue), 100%, 45%);
+    --background-color: hsl(var(--hue), 20%, 20%);
+    --background-color-odd: hsl(var(--hue), 20%, 16%);
+    --background-color-toggle: hsl(var(--hue), 5%, 80%);
+    --title-color: hsl(var(--hue), 40%, 92%);
+    --text-color: hsl(var(--hue), 20%, 80%);
+    --description-text-color: hsl(var(--hue), 90%, 10%);
+    --description-background-color: hsl(var(--hue), 10%, 90%);
+    --code-background-color: hsla(var(--hue), 40%, 12%);
     --warning-background-color: var(--code-background-color);
-    --code-color: hsl(var(--color-hue), 30%, 86%);
+    --code-color: hsl(var(--hue), 30%, 86%);
     --nav-dot-color: var(--main-color);
     --nav-dot-selected: white;
 }
@@ -127,17 +127,21 @@ li::marker {
 
 /* NAV */
 
-nav ul {
+nav {
     position: fixed;
-    top: 0;
+    top: var(--header-height, 0);
     bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    z-index: 50;
+    z-index: 1;
     margin: 0;
     padding: 0;
     line-height: 1.5;
+}
+
+nav ul {
+    overflow: auto;
 }
 
 nav a {
@@ -201,9 +205,40 @@ nav .nav-dot {
 
 header {
     height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
 }
 
-#container-theme {
+#container-color-theme {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: black;
+    padding: 0 2rem;
+}
+
+.btn-color-theme {
+    aspect-ratio: 1;
+    width: 2rem;
+    border: 2px solid white;
+    border-radius: 0.5rem;
+}
+
+.btn-color-theme-selected {
+    border: 2px solid var(--main-color, grey);
+}
+
+#btn-orange-theme {
+    background-color: hsl(32, 60%, 60%);
+}
+
+#btn-green-theme {
+    background-color: hsl(132, 60%, 60%);
+}
+
+#container-light-theme {
     height: 100%;
     font-size: 26px;
     display: flex;

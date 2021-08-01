@@ -1,8 +1,17 @@
 /* ON START */
 
 document.addEventListener("DOMContentLoaded", function (event) {
-    // enable theme
-    if (localStorage.getItem("theme") === "dark") {
+    // enable color theme
+    if (localStorage.getItem("color-theme")) {
+        // get hue as a number
+        const hue = +localStorage.getItem("color-theme");
+        // change the variable "hue" of the :root
+        document.documentElement.style.setProperty('--hue', hue);
+        // TODO: select the button with the hue selected
+    }
+
+    // enable light theme
+    if (localStorage.getItem("light-theme") === "dark") {
         setTheme(true, "dark", activateLightModeMessage);
     } else {
         setTheme(false, "light", activateDarkModeMessage);
@@ -14,6 +23,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 /* TOGGLE THEME */
 
+// Change color theme
+function changeColorTheme(hue) {
+    if (hue && !isNaN(hue)) {
+        // change the variable "hue" of the :root
+        document.documentElement.style.setProperty('--hue', hue);
+        // save preferences in local storage
+        localStorage.setItem("color-theme", hue);
+    }
+}
+
+// Change light theme
 const buttonTheme = document.querySelector("#btn-theme");
 const activateDarkModeMessage = "Activate dark mode";
 const activateLightModeMessage = "Activate light mode";
@@ -34,7 +54,7 @@ function setTheme(isButtonPressed, themeName, themeMessage) {
     buttonTheme.setAttribute("aria-label", themeMessage);
     document.documentElement.setAttribute("theme", themeName);
     // save preferences in local storage
-    localStorage.setItem("theme", themeName);
+    localStorage.setItem("light-theme", themeName);
 }
 
 /* NAVIGATION LINKS */
@@ -68,7 +88,7 @@ function checkCurrentNavigation() {
 function displayExample(button, exampleId) {
     const example = document.getElementById(exampleId);
     // change button innerText
-    button.textContent = example.classList.contains("d-none") ? 
+    button.textContent = example.classList.contains("d-none") ?
         "Hide example" : "Show me an example";
     // display/hide example
     example.classList.toggle("d-none");

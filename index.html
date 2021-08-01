@@ -24,7 +24,18 @@
     </nav>
     <main>
         <header>
-            <div id="container-theme">
+            <div id="container-color-theme">
+                Themes :
+                <button type="button" id="btn-orange-theme" 
+                    class="btn-color-theme" onclick="changeColorTheme(32)">
+                    Select orange theme
+                </button>
+                <button type="button" id="btn-green-theme" 
+                    class="btn-color-theme" onclick="changeColorTheme(132)">
+                    Select green theme
+                </button>
+            </div>
+            <div id="container-light-theme">
                 <button id="btn-theme" type="button" aria-pressed="false" aria-label="Activate dark mode"
                     title="Activate dark mode">
                     <span id="icon-light-mode" aria-hidden="true">🌞</span>
