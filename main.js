@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         const hue = +localStorage.getItem("color-theme");
         // change the variable "hue" of the :root
         document.documentElement.style.setProperty('--hue', hue);
-        // TODO: select the button with the hue selected
+        hightlightButtonTheme(hue);
     }
 
     // enable light theme
@@ -30,7 +30,21 @@ function changeColorTheme(hue) {
         document.documentElement.style.setProperty('--hue', hue);
         // save preferences in local storage
         localStorage.setItem("color-theme", hue);
+        hightlightButtonTheme(hue);
     }
+}
+
+// hightlight the button color theme
+function hightlightButtonTheme(hue) {
+    const btnColorTheme = document.querySelectorAll(".btn-color-theme");
+    btnColorTheme.forEach(btn => {
+        const colorData = btn.getAttribute("data-color");
+        if (+colorData == hue) {
+            btn.classList.add("btn-color-theme-selected");
+        } else {
+            btn.classList.remove("btn-color-theme-selected");
+        }
+    })
 }
 
 // Change light theme
