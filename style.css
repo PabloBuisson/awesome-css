@@ -11,6 +11,7 @@
 :root {
     --hue: 36;
     --header-height: 90px;
+    --background-color-toggle: hsl(var(--hue), 5%, 80%);
     --warning-color: hsl(17, 100%, 40%);
     --warning-background-color: hsl(56, 100%, 91%);
     --pre-background-color: #282a36;
@@ -32,7 +33,6 @@
     --decorative-color: hsl(var(--hue), 100%, 50%);
     --background-color: hsl(var(--hue), 35%, 82%);
     --background-color-odd: hsl(var(--hue), 40%, 85%);
-    --background-color-toggle: hsl(var(--hue), 5%, 80%);
     --title-color: hsl(var(--hue), 90%, 10%);
     --text-color: hsl(var(--hue), 90%, 10%);
     --description-text-color: hsl(var(--hue), 90%, 20%);
@@ -51,7 +51,6 @@
     --decorative-color: hsl(var(--hue), 100%, 45%);
     --background-color: hsl(var(--hue), 20%, 20%);
     --background-color-odd: hsl(var(--hue), 20%, 16%);
-    --background-color-toggle: hsl(var(--hue), 5%, 80%);
     --title-color: hsl(var(--hue), 40%, 92%);
     --text-color: hsl(var(--hue), 20%, 80%);
     --description-text-color: hsl(var(--hue), 90%, 10%);
@@ -124,6 +123,26 @@ code {
     position: absolute;
     white-space: nowrap;
     width: 1px;
+}
+
+.info-message {
+    display: flex;
+    align-items: center;
+    color: hsl(195, 60%, 20%);
+    background-color: hsl(195, 50%, 70%);
+    padding: 1rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.info-message p {
+    margin-bottom: 0;
+    color: hsl(195, 60%, 20%);
+}
+
+.fa-lightbulb {
+    width: 1em;
+    margin: 0 1.5rem 0 0.5rem;
 }
 
 ul {
@@ -258,27 +277,39 @@ header {
     background-color: hsl(132, 60%, 60%);
 }
 
-.slider {
+#btn-user-theme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    width: 2.25rem;
+    background-color: hsl(var(--hue), 5%, 90%);
+    border-radius: 3rem;
+}
+
+.fa-plus {
+    color: var(--constrast-color, black);
+    width: 1em;
+}
+
+#slider-color-theme {
     display: flex;
     align-items: center;
     gap: 0.75rem;
 }
 
-#shade {
+#slider-shade {
     -webkit-appearance: none;
-    /* Override default CSS styles */
     appearance: none;
     width: 100%;
-    /* Full-width */
     height: 2rem;
-    /* Specified height */
     background: -webkit-gradient(linear, left top, right top, from(red), color-stop(17%, #ff0), color-stop(33%, lime), color-stop(50%, cyan), color-stop(66%, blue), color-stop(83%, #f0f), to(red));
     background: linear-gradient(to right, red 0%, #ff0 17%, lime 33%, cyan 50%, blue 66%, #f0f 83%, red 100%);
     border-radius: 0.5rem;
 }
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-#shade::-webkit-slider-thumb {
+#slider-shade::-webkit-slider-thumb {
     -webkit-appearance: none;
     border: 2px solid var(--description-text-color);
     border-radius: 1rem;
@@ -288,45 +319,22 @@ header {
     cursor: pointer;
 }
 
-#shade::-moz-range-thumb {
+#slider-shade::-moz-range-thumb {
     width: 0.5rem;
-    /* Set a specific slider handle width */
     height: 120%;
-    /* Slider handle height */
     background: transparent;
-    /* Green background */
     cursor: pointer;
-    /* Cursor on hover */
     border: 2px solid var(--description-text-color);
 }
 
-.slider label {
+#slider-color-theme label {
     display: block;
     width: 100%;
     color: var(--description-text-color, black);
 }
 
-.slider input {
+#slider-color-theme input {
     width: 100%;
-}
-
-.slider-bg {
-    height: 3rem;
-    width: 100%;
-    background: -webkit-gradient(linear, left top, right top, from(red), color-stop(17%, #ff0), color-stop(33%, lime), color-stop(50%, cyan), color-stop(66%, blue), color-stop(83%, #f0f), to(red));
-    background: linear-gradient(to right, red 0%, #ff0 17%, lime 33%, cyan 50%, blue 66%, #f0f 83%, red 100%);
-}
-
-#btn-user-theme {
-    background-color: var(--constrast-color, black);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.fa-plus {
-    color: white;
-    width: 1em;
 }
 
 #container-light-theme {

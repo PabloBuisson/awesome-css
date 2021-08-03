@@ -35,7 +35,7 @@ function changeColorTheme(hue) {
 }
 
 // change color theme with the slider
-const slider = document.querySelector('#shade');
+const slider = document.querySelector('#slider-shade');
 slider.addEventListener('input', function () {
     console.log(this.value);
     changeColorTheme(this.value);
@@ -44,7 +44,7 @@ slider.addEventListener('input', function () {
 // display slider
 function displayUserTheme() {
     const userThemeBlock = document.querySelector('#container-user-theme');
-    userThemeBlock.classList.remove('d-none');
+    userThemeBlock.classList.toggle('d-none');
 }
 
 // hightlight the button color theme
