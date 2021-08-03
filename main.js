@@ -34,6 +34,19 @@ function changeColorTheme(hue) {
     }
 }
 
+// change color theme with the slider
+const slider = document.querySelector('#shade');
+slider.addEventListener('input', function () {
+    console.log(this.value);
+    changeColorTheme(this.value);
+});
+
+// display slider
+function displayUserTheme() {
+    const userThemeBlock = document.querySelector('#container-user-theme');
+    userThemeBlock.classList.remove('d-none');
+}
+
 // hightlight the button color theme
 function hightlightButtonTheme(hue) {
     const btnColorTheme = document.querySelectorAll(".btn-color-theme");

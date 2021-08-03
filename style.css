@@ -67,7 +67,7 @@
     :root {
         --max-width-container: 100%;
     }
- }
+}
 
 html {
     color: var(--title-color);
@@ -224,6 +224,15 @@ header {
 #container-color-theme {
     display: flex;
     align-items: center;
+}
+
+#container-color-theme label {
+    color: var(--description-text-color, black);
+}
+
+#container-color-buttons {
+    display: flex;
+    align-items: center;
     gap: 0.75rem;
     color: black;
     padding: 0 2rem;
@@ -247,6 +256,77 @@ header {
 
 #btn-green-theme {
     background-color: hsl(132, 60%, 60%);
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+#shade {
+    -webkit-appearance: none;
+    /* Override default CSS styles */
+    appearance: none;
+    width: 100%;
+    /* Full-width */
+    height: 2rem;
+    /* Specified height */
+    background: -webkit-gradient(linear, left top, right top, from(red), color-stop(17%, #ff0), color-stop(33%, lime), color-stop(50%, cyan), color-stop(66%, blue), color-stop(83%, #f0f), to(red));
+    background: linear-gradient(to right, red 0%, #ff0 17%, lime 33%, cyan 50%, blue 66%, #f0f 83%, red 100%);
+    border-radius: 0.5rem;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+#shade::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 2px solid var(--description-text-color);
+    border-radius: 1rem;
+    height: 2.5rem;
+    width: 0.5rem;
+    background: transparent;
+    cursor: pointer;
+}
+
+#shade::-moz-range-thumb {
+    width: 0.5rem;
+    /* Set a specific slider handle width */
+    height: 120%;
+    /* Slider handle height */
+    background: transparent;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+    border: 2px solid var(--description-text-color);
+}
+
+.slider label {
+    display: block;
+    width: 100%;
+    color: var(--description-text-color, black);
+}
+
+.slider input {
+    width: 100%;
+}
+
+.slider-bg {
+    height: 3rem;
+    width: 100%;
+    background: -webkit-gradient(linear, left top, right top, from(red), color-stop(17%, #ff0), color-stop(33%, lime), color-stop(50%, cyan), color-stop(66%, blue), color-stop(83%, #f0f), to(red));
+    background: linear-gradient(to right, red 0%, #ff0 17%, lime 33%, cyan 50%, blue 66%, #f0f 83%, red 100%);
+}
+
+#btn-user-theme {
+    background-color: var(--constrast-color, black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-plus {
+    color: white;
+    width: 1em;
 }
 
 #container-light-theme {
