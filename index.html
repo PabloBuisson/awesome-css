@@ -356,9 +356,153 @@
                 </ul>
             </div>
         </section>
+
+        <!-- SECTION VARIABLES -->
         <section id="section-variables" class="section section-even">
             <h2 class="section-title">Variables</h2>
+            <div class="section-description">
+                <p>
+                    Variables are powerful sidekick.
+                    It gives us the power of sharing and customize reusable code
+                    and the ability to adapt user interface on user interactions.
+                </p>
+            </div>
+
+            <h3 class="section-subtitle">How does variables works ?</h3>
+            <p>CSS variables are <strong>custom properties</strong>.
+                We declare a variable with the <code>--</code> prefix, for example <code>--my-variable</code>
+                and we get its value by calling the <code>var()</code> function, like this : <code>var(--my-variable,
+                    fallback value)</code>.
+            </p>
+
+            <h3 class="section-subtitle">Examples</h3>
+
+            <h4 class="section-subtitle-example">Color palettes with HSL</h4>
+            <div class="variables-hsl-block">
+                <div class="variables-hsl-examples">
+                    <div>Main color</div>
+                <div class="variables-hsl-example"></div>
+                </div>
+                <div class="variables-hsl-examples">
+                    <div>Constrast color</div>
+                    <div class="variables-hsl-example"></div>
+                </div>
+                <div class="variables-hsl-examples">
+                    <div>Title color</div>
+                    <div class="variables-hsl-example"></div>
+                </div>
+            </div>
+            <div class="info-message">
+                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="lightbulb"
+                    class="svg-inline--fa fa-lightbulb fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 352 512">
+                    <path fill="currentColor"
+                        d="M176 80c-52.94 0-96 43.06-96 96 0 8.84 7.16 16 16 16s16-7.16 16-16c0-35.3 28.72-64 64-64 8.84 0 16-7.16 16-16s-7.16-16-16-16zM96.06 459.17c0 3.15.93 6.22 2.68 8.84l24.51 36.84c2.97 4.46 7.97 7.14 13.32 7.14h78.85c5.36 0 10.36-2.68 13.32-7.14l24.51-36.84c1.74-2.62 2.67-5.7 2.68-8.84l.05-43.18H96.02l.04 43.18zM176 0C73.72 0 0 82.97 0 176c0 44.37 16.45 84.85 43.56 115.78 16.64 18.99 42.74 58.8 52.42 92.16v.06h48v-.12c-.01-4.77-.72-9.51-2.15-14.07-5.59-17.81-22.82-64.77-62.17-109.67-20.54-23.43-31.52-53.15-31.61-84.14-.2-73.64 59.67-128 127.95-128 70.58 0 128 57.42 128 128 0 30.97-11.24 60.85-31.65 84.14-39.11 44.61-56.42 91.47-62.1 109.46a47.507 47.507 0 0 0-2.22 14.3v.1h48v-.05c9.68-33.37 35.78-73.18 52.42-92.16C335.55 260.85 352 220.37 352 176 352 78.8 273.2 0 176 0z">
+                    </path>
+                </svg>
+                <p>Below is the code I used for the colors of this website</p>
+            </div>
+            <pre>
+<span class="comment">/* white container */</span>
+<span class="selector">#grid-container</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="property">repeat</span>(<span class="number">3</span>, <span class="number">1</span><span class="unit">fr</span>);
+    <span class="property">grid-template-rows</span>: <span class="number">8</span><span class="unit">rem</span> <span
+            class="value">auto</span> <span class="property">minmax</span>(<span class="value">auto</span>, <span
+                class="number">50</span><span
+                    class="unit">%</span>);
+    <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
+}
+
+:root {
+    --hue: 36; 
+    /* we declare a main color, a number between 0 and 360 /*
+    ...
+}
+
+:root[theme="light"] {
+    /* we then use the variable in the HSL representation */
+    --main-color: hsl(var(--hue), 100%, 50%);
+    /* HSL stands for --hue, --saturation and --lightness */
+    --constrast-color: hsl(var(--hue), 60%, 40%);
+    /* we can change the saturation or the lightness to create different shades */
+    --title-color: hsl(var(--hue), 90%, 10%);
+    ...
+}
+
+.section button {
+    background-color: var(--constrast-color, black);
+    /* ↑ 💡 we use a fallback value, in this example "black" */
+    color: white;
+    ...
+}
+            </pre>
+
+            <h4 class="section-subtitle-example">Light theme / Dark theme</h4>
+            <button id="btn-example-theme" type="button">Enable dark theme</button>
+            <div class="info-message">
+                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="lightbulb"
+                    class="svg-inline--fa fa-lightbulb fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 352 512">
+                    <path fill="currentColor"
+                        d="M176 80c-52.94 0-96 43.06-96 96 0 8.84 7.16 16 16 16s16-7.16 16-16c0-35.3 28.72-64 64-64 8.84 0 16-7.16 16-16s-7.16-16-16-16zM96.06 459.17c0 3.15.93 6.22 2.68 8.84l24.51 36.84c2.97 4.46 7.97 7.14 13.32 7.14h78.85c5.36 0 10.36-2.68 13.32-7.14l24.51-36.84c1.74-2.62 2.67-5.7 2.68-8.84l.05-43.18H96.02l.04 43.18zM176 0C73.72 0 0 82.97 0 176c0 44.37 16.45 84.85 43.56 115.78 16.64 18.99 42.74 58.8 52.42 92.16v.06h48v-.12c-.01-4.77-.72-9.51-2.15-14.07-5.59-17.81-22.82-64.77-62.17-109.67-20.54-23.43-31.52-53.15-31.61-84.14-.2-73.64 59.67-128 127.95-128 70.58 0 128 57.42 128 128 0 30.97-11.24 60.85-31.65 84.14-39.11 44.61-56.42 91.47-62.1 109.46a47.507 47.507 0 0 0-2.22 14.3v.1h48v-.05c9.68-33.37 35.78-73.18 52.42-92.16C335.55 260.85 352 220.37 352 176 352 78.8 273.2 0 176 0z">
+                    </path>
+                </svg>
+                <p>Below is the code I used for the example and for this website</p>
+            </div>
+            <pre>
+<span class="comment">/* white container */</span>
+<span class="selector">#grid-container</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="property">repeat</span>(<span class="number">3</span>, <span class="number">1</span><span class="unit">fr</span>);
+    <span class="property">grid-template-rows</span>: <span class="number">8</span><span class="unit">rem</span> <span
+            class="value">auto</span> <span class="property">minmax</span>(<span class="value">auto</span>, <span
+                class="number">50</span><span
+                    class="unit">%</span>);
+    <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
+}
+
+:root {
+    --hue: 36; /* main color, 36 by default */
+    /* 💡 the value will change on user interaction*/
+    ...
+}
+
+:root[theme="light"] {
+    --main-color: hsl(var(--hue), 100%, 50%);
+    --constrast-color: hsl(var(--hue), 60%, 40%);
+    --accent-color: hsl(var(--hue), 100%, 45%);
+    --background-color: hsl(var(--hue), 35%, 82%); 
+    /* ↑ 💡 backgroud is light */
+    --text-color: hsl(var(--hue), 90%, 10%); 
+    /* ↑ 💡 text is dark */
+    ...
+}
+
+:root[theme="dark"] {
+    --main-color: hsl(var(--hue), 100%, 50%);
+    --constrast-color: hsl(var(--hue), 60%, 40%);
+    --accent-color: hsl(var(--hue), 100%, 45%);
+    --background-color: hsl(var(--hue), 20%, 20%); 
+    /* ↑ 💡 background is dark */
+    --text-color: hsl(var(--hue), 20%, 80%); 
+    /* ↑ 💡 text is light */
+    ...
+}
+
+p {
+    color: var(--text-color);
+    /* ↑ 💡 will change on user interaction */
+    ...
+}
+
+section {
+    background-color: var(--background-color, lightgrey);
+    /* ↑ 💡 we use a fallback value, in this example "lightgrey" */
+}
+            </pre>
         </section>
+
         <section id="section-navigation" class="section section-odd">
             <h2 class="section-title">Navigation</h2>
         </section>
