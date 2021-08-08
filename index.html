@@ -76,7 +76,7 @@
                 <h2 class="section-title">Relative units</h2>
                 <div class="section-description">
                     <p>Relative units are one of the main powerful features of CSS :
-                        thank to them, one can easily display responsive and accessible layout.
+                        thank to them, we can easily display responsive and accessible layout.
                         Let's review the most used and interesting relative units.
                     </p>
                 </div>
@@ -186,7 +186,7 @@
                 <p>In short, <code>1vh</code> = 1% of the viewport height,
                     whereas <code>1vw</code> = 1% of the viewport width.</p>
                 <p>With the definition of these two units,
-                    one can easily guess the role of the other two : the viewport minimum <code>vmin</code> will return
+                    we can easily guess the role of the other two : the viewport minimum <code>vmin</code> will return
                     the
                     smaller value of
                     <code>vh</code> or <code>vw</code>, and the viewport maximum <code>vmax</code> will return the
@@ -359,50 +359,53 @@
 
         <!-- SECTION VARIABLES -->
         <section id="section-variables" class="section section-even">
-            <h2 class="section-title">Variables</h2>
-            <div class="section-description">
-                <p>
-                    Variables are powerful sidekick.
-                    It gives us the power of sharing and customize reusable code
-                    and the ability to adapt user interface on user interactions.
+            <div class="section-container">
+                <h2 class="section-title">Variables</h2>
+                <div class="section-description">
+                    <p>
+                        Variables are powerful sidekick.
+                        It gives us the power of sharing and customize reusable code
+                        and the ability to adapt user interface on user interactions.
+                    </p>
+                </div>
+
+                <h3 class="section-subtitle">How does variables works ?</h3>
+                <p>CSS variables are <strong>custom properties</strong>.
+                    We declare a variable with the <code>--</code> prefix, for example <code>--my-variable</code>,
+                    and we get its value by calling the <code>var()</code> function, like this :
+                    <code>var(--my-variable,
+                        fallback value)</code>. We use variables for creating color palettes, for calculations,
+                    for displaying multiple themes and so much more.
                 </p>
-            </div>
 
-            <h3 class="section-subtitle">How does variables works ?</h3>
-            <p>CSS variables are <strong>custom properties</strong>.
-                We declare a variable with the <code>--</code> prefix, for example <code>--my-variable</code>
-                and we get its value by calling the <code>var()</code> function, like this : <code>var(--my-variable,
-                    fallback value)</code>.
-            </p>
+                <h3 class="section-subtitle">Examples</h3>
 
-            <h3 class="section-subtitle">Examples</h3>
-
-            <h4 class="section-subtitle-example">Color palettes with HSL</h4>
-            <div class="variables-hsl-block">
-                <div class="variables-hsl-examples">
-                    <div>Main color</div>
-                <div class="variables-hsl-example"></div>
+                <h4 class="section-subtitle-example">Color palettes with HSL</h4>
+                <div class="variables-hsl-block">
+                    <div class="variables-hsl-examples">
+                        <div>Main color</div>
+                        <div class="variables-hsl-example"></div>
+                    </div>
+                    <div class="variables-hsl-examples">
+                        <div>Constrast color</div>
+                        <div class="variables-hsl-example"></div>
+                    </div>
+                    <div class="variables-hsl-examples">
+                        <div>Dark color</div>
+                        <div class="variables-hsl-example"></div>
+                    </div>
                 </div>
-                <div class="variables-hsl-examples">
-                    <div>Constrast color</div>
-                    <div class="variables-hsl-example"></div>
+                <div class="info-message">
+                    <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="lightbulb"
+                        class="svg-inline--fa fa-lightbulb fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 352 512">
+                        <path fill="currentColor"
+                            d="M176 80c-52.94 0-96 43.06-96 96 0 8.84 7.16 16 16 16s16-7.16 16-16c0-35.3 28.72-64 64-64 8.84 0 16-7.16 16-16s-7.16-16-16-16zM96.06 459.17c0 3.15.93 6.22 2.68 8.84l24.51 36.84c2.97 4.46 7.97 7.14 13.32 7.14h78.85c5.36 0 10.36-2.68 13.32-7.14l24.51-36.84c1.74-2.62 2.67-5.7 2.68-8.84l.05-43.18H96.02l.04 43.18zM176 0C73.72 0 0 82.97 0 176c0 44.37 16.45 84.85 43.56 115.78 16.64 18.99 42.74 58.8 52.42 92.16v.06h48v-.12c-.01-4.77-.72-9.51-2.15-14.07-5.59-17.81-22.82-64.77-62.17-109.67-20.54-23.43-31.52-53.15-31.61-84.14-.2-73.64 59.67-128 127.95-128 70.58 0 128 57.42 128 128 0 30.97-11.24 60.85-31.65 84.14-39.11 44.61-56.42 91.47-62.1 109.46a47.507 47.507 0 0 0-2.22 14.3v.1h48v-.05c9.68-33.37 35.78-73.18 52.42-92.16C335.55 260.85 352 220.37 352 176 352 78.8 273.2 0 176 0z">
+                        </path>
+                    </svg>
+                    <p>Below is the code I use for the colors of this website</p>
                 </div>
-                <div class="variables-hsl-examples">
-                    <div>Title color</div>
-                    <div class="variables-hsl-example"></div>
-                </div>
-            </div>
-            <div class="info-message">
-                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="lightbulb"
-                    class="svg-inline--fa fa-lightbulb fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 352 512">
-                    <path fill="currentColor"
-                        d="M176 80c-52.94 0-96 43.06-96 96 0 8.84 7.16 16 16 16s16-7.16 16-16c0-35.3 28.72-64 64-64 8.84 0 16-7.16 16-16s-7.16-16-16-16zM96.06 459.17c0 3.15.93 6.22 2.68 8.84l24.51 36.84c2.97 4.46 7.97 7.14 13.32 7.14h78.85c5.36 0 10.36-2.68 13.32-7.14l24.51-36.84c1.74-2.62 2.67-5.7 2.68-8.84l.05-43.18H96.02l.04 43.18zM176 0C73.72 0 0 82.97 0 176c0 44.37 16.45 84.85 43.56 115.78 16.64 18.99 42.74 58.8 52.42 92.16v.06h48v-.12c-.01-4.77-.72-9.51-2.15-14.07-5.59-17.81-22.82-64.77-62.17-109.67-20.54-23.43-31.52-53.15-31.61-84.14-.2-73.64 59.67-128 127.95-128 70.58 0 128 57.42 128 128 0 30.97-11.24 60.85-31.65 84.14-39.11 44.61-56.42 91.47-62.1 109.46a47.507 47.507 0 0 0-2.22 14.3v.1h48v-.05c9.68-33.37 35.78-73.18 52.42-92.16C335.55 260.85 352 220.37 352 176 352 78.8 273.2 0 176 0z">
-                    </path>
-                </svg>
-                <p>Below is the code I used for the colors of this website</p>
-            </div>
-            <pre>
+                <pre>
 <span class="comment">/* white container */</span>
 <span class="selector">#grid-container</span> {
     <span class="property">display</span>: <span class="value">grid</span>;
@@ -414,43 +417,43 @@
     <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
 }
 
-:root {
+<span class="tag">:</span><span class="selector">root</span> {
     --hue: 36; 
-    /* we declare a main color, a number between 0 and 360 /*
+    <span class="comment">/* we declare a main color, a number between 0 and 360 /*</span>
     ...
 }
 
-:root[theme="light"] {
-    /* we then use the variable in the HSL representation */
-    --main-color: hsl(var(--hue), 100%, 50%);
-    /* HSL stands for --hue, --saturation and --lightness */
-    --constrast-color: hsl(var(--hue), 60%, 40%);
-    /* we can change the saturation or the lightness to create different shades */
-    --title-color: hsl(var(--hue), 90%, 10%);
+<span class="tag">:</span><span class="selector">root</span>[theme="light"] {
+    <span class="comment">/* we then use the variable in the HSL representation */</span>
+    --main-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 100%, 50%);
+    <span class="comment">/* HSL stands for --hue, --saturation and --lightness */</span>
+    --constrast-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 60%, 40%);
+    <span class="comment">/* we can change the saturation or the lightness
+        to create different shades */</span>
+    --dark-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 80%, 20%);
     ...
 }
 
-.section button {
-    background-color: var(--constrast-color, black);
-    /* ↑ 💡 we use a fallback value, in this example "black" */
-    color: white;
+<span class="selector">.section</span> <span class="tag">button</span> {
+    <span class="property">background-color</span>: <span class="property">var</span>(--constrast-color, black);
+    <span class="comment">/* ↑ 💡 we use a fallback value, in this example "black" */</span>
     ...
 }
             </pre>
 
-            <h4 class="section-subtitle-example">Light theme / Dark theme</h4>
-            <button id="btn-example-theme" type="button">Enable dark theme</button>
-            <div class="info-message">
-                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="lightbulb"
-                    class="svg-inline--fa fa-lightbulb fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 352 512">
-                    <path fill="currentColor"
-                        d="M176 80c-52.94 0-96 43.06-96 96 0 8.84 7.16 16 16 16s16-7.16 16-16c0-35.3 28.72-64 64-64 8.84 0 16-7.16 16-16s-7.16-16-16-16zM96.06 459.17c0 3.15.93 6.22 2.68 8.84l24.51 36.84c2.97 4.46 7.97 7.14 13.32 7.14h78.85c5.36 0 10.36-2.68 13.32-7.14l24.51-36.84c1.74-2.62 2.67-5.7 2.68-8.84l.05-43.18H96.02l.04 43.18zM176 0C73.72 0 0 82.97 0 176c0 44.37 16.45 84.85 43.56 115.78 16.64 18.99 42.74 58.8 52.42 92.16v.06h48v-.12c-.01-4.77-.72-9.51-2.15-14.07-5.59-17.81-22.82-64.77-62.17-109.67-20.54-23.43-31.52-53.15-31.61-84.14-.2-73.64 59.67-128 127.95-128 70.58 0 128 57.42 128 128 0 30.97-11.24 60.85-31.65 84.14-39.11 44.61-56.42 91.47-62.1 109.46a47.507 47.507 0 0 0-2.22 14.3v.1h48v-.05c9.68-33.37 35.78-73.18 52.42-92.16C335.55 260.85 352 220.37 352 176 352 78.8 273.2 0 176 0z">
-                    </path>
-                </svg>
-                <p>Below is the code I used for the example and for this website</p>
-            </div>
-            <pre>
+                <h4 class="section-subtitle-example section-subtitle-example-mt">Light theme / Dark theme</h4>
+                <button id="btn-example-theme" type="button">Enable dark theme</button>
+                <div class="info-message">
+                    <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="lightbulb"
+                        class="svg-inline--fa fa-lightbulb fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 352 512">
+                        <path fill="currentColor"
+                            d="M176 80c-52.94 0-96 43.06-96 96 0 8.84 7.16 16 16 16s16-7.16 16-16c0-35.3 28.72-64 64-64 8.84 0 16-7.16 16-16s-7.16-16-16-16zM96.06 459.17c0 3.15.93 6.22 2.68 8.84l24.51 36.84c2.97 4.46 7.97 7.14 13.32 7.14h78.85c5.36 0 10.36-2.68 13.32-7.14l24.51-36.84c1.74-2.62 2.67-5.7 2.68-8.84l.05-43.18H96.02l.04 43.18zM176 0C73.72 0 0 82.97 0 176c0 44.37 16.45 84.85 43.56 115.78 16.64 18.99 42.74 58.8 52.42 92.16v.06h48v-.12c-.01-4.77-.72-9.51-2.15-14.07-5.59-17.81-22.82-64.77-62.17-109.67-20.54-23.43-31.52-53.15-31.61-84.14-.2-73.64 59.67-128 127.95-128 70.58 0 128 57.42 128 128 0 30.97-11.24 60.85-31.65 84.14-39.11 44.61-56.42 91.47-62.1 109.46a47.507 47.507 0 0 0-2.22 14.3v.1h48v-.05c9.68-33.37 35.78-73.18 52.42-92.16C335.55 260.85 352 220.37 352 176 352 78.8 273.2 0 176 0z">
+                        </path>
+                    </svg>
+                    <p>Below is the code I use for the example and for this website</p>
+                </div>
+                <pre>
 <span class="comment">/* white container */</span>
 <span class="selector">#grid-container</span> {
     <span class="property">display</span>: <span class="value">grid</span>;
@@ -462,45 +465,64 @@
     <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
 }
 
-:root {
-    --hue: 36; /* main color, 36 by default */
-    /* 💡 the value will change on user interaction*/
+<span class="tag">:</span><span class="selector">root</span> {
+    --hue: 36; <span class="comment">/* main color, 36 by default */</span>
+    <span class="comment">/* 💡 the value change when the user choose another color */</span>
     ...
 }
 
-:root[theme="light"] {
-    --main-color: hsl(var(--hue), 100%, 50%);
-    --constrast-color: hsl(var(--hue), 60%, 40%);
-    --accent-color: hsl(var(--hue), 100%, 45%);
-    --background-color: hsl(var(--hue), 35%, 82%); 
-    /* ↑ 💡 backgroud is light */
-    --text-color: hsl(var(--hue), 90%, 10%); 
-    /* ↑ 💡 text is dark */
+<span class="tag">:</span><span class="selector">root</span>[theme="light"] {
+    --main-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 100%, 50%);
+    --constrast-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 60%, 40%);
+    --accent-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 100%, 45%);
+    --background-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 35%, 82%);
+    <span class="comment">/* ↑ 💡 backgroud is light */</span>
+    --text-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 90%, 10%);
+    <span class="comment">/* ↑ 💡 text is dark */</span>
     ...
 }
 
-:root[theme="dark"] {
-    --main-color: hsl(var(--hue), 100%, 50%);
-    --constrast-color: hsl(var(--hue), 60%, 40%);
-    --accent-color: hsl(var(--hue), 100%, 45%);
-    --background-color: hsl(var(--hue), 20%, 20%); 
-    /* ↑ 💡 background is dark */
-    --text-color: hsl(var(--hue), 20%, 80%); 
-    /* ↑ 💡 text is light */
+<span class="tag">:</span><span class="selector">root</span>[theme="dark"] {
+    --main-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 100%, 50%);
+    --constrast-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 60%, 40%);
+    --accent-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 100%, 45%);
+    --background-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 20%, 20%);
+    <span class="comment">/* ↑ 💡 background is dark */</span>
+    --text-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 20%, 80%);
+    <span class="comment">/* ↑ 💡 text is light */</span>
     ...
 }
 
-p {
-    color: var(--text-color);
-    /* ↑ 💡 will change on user interaction */
+<span class="tag">p</span> {
+    <span class="property">color</span>: <span class="property">var</span>(--text-color);
+    <span class="comment">/* ↑ 💡 will change on user interaction */</span>
     ...
 }
 
-section {
-    background-color: var(--background-color, lightgrey);
-    /* ↑ 💡 we use a fallback value, in this example "lightgrey" */
+<span class="tag">section</span> {
+    <span class="property">background-color</span>: <span class="property">var</span>(--background-color, lightgrey);
+    <span class="comment">/* ↑ 💡 we use a fallback value, in this example "lightgrey" */</span>
 }
             </pre>
+
+                <!-- SUBSECTION RESOURCES -->
+                <h3 class="section-subtitle section-resources">Further resources</h3>
+                <ul>
+                    <li><a href="https://increment.com/frontend/a-users-guide-to-css-variables/">
+                            A user’s guide to CSS variables</a></li>
+                    <li><a href="https://piccalil.li/tutorial/getting-started-with-css-custom-properties">
+                            Getting started with CSS Custom Properties</a></li>
+                    </li>
+                    <li><a href="https://ishadeed.com/article/practical-css-variables/">
+                            Practical Use Cases For CSS Variables</a></li>
+                    <li><a href="https://css-tricks.com/a-complete-guide-to-custom-properties">
+                            A Complete Guide to Custom Properties</a></li>
+                    <li><a href="https://dev.to/afif/what-no-one-told-you-about-css-variables-553o">
+                            What no one told you about CSS Variables</a></li>
+                    <li><a href="https://www.callumhart.com/blog/css-variables-that-mimic-chameleons">
+                            CSS Variables That Mimic Chameleons</a></li>
+                </ul>
+            </div>
         </section>
 
         <section id="section-navigation" class="section section-odd">
@@ -604,7 +626,7 @@ section {
 }
             </pre>
                 <!-- Second example Grid -->
-                <h4 class="section-subtitle-example">CSS Grid Responsive</h4>
+                <h4 class="section-subtitle-example section-subtitle-example-mt">CSS Grid Responsive</h4>
                 <div class="info-message">
                     <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="lightbulb"
                         class="svg-inline--fa fa-lightbulb fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -710,7 +732,7 @@ section {
 }
             </pre>
                 <!-- Third example Grid -->
-                <h4 class="section-subtitle-example">CSS Grid Positioning and Spanning</h4>
+                <h4 class="section-subtitle-example section-subtitle-example-mt">CSS Grid Positioning and Spanning</h4>
                 <div id="grid-container-three">
                     <div class="grid-items">
                         <span class="grid-item-number">1</span>
@@ -781,7 +803,7 @@ section {
             </pre>
 
                 <!-- Fourth example Grid -->
-                <h4 class="section-subtitle-example">CSS Grid Area (with Media Queries)</h4>
+                <h4 class="section-subtitle-example section-subtitle-example-mt">CSS Grid Area (with Media Queries)</h4>
                 <div id="grid-container-four">
                     <div class="grid-items">
                         <span class="grid-item-number">HEADER</span>
@@ -847,7 +869,7 @@ section {
             </pre>
 
                 <!-- SUBSECTION RESOURCES -->
-                <h3 class="section-subtitle section-resources">Further resources</h3>
+                <h3 class="section-subtitle section-resources">CSS Grid : Further resources</h3>
                 <ul>
                     <li><a href="https://thoughtbot.com/blog/concise-media-queries-with-css-grid"> Concise Media Queries
                             with CSS Grid</a></li>
@@ -859,7 +881,101 @@ section {
                             Ma, No Media Queries! Responsive Layouts
                             Using CSS Grid </a></li>
                 </ul>
+
+                <!-- SUBSECTION SHAPE OUTSIDE -->
+                <h3 style="--margin: 5rem 0 1rem 0" class="section-subtitle">Shape Outside</h3>
+                <p>The shape-outside property defines a shape (circle, ellipse, polygon, rectangle) for an element,
+                    and therefore how content will wrap around that element.
+                </p>
+                <div class="example-illustration">
+                    <div class="example-shape-outside-element"></div>
+                    <p class="example-shape-outside-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Consequatur autem quae sapiente? Nulla libero reprehenderit praesentium aut amet expedita
+                        voluptas exercitationem dolore minus ut. Itaque tempora quam vel unde laboriosam.</p>
+                    <div class="example-shape-outside-element"></div>
+                    <p class="example-shape-outside-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Consequatur autem quae sapiente? Nulla libero reprehenderit praesentium aut amet expedita
+                        voluptas exercitationem dolore minus ut. Itaque tempora quam vel unde laboriosam.</p>
+                    <div class="example-shape-outside-element"></div>
+                    <p class="example-shape-outside-content">Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Consequatur autem quae sapiente? Nulla libero reprehenderit praesentium aut amet
+                        expedita voluptas exercitationem dolore minus ut. Itaque tempora quam vel unde laboriosam.
+                    </p>
+                </div>
+                <pre>
+<span class="comment">/* big purple box */</span>
+<span class="selector">.parent</span> {
+    <span class="property">font-size</span>: <span class="number">20</span><span class="unit">px</span>;
+}
+
+<span class="comment">/* medium pink box */</span>
+<span class="selector">.child-one</span> {
+    <span class="comment">/* the child hasn't declared a font-size, 
+        so 1em = parent's font-size */</span>
+    <span class="property">width</span>: <span class="number">2</span><span class="unit">em</span>; 
+    <span class="comment">/* ↑ 2 x 20px = 40px */</span>
+    <span class="property">height</span>: <span class="number">2</span><span class="unit">em</span>; 
+    <span class="comment">/* ↑ 2 x 20px = 40px */</span>
+}
+
+<span class="comment">/* small green box */</span>
+<span class="selector">.child-two</span> {
+    <span class="property">font-size</span>: <span class="number">0.5</span><span class="unit">em</span>; 
+    <span class="comment">/* ↑ 0.5 x 20px = 10px */</span>
+    <span class="comment">/* the child has declared a font-size, 
+        so 1em = element's font-size */</span>
+    <span class="property">width</span>: <span class="number">2</span><span class="unit">em</span>; 
+    <span class="comment">/* ↑ 2 x 10px = 20px */</span>
+    <span class="property">height</span>: <span class="number">2</span><span class="unit">em</span>; 
+    <span class="comment">/* ↑ 2 x 10px = 20px */</span>
+}
+
+.example-shape-outside-element {
+    width: 8rem;
+    aspect-ratio: 1;
+    background-color: var(--illustration-pink, --pre-pink);
+    float: left;
+    margin-right: 2rem;
+}
+
+.example-shape-outside-element:first-child {
+    border-radius: 50%;
+    shape-outside: circle(50%);
+}
+
+.example-shape-outside-element:nth-of-type(2) {
+    shape-outside: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    /* the property only change the relationship of adjacent elements,
+    not the geometry of the element itself */
+    /* to change the geometry of the element we use the clip-path property,
+    with the same values */
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.example-shape-outside-element:nth-of-type(3) {
+    shape-outside: ellipse(35% 50% at 50% 50%);
+    clip-path: ellipse(35% 50% at 50% 50%);
+}
+
+.example-shape-outside-content {
+    margin-bottom: 3rem;
+}
+                </pre>
+
+                <!-- SUBSECTION RESOURCES -->
+                <h3 class="section-subtitle section-resources">Shape-outside : Further resources</h3>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside">
+                            shape-outside - CSS: Cascading Style Sheets | MDN</a></li>
+                    <li><a href="https://css-tricks.com/almanac/properties/s/shape-outside/">
+                            shape-outside | CSS-Tricks
+                        </a></li>
+                    </li>
+                </ul>
+
             </div>
+
+
         </section>
     </main>
 
