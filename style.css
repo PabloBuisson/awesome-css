@@ -947,7 +947,7 @@ header {
     margin-right: 2rem;
 }
 
-.example-shape-outside-element:first-child {
+.example-shape-outside-element:first-of-type {
     border-radius: 50%;
     shape-outside: circle(50%);
 }
@@ -967,7 +967,79 @@ header {
 }
 
 .example-shape-outside-content {
+    opacity: 0.6;
     margin-bottom: 3rem;
+}
+
+/* DROP SHADOW SECTION */
+
+.example-drop-shadow-vs {
+    --shadow-color: hsl(150, 80%, 30%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+    margin-bottom: 5rem;
+}
+
+.example-drop-shadow-vs:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.example-drop-shadow,
+.example-box-shadow {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-drop-shadow>div {
+    width: 8rem;
+    aspect-ratio: 1;
+    background-color: var(--illustration-green, --pre-green);
+    filter: drop-shadow(1rem -0.25rem 0.5rem var(--shadow-color));
+}
+
+.example-box-shadow>div {
+    width: 8rem;
+    aspect-ratio: 1;
+    background-color: var(--illustration-green, --pre-green);
+    box-shadow: 1rem -0.25rem 0.5rem var(--shadow-color);
+}
+
+.example-drop-shadow .example-drop-shadow-triangle {
+    background-color: initial;
+    background-image: linear-gradient(45deg, var(--illustration-green, --pre-green) 50%, rgba(255, 255, 255, 0) 50%);
+}
+
+.example-box-shadow .example-box-shadow-triangle {
+    background-color: initial;
+    background-image: linear-gradient(45deg, var(--illustration-green, --pre-green) 50%, rgba(255, 255, 255, 0) 50%);
+}
+
+.example-drop-shadow-clip {
+    /* With clipped element, the drop-shadow filter is applied on the parent element */
+    filter: drop-shadow(1rem -0.25rem 0.5rem var(--shadow-color));
+}
+
+.example-box-shadow-clip {
+    box-shadow: 1rem -0.25rem 0.5rem var(--shadow-color);
+}
+
+
+.example-drop-shadow-circle,
+.example-box-shadow-circle {
+    border-radius: 50%;
+}
+
+.example-drop-shadow-cross,
+.example-box-shadow-cross {
+    display: flex;
+    flex-direction: column;
+    width: 8rem;
+    aspect-ratio: 1;
+    background-color: var(--illustration-green, --pre-green);
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
 }
 
 /* PRE */

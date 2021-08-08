@@ -884,7 +884,9 @@
 
                 <!-- SUBSECTION SHAPE OUTSIDE -->
                 <h3 style="--margin: 5rem 0 1rem 0" class="section-subtitle">Shape Outside</h3>
-                <p>The shape-outside property defines a shape (circle, ellipse, polygon, rectangle) for an element,
+                <p>The <strong>shape-outside property</strong> defines a shape (circle, ellipse, polygon, rectangle)
+                    for an
+                    element,
                     and therefore how content will wrap around that element.
                 </p>
                 <div class="example-illustration">
@@ -973,9 +975,108 @@
                     </li>
                 </ul>
 
+                <!-- SUBSECTION SHAPE OUTSIDE -->
+                <h3 style="--margin: 5rem 0 1rem 0" class="section-subtitle">Drop Shadow</h3>
+                <p>Like the box-shadow property, the <strong>drop-shadow function</strong> applies a <strong>shadow
+                        around an
+                        element</strong>.
+                    But, unlike the former, the shadow is applied to the shape of that element, not to its
+                    container box. The drop-shadow function is used with the filter property.
+                </p>
+
+                <div class="example-illustration">
+                    <div class="example-drop-shadow-vs">
+                        <div class="example-drop-shadow">
+                            <div class="example-drop-shadow-circle"></div>
+                            <figure>Drop-shadow circle</figure>
+                        </div>
+                        <div class="example-box-shadow">
+                            <div class="example-box-shadow-circle"></div>
+                            <figure>Box-shadow circle</figure>
+                        </div>
+                    </div>
+                    <div class="example-drop-shadow-vs">
+                        <div class="example-drop-shadow">
+                            <div class="example-drop-shadow-triangle"></div>
+                            <figure>Drop-shadow triangle</figure>
+                        </div>
+                        <div class="example-box-shadow">
+                            <div class="example-box-shadow-triangle"></div>
+                            <figure>Box-shadow triangle</figure>
+                        </div>
+                    </div>
+                    <div class="example-drop-shadow-vs">
+                        <div class="example-drop-shadow-clip">
+                            <div class="example-drop-shadow-cross"></div>
+                            <figure>Drop-shadow cross</figure>
+                        </div>
+                        <div class="example-box-shadow-clip">
+                            <div class="example-box-shadow-cross"></div>
+                            <figure>Box-shadow cross</figure>
+                        </div>
+                    </div>
+                </div>
+                <pre>
+<span class="comment">/* big purple box */</span>
+<span class="selector">.parent</span> {
+    <span class="property">font-size</span>: <span class="number">20</span><span class="unit">px</span>;
+}
+
+<span class="comment">/* medium pink box */</span>
+<span class="selector">.child-one</span> {
+    <span class="comment">/* the child hasn't declared a font-size, 
+        so 1em = parent's font-size */</span>
+    <span class="property">width</span>: <span class="number">2</span><span class="unit">em</span>; 
+    <span class="comment">/* ↑ 2 x 20px = 40px */</span>
+    <span class="property">height</span>: <span class="number">2</span><span class="unit">em</span>; 
+    <span class="comment">/* ↑ 2 x 20px = 40px */</span>
+}
+
+<span class="comment">/* small green box */</span>
+<span class="selector">.child-two</span> {
+    <span class="property">font-size</span>: <span class="number">0.5</span><span class="unit">em</span>; 
+    <span class="comment">/* ↑ 0.5 x 20px = 10px */</span>
+    <span class="comment">/* the child has declared a font-size, 
+        so 1em = element's font-size */</span>
+    <span class="property">width</span>: <span class="number">2</span><span class="unit">em</span>; 
+    <span class="comment">/* ↑ 2 x 10px = 20px */</span>
+    <span class="property">height</span>: <span class="number">2</span><span class="unit">em</span>; 
+    <span class="comment">/* ↑ 2 x 10px = 20px */</span>
+}
+
+.example-shape-outside-element {
+    width: 8rem;
+    aspect-ratio: 1;
+    background-color: var(--illustration-pink, --pre-pink);
+    float: left;
+    margin-right: 2rem;
+}
+
+.example-shape-outside-element:first-child {
+    border-radius: 50%;
+    shape-outside: circle(50%);
+}
+
+.example-shape-outside-element:nth-of-type(2) {
+    shape-outside: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    /* the property only change the relationship of adjacent elements,
+    not the geometry of the element itself */
+    /* to change the geometry of the element we use the clip-path property,
+    with the same values */
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.example-shape-outside-element:nth-of-type(3) {
+    shape-outside: ellipse(35% 50% at 50% 50%);
+    clip-path: ellipse(35% 50% at 50% 50%);
+}
+
+.example-shape-outside-content {
+    margin-bottom: 3rem;
+}
+                </pre>
+
             </div>
-
-
         </section>
     </main>
 
