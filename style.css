@@ -566,6 +566,28 @@ header {
     margin-top: 3.25rem;
 }
 
+.section-subtitle.section-resources::before {
+    height: 0.2em;
+    width: 0.8em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.section-resources::after {
+    position: absolute;
+    right: auto;
+    left: 0;
+    top: 50%;
+    bottom: 0;
+    z-index: -1;
+    background: var(--decorative-color, #ffc862);
+    content: "";
+    height: 0.2em;
+    width: 0.8em;
+    border-radius: 0.3em;
+    transform: rotate(90deg) translateX(-12.5%);
+}
+
 /* SECTION RELATIVE UNITS */
 
 .example-em-parent {
@@ -991,6 +1013,9 @@ header {
 .example-box-shadow {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 .example-drop-shadow>div {
@@ -1007,29 +1032,30 @@ header {
     box-shadow: 1rem -0.25rem 0.5rem var(--shadow-color);
 }
 
-.example-drop-shadow .example-drop-shadow-triangle {
-    background-color: initial;
-    background-image: linear-gradient(45deg, var(--illustration-green, --pre-green) 50%, rgba(255, 255, 255, 0) 50%);
+.example-drop-shadow-circle,
+.example-box-shadow-circle {
+    border-radius: 50%;
 }
 
+.example-drop-shadow .example-drop-shadow-triangle,
 .example-box-shadow .example-box-shadow-triangle {
     background-color: initial;
     background-image: linear-gradient(45deg, var(--illustration-green, --pre-green) 50%, rgba(255, 255, 255, 0) 50%);
 }
 
-.example-drop-shadow-clip {
+.example-drop-shadow-clip,
+.example-box-shadow-clip {
+    /* With clipped element, we lose the shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.example-drop-shadow-container {
     /* With clipped element, the drop-shadow filter is applied on the parent element */
     filter: drop-shadow(1rem -0.25rem 0.5rem var(--shadow-color));
-}
-
-.example-box-shadow-clip {
-    box-shadow: 1rem -0.25rem 0.5rem var(--shadow-color);
-}
-
-
-.example-drop-shadow-circle,
-.example-box-shadow-circle {
-    border-radius: 50%;
 }
 
 .example-drop-shadow-cross,

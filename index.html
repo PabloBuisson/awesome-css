@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav>
+    <nav aria-label="Main menu">
         <ul>
             <li><a href="#section-home"><span class="nav-dot"></span><span class="nav-label">Home</span></a></li>
             <li><a href="#section-relative-units"><span class="nav-dot"></span><span class="nav-label">Relative
@@ -418,6 +418,8 @@
 }
 
 <span class="tag">:</span><span class="selector">root</span> {
+    <span class="comment">/* Here are the global variables, 
+        shared with all elements of the document /*</span>
     --hue: 36; 
     <span class="comment">/* we declare a main color, a number between 0 and 360 /*</span>
     ...
@@ -502,6 +504,88 @@
 <span class="tag">section</span> {
     <span class="property">background-color</span>: <span class="property">var</span>(--background-color, lightgrey);
     <span class="comment">/* ↑ 💡 we use a fallback value, in this example "lightgrey" */</span>
+}
+            </pre>
+
+                <h4 class="section-subtitle-example section-subtitle-example-mt">Inheritance</h4>
+                <div class="info-message">
+                    <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="lightbulb"
+                        class="svg-inline--fa fa-lightbulb fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 352 512">
+                        <path fill="currentColor"
+                            d="M176 80c-52.94 0-96 43.06-96 96 0 8.84 7.16 16 16 16s16-7.16 16-16c0-35.3 28.72-64 64-64 8.84 0 16-7.16 16-16s-7.16-16-16-16zM96.06 459.17c0 3.15.93 6.22 2.68 8.84l24.51 36.84c2.97 4.46 7.97 7.14 13.32 7.14h78.85c5.36 0 10.36-2.68 13.32-7.14l24.51-36.84c1.74-2.62 2.67-5.7 2.68-8.84l.05-43.18H96.02l.04 43.18zM176 0C73.72 0 0 82.97 0 176c0 44.37 16.45 84.85 43.56 115.78 16.64 18.99 42.74 58.8 52.42 92.16v.06h48v-.12c-.01-4.77-.72-9.51-2.15-14.07-5.59-17.81-22.82-64.77-62.17-109.67-20.54-23.43-31.52-53.15-31.61-84.14-.2-73.64 59.67-128 127.95-128 70.58 0 128 57.42 128 128 0 30.97-11.24 60.85-31.65 84.14-39.11 44.61-56.42 91.47-62.1 109.46a47.507 47.507 0 0 0-2.22 14.3v.1h48v-.05c9.68-33.37 35.78-73.18 52.42-92.16C335.55 260.85 352 220.37 352 176 352 78.8 273.2 0 176 0z">
+                        </path>
+                    </svg>
+                    <p>By default, variables are inherited by the children of the element that declared them.</p>
+                </div>
+                
+                <pre>
+<span class="comment">/* white container */</span>
+<span class="selector">#grid-container</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="property">repeat</span>(<span class="number">3</span>, <span class="number">1</span><span class="unit">fr</span>);
+    <span class="property">grid-template-rows</span>: <span class="number">8</span><span class="unit">rem</span> <span
+            class="value">auto</span> <span class="property">minmax</span>(<span class="value">auto</span>, <span
+                class="number">50</span><span
+                    class="unit">%</span>);
+    <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
+}
+
+.parent {
+    --background-color: red;
+    /* local variable (not in :root), inherited by children */
+}
+
+.child-one {
+    background-color: var(--background-color, grey);
+    /* by default, background-color: red */
+}
+
+.child-two {
+    --background-color: green; 
+    /* local variable, override the parent variable */
+    background-color: var(--background-color, grey);
+    /* background-color: green */
+}
+            </pre>
+
+            <h4 class="section-subtitle-example section-subtitle-example-mt">Inline style and variables</h4>
+            <div class="info-message">
+                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="lightbulb"
+                    class="svg-inline--fa fa-lightbulb fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 352 512">
+                    <path fill="currentColor"
+                        d="M176 80c-52.94 0-96 43.06-96 96 0 8.84 7.16 16 16 16s16-7.16 16-16c0-35.3 28.72-64 64-64 8.84 0 16-7.16 16-16s-7.16-16-16-16zM96.06 459.17c0 3.15.93 6.22 2.68 8.84l24.51 36.84c2.97 4.46 7.97 7.14 13.32 7.14h78.85c5.36 0 10.36-2.68 13.32-7.14l24.51-36.84c1.74-2.62 2.67-5.7 2.68-8.84l.05-43.18H96.02l.04 43.18zM176 0C73.72 0 0 82.97 0 176c0 44.37 16.45 84.85 43.56 115.78 16.64 18.99 42.74 58.8 52.42 92.16v.06h48v-.12c-.01-4.77-.72-9.51-2.15-14.07-5.59-17.81-22.82-64.77-62.17-109.67-20.54-23.43-31.52-53.15-31.61-84.14-.2-73.64 59.67-128 127.95-128 70.58 0 128 57.42 128 128 0 30.97-11.24 60.85-31.65 84.14-39.11 44.61-56.42 91.47-62.1 109.46a47.507 47.507 0 0 0-2.22 14.3v.1h48v-.05c9.68-33.37 35.78-73.18 52.42-92.16C335.55 260.85 352 220.37 352 176 352 78.8 273.2 0 176 0z">
+                    </path>
+                </svg>
+                <p>We can also directly declare variables in HTML, with the inline style. Awesome, right ?</p>
+            </div>
+
+            <pre>
+<span class="comment">/* white container */</span>
+<span class="selector">#grid-container</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="property">repeat</span>(<span class="number">3</span>, <span class="number">1</span><span class="unit">fr</span>);
+    <span class="property">grid-template-rows</span>: <span class="number">8</span><span class="unit">rem</span> <span
+            class="value">auto</span> <span class="property">minmax</span>(<span class="value">auto</span>, <span
+                class="number">50</span><span
+                    class="unit">%</span>);
+    <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
+}
+
+/* I want to add more margin-top to this subtitle */
+/* I pass the new margin-top with the inline style */
+&#60h2 style="--margin-top: 5rem" class="subtitle"&#62
+    Awesome Subtitle
+&#60/h2&#62
+
+.subtitle {
+    --margin-top: 2.5rem;
+    /* the margin-top by default */
+    /* is overrided by the new value declared in the inline style */
+    margin: var(--margin-top, 2.5rem) 0 1rem 0;
+    /* so, for the title named "Awesome Subtitle", 
+        margin: 5rem 0 1rem 0; */
 }
             </pre>
 
@@ -940,11 +1024,13 @@
     margin-right: 2rem;
 }
 
+/* circle shape */
 .example-shape-outside-element:first-child {
     border-radius: 50%;
     shape-outside: circle(50%);
 }
 
+/* diamond shape */
 .example-shape-outside-element:nth-of-type(2) {
     shape-outside: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
     /* the property only change the relationship of adjacent elements,
@@ -954,13 +1040,10 @@
     clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
 }
 
+/* ellipse shape */
 .example-shape-outside-element:nth-of-type(3) {
     shape-outside: ellipse(35% 50% at 50% 50%);
     clip-path: ellipse(35% 50% at 50% 50%);
-}
-
-.example-shape-outside-content {
-    margin-bottom: 3rem;
 }
                 </pre>
 
@@ -986,34 +1069,36 @@
 
                 <div class="example-illustration">
                     <div class="example-drop-shadow-vs">
-                        <div class="example-drop-shadow">
+                        <figure class="example-drop-shadow">
                             <div class="example-drop-shadow-circle"></div>
-                            <figure>Drop-shadow circle</figure>
-                        </div>
-                        <div class="example-box-shadow">
+                            <figcaption>Drop-shadow circle</figcaption>
+                        </figure>
+                        <figure class="example-box-shadow">
                             <div class="example-box-shadow-circle"></div>
-                            <figure>Box-shadow circle</figure>
-                        </div>
+                            <figcaption>Box-shadow circle</figcaption>
+                        </figure>
                     </div>
                     <div class="example-drop-shadow-vs">
-                        <div class="example-drop-shadow">
+                        <figure class="example-drop-shadow">
                             <div class="example-drop-shadow-triangle"></div>
-                            <figure>Drop-shadow triangle</figure>
-                        </div>
-                        <div class="example-box-shadow">
+                            <figcaption>Drop-shadow triangle (using gradient)</figcaption>
+                        </figure>
+                        <figure class="example-box-shadow">
                             <div class="example-box-shadow-triangle"></div>
-                            <figure>Box-shadow triangle</figure>
-                        </div>
+                            <figcaption>Box-shadow triangle (using gradient)</figcaption>
+                        </figure>
                     </div>
                     <div class="example-drop-shadow-vs">
-                        <div class="example-drop-shadow-clip">
-                            <div class="example-drop-shadow-cross"></div>
-                            <figure>Drop-shadow cross</figure>
-                        </div>
-                        <div class="example-box-shadow-clip">
+                        <figure class="example-drop-shadow-clip">
+                            <div class="example-drop-shadow-container">
+                                <div class="example-drop-shadow-cross"></div>
+                            </div>
+                            <figcaption>Drop-shadow cross (using clip-path)</figcaption>
+                        </figure>
+                        <figure class="example-box-shadow-clip">
                             <div class="example-box-shadow-cross"></div>
-                            <figure>Box-shadow cross</figure>
-                        </div>
+                            <figcaption>Box-shadow cross (using clip-path)</figcaption>
+                        </figure>
                     </div>
                 </div>
                 <pre>
@@ -1044,35 +1129,50 @@
     <span class="comment">/* ↑ 2 x 10px = 20px */</span>
 }
 
-.example-shape-outside-element {
+.example-drop-shadow>div {
     width: 8rem;
     aspect-ratio: 1;
-    background-color: var(--illustration-pink, --pre-pink);
-    float: left;
-    margin-right: 2rem;
+    background-color: var(--illustration-green, --pre-green);
+    /* with drop-shadow, we use the filter property */
+    filter: drop-shadow(1rem -0.25rem 0.5rem var(--shadow-color));
 }
 
-.example-shape-outside-element:first-child {
+.example-box-shadow>div {
+    width: 8rem;
+    aspect-ratio: 1;
+    background-color: var(--illustration-green, --pre-green);
+    /* the box-shadow is applied to the box container */
+    box-shadow: 1rem -0.25rem 0.5rem var(--shadow-color);
+}
+
+/* circle shape */
+.example-drop-shadow-circle,
+.example-box-shadow-circle {
     border-radius: 50%;
-    shape-outside: circle(50%);
 }
 
-.example-shape-outside-element:nth-of-type(2) {
-    shape-outside: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-    /* the property only change the relationship of adjacent elements,
-    not the geometry of the element itself */
-    /* to change the geometry of the element we use the clip-path property,
-    with the same values */
-    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+/* triangle shape (using gradient) */
+.example-drop-shadow-triangle,
+.example-box-shadow-triangle {
+    background-color: initial;
+    background-image: linear-gradient(45deg, var(--illustration-green, --pre-green) 50%, rgba(255, 255, 255, 0) 50%);
 }
 
-.example-shape-outside-element:nth-of-type(3) {
-    shape-outside: ellipse(35% 50% at 50% 50%);
-    clip-path: ellipse(35% 50% at 50% 50%);
+/* cross shape (using clip-path) */
+.example-drop-shadow-cross,
+.example-box-shadow-cross {
+    display: flex;
+    flex-direction: column;
+    width: 8rem;
+    aspect-ratio: 1;
+    background-color: var(--illustration-green, --pre-green);
+    /* With clipped element, we lose the shadow */
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
 }
 
-.example-shape-outside-content {
-    margin-bottom: 3rem;
+.example-drop-shadow-container {
+    /* Solution : the drop-shadow filter is applied on the parent element */
+    filter: drop-shadow(1rem -0.25rem 0.5rem var(--shadow-color));
 }
                 </pre>
 
