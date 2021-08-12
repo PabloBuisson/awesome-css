@@ -18,6 +18,7 @@
     --pre-comment-color: #6272a4;
     --pre-selector-color: #50fa7b;
     --pre-property-color: #8be9fd;
+    --pre-attribute-value-color: #f1fa8c;
     --pre-pink: #ff79c6;
     --pre-purple: #bd93f9;
     --illustration-purple: hsl(270, 57%, 38%);
@@ -504,15 +505,12 @@ header {
 }
 
 .section-subtitle-example {
+    --margin-top: 1.5rem;
     position: relative;
     z-index: 1;
     font-size: 1.25rem;
     padding-left: 1em;
-    margin: 1.5rem 0;
-}
-
-.section-subtitle-example-mt {
-    margin: 3rem 0 1.5rem 0;
+    margin: var(--margin-top, 1.5rem) 0 1.5rem 0;
 }
 
 .section-subtitle-example::before {
@@ -565,6 +563,10 @@ header {
 
 .section-resources {
     margin-top: 3.25rem;
+}
+
+.section-resources + ul {
+    padding-left: 1.45rem;
 }
 
 .section-subtitle.section-resources::before {
@@ -766,7 +768,6 @@ header {
     justify-content: center;
     align-items: center;
     scroll-snap-align: start;
-    /* (!) center stop at first attempt */
     color: white;
 }
 
@@ -776,28 +777,21 @@ header {
     flex: 0 0 35ch;
 }
 
-.scroll-area:nth-of-type(1) {
-    background: var(--illustration-green, lightgreen);
-    color: hsl(150, 70%, 20%);
-}
-
-.scroll-area:nth-of-type(2) {
-    background: var(--illustration-pink, pink);
-    color: hsl(326, 70%, 20%);
-}
-
-.scroll-area:nth-of-type(3) {
-    background: var(--illustration-purple, purple);
-}
-
+.scroll-area:nth-of-type(1),
 .scroll-area:nth-of-type(4) {
     background: var(--illustration-green, lightgreen);
     color: hsl(150, 70%, 20%);
 }
 
+.scroll-area:nth-of-type(2),
 .scroll-area:nth-of-type(5) {
     background: var(--illustration-pink, pink);
     color: hsl(326, 70%, 20%);
+}
+
+.scroll-area:nth-of-type(3),
+.scroll-area:nth-of-type(6) {
+    background: var(--illustration-purple, purple);
 }
 
 .container-scroll-x {
@@ -1171,5 +1165,9 @@ pre .comment {
 }
 
 pre .property {
-    color: var(--pre-property-color, #8be9fd)
+    color: var(--pre-property-color, #8be9fd);
+}
+
+pre .attribute-value {
+    color: var(--pre-attribute-value-color, #f1fa8c);
 }

@@ -336,7 +336,7 @@
 
 
                 <!-- SUBSECTION RESOURCES -->
-                <h3 class="section-subtitle section-resources">Resources</h3>
+                <h4 class="section-subtitle section-resources">Resources</h4>
                 <ul>
                     <li><a href="https://dev.to/5t3ph/guide-to-css-units-for-relational-spacing-1mj5">Guide to CSS Units
                             for
@@ -406,44 +406,38 @@
                     <p>Below is the code I use for the colors of this website</p>
                 </div>
                 <pre>
-<span class="comment">/* white container */</span>
-<span class="selector">#grid-container</span> {
-    <span class="property">display</span>: <span class="value">grid</span>;
-    <span class="property">grid-template-columns</span>: <span class="property">repeat</span>(<span class="number">3</span>, <span class="number">1</span><span class="unit">fr</span>);
-    <span class="property">grid-template-rows</span>: <span class="number">8</span><span class="unit">rem</span> <span
-            class="value">auto</span> <span class="property">minmax</span>(<span class="value">auto</span>, <span
-                class="number">50</span><span
-                    class="unit">%</span>);
-    <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
-}
-
 <span class="tag">:</span><span class="selector">root</span> {
     <span class="comment">/* Here are the global variables, 
         shared with all elements of the document /*</span>
-    --hue: 36; 
+    --hue: <span class="value">36</span>;
     <span class="comment">/* we declare a main color, a number between 0 and 360 /*</span>
     ...
 }
 
 <span class="tag">:</span><span class="selector">root</span>[theme="light"] {
     <span class="comment">/* we then use the variable in the HSL representation */</span>
-    --main-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 100%, 50%);
+    --main-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), <span
+        class="number">100</span><span class="unit">%</span>, <span class="number">50</span><span class="unit">%</span>);
     <span class="comment">/* HSL stands for --hue, --saturation and --lightness */</span>
-    --constrast-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 60%, 40%);
+    --constrast-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), <span
+        class="number">60</span><span class="unit">%</span>, <span class="number">40</span><span class="unit">%</span>);
     <span class="comment">/* we can change the saturation or the lightness
         to create different shades */</span>
-    --dark-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 80%, 20%);
+    --dark-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), <span
+        class="number">80</span><span class="unit">%</span>, <span class="number">20</span><span class="unit">%</span>);
     ...
 }
 
 <span class="selector">.section</span> <span class="tag">button</span> {
-    <span class="property">background-color</span>: <span class="property">var</span>(--constrast-color, black);
+    <span class="property">background-color</span>: <span class="property">var</span>(--constrast-color, <span
+        class="value">black</span>);
     <span class="comment">/* ↑ 💡 we use a fallback value, in this example "black" */</span>
     ...
 }
             </pre>
 
-                <h4 class="section-subtitle-example section-subtitle-example-mt">Light theme / Dark theme</h4>
+                <h4 style="--margin-top: 3rem" class="section-subtitle-example">Light
+                    theme / Dark theme</h4>
                 <button id="btn-example-theme" type="button">Enable dark theme</button>
                 <div class="info-message">
                     <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="lightbulb"
@@ -456,41 +450,28 @@
                     <p>Below is the code I use for the example and for this website</p>
                 </div>
                 <pre>
-<span class="comment">/* white container */</span>
-<span class="selector">#grid-container</span> {
-    <span class="property">display</span>: <span class="value">grid</span>;
-    <span class="property">grid-template-columns</span>: <span class="property">repeat</span>(<span class="number">3</span>, <span class="number">1</span><span class="unit">fr</span>);
-    <span class="property">grid-template-rows</span>: <span class="number">8</span><span class="unit">rem</span> <span
-            class="value">auto</span> <span class="property">minmax</span>(<span class="value">auto</span>, <span
-                class="number">50</span><span
-                    class="unit">%</span>);
-    <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
-}
-
 <span class="tag">:</span><span class="selector">root</span> {
-    --hue: 36; <span class="comment">/* main color, 36 by default */</span>
+    --hue: <span class="number">36</span>; <span class="comment">/* main color, 36 by default */</span>
     <span class="comment">/* 💡 the value change when the user choose another color */</span>
     ...
 }
 
 <span class="tag">:</span><span class="selector">root</span>[theme="light"] {
-    --main-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 100%, 50%);
-    --constrast-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 60%, 40%);
-    --accent-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 100%, 45%);
-    --background-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 35%, 82%);
+    --background-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), <span
+        class="number">35</span><span class="unit">%</span>, <span class="number">82</span><span class="unit">%</span>);
     <span class="comment">/* ↑ 💡 backgroud is light */</span>
-    --text-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 90%, 10%);
+    --text-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), <span
+        class="number">90</span><span class="unit">%</span>, <span class="number">10</span><span class="unit">%</span>);
     <span class="comment">/* ↑ 💡 text is dark */</span>
     ...
 }
 
 <span class="tag">:</span><span class="selector">root</span>[theme="dark"] {
-    --main-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 100%, 50%);
-    --constrast-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 60%, 40%);
-    --accent-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 100%, 45%);
-    --background-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 20%, 20%);
+    --background-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), <span
+        class="number">20</span><span class="unit">%</span>, <span class="number">20</span><span class="unit">%</span>);
     <span class="comment">/* ↑ 💡 background is dark */</span>
-    --text-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), 20%, 80%);
+    --text-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), <span
+        class="number">20</span><span class="unit">%</span>, <span class="number">80</span><span class="unit">%</span>);
     <span class="comment">/* ↑ 💡 text is light */</span>
     ...
 }
@@ -502,12 +483,13 @@
 }
 
 <span class="tag">section</span> {
-    <span class="property">background-color</span>: <span class="property">var</span>(--background-color, lightgrey);
+    <span class="property">background-color</span>: <span class="property">var</span>(--background-color, <span
+        class="value">lightgrey</span>);
     <span class="comment">/* ↑ 💡 we use a fallback value, in this example "lightgrey" */</span>
 }
             </pre>
 
-                <h4 class="section-subtitle-example section-subtitle-example-mt">Inheritance</h4>
+                <h4 style="--margin-top: 3rem" class="section-subtitle-example">Inheritance</h4>
                 <div class="info-message">
                     <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="lightbulb"
                         class="svg-inline--fa fa-lightbulb fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -520,36 +502,27 @@
                 </div>
 
                 <pre>
-<span class="comment">/* white container */</span>
-<span class="selector">#grid-container</span> {
-    <span class="property">display</span>: <span class="value">grid</span>;
-    <span class="property">grid-template-columns</span>: <span class="property">repeat</span>(<span class="number">3</span>, <span class="number">1</span><span class="unit">fr</span>);
-    <span class="property">grid-template-rows</span>: <span class="number">8</span><span class="unit">rem</span> <span
-            class="value">auto</span> <span class="property">minmax</span>(<span class="value">auto</span>, <span
-                class="number">50</span><span
-                    class="unit">%</span>);
-    <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
+<span class="selector">.parent</span> {
+    --background-color: <span class="value">red</span>;
+    <span class="comment">/* local variable (not in :root), inherited by children */</span>
 }
 
-.parent {
-    --background-color: red;
-    /* local variable (not in :root), inherited by children */
+<span class="selector">.child-one</span> {
+    <span class="property">background-color</span>: <span class="property">var</span>(--background-color, <span
+            class="value">grey</span>);
+    <span class="comment">/* by default, background-color: red */</span>
 }
 
-.child-one {
-    background-color: var(--background-color, grey);
-    /* by default, background-color: red */
-}
-
-.child-two {
-    --background-color: green; 
-    /* local variable, override the parent variable */
-    background-color: var(--background-color, grey);
-    /* background-color: green */
+<span class="selector">.child-two</span> {
+    --background-color: <span class="value">green</span>;
+    <span class="comment">/* local variable, override the parent variable */</span>
+    <span class="property">background-color</span>: <span class="property">var</span>(--background-color, <span
+            class="value">grey</span>);
+    <span class="comment">/* background-color: green */</span>
 }
             </pre>
 
-                <h4 class="section-subtitle-example section-subtitle-example-mt">Inline style and variables</h4>
+                <h4 style="--margin-top: 3rem" class="section-subtitle-example">Inline style and variables</h4>
                 <div class="info-message">
                     <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="lightbulb"
                         class="svg-inline--fa fa-lightbulb fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -562,35 +535,29 @@
                 </div>
 
                 <pre>
-<span class="comment">/* white container */</span>
-<span class="selector">#grid-container</span> {
-    <span class="property">display</span>: <span class="value">grid</span>;
-    <span class="property">grid-template-columns</span>: <span class="property">repeat</span>(<span class="number">3</span>, <span class="number">1</span><span class="unit">fr</span>);
-    <span class="property">grid-template-rows</span>: <span class="number">8</span><span class="unit">rem</span> <span
-            class="value">auto</span> <span class="property">minmax</span>(<span class="value">auto</span>, <span
-                class="number">50</span><span
-                    class="unit">%</span>);
-    <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
-}
-
-/* I want to add more margin-top to this subtitle */
-/* I pass the new margin-top with the inline style */
-&#60h2 style="--margin-top: 5rem" class="subtitle"&#62
+<span class="comment">/* I want to add more margin-top to this subtitle */</span>
+<span class="comment">/* I pass the new margin-top with the inline style */</span>
+&#60<span class="tag">h2</span> <span class="selector">style</span>=<span class="attribute-value">"--margin-top: 5rem"</span>
+    <span class="selector">class</span>=<span class="attribute-value">"subtitle"</span>&#62
     Awesome Subtitle
-&#60/h2&#62
+&#60/<span class="tag">h2</span>&#62
 
-.subtitle {
-    --margin-top: 2.5rem;
-    /* the margin-top by default */
-    /* is overrided by the new value declared in the inline style */
-    margin: var(--margin-top, 2.5rem) 0 1rem 0;
-    /* so, for the title named "Awesome Subtitle", 
-        margin: 5rem 0 1rem 0; */
+<span class="selector">.subtitle</span> {
+    --margin-top: <span class="number">2.5</span><span class="unit">rem</span>;
+    <span class="comment">/* the margin-top by default */</span>
+    <span class="comment">/* is overrided by the new value declared in the inline style */</span>
+    <span class="property">margin</span>: <span class="property">var</span>(--margin-top, <span class="number">2.5</span><span
+            class="unit">rem</span>) <span
+        class="number">0</span> <span
+                    class="number">1</span><span
+                    class="unit">rem</span> <span class="number">0</span>;
+    <span class="comment">/* so, for the title named "Awesome Subtitle",
+        margin: 5rem 0 1rem 0; */</span>
 }
             </pre>
 
                 <!-- SUBSECTION RESOURCES -->
-                <h3 class="section-subtitle section-resources">Further resources</h3>
+                <h4 class="section-subtitle section-resources">Further resources</h4>
                 <ul>
                     <li><a href="https://increment.com/frontend/a-users-guide-to-css-variables/">
                             A user’s guide to CSS variables</a></li>
@@ -648,71 +615,35 @@
                             <li class="scroll-area">Item 3</li>
                             <li class="scroll-area">Item 4</li>
                             <li class="scroll-area">Item 5</li>
+                            <li class="scroll-area">Item 6</li>
                         </ul>
                     </div>
                 </div>
 
                 <pre>
-<span class="comment">/* big purple box */</span>
-<span class="selector">.parent</span> {
-    <span class="property">font-size</span>: <span class="number">20</span><span class="unit">px</span>;
+<span class="selector">.container</span> {
+    <span class="property">scroll-snap-type</span>: <span class="value">y mandatory</span>;
+    <span class="comment">/* y = horizontal scroll */
+        /* proximity = if the user is in a range of proximity
+        (a few hundred pixels of a snap point),
+        the visual viewport will rest on the next snap point */</span>
+    <span class="property">height</span>: <span class="number">20</span><span class="unit">rem</span>;
+    <span class="property">overflow</span>: <span class="value">auto</span>;
 }
 
-<span class="comment">/* medium pink box */</span>
-<span class="selector">.child-one</span> {
-    <span class="comment">/* the child hasn't declared a font-size, 
-        so 1em = parent's font-size */</span>
-    <span class="property">width</span>: <span class="number">2</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 2 x 20px = 40px */</span>
-    <span class="property">height</span>: <span class="number">2</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 2 x 20px = 40px */</span>
-}
-
-<span class="comment">/* small green box */</span>
-<span class="selector">.child-two</span> {
-    <span class="property">font-size</span>: <span class="number">0.5</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 0.5 x 20px = 10px */</span>
-    <span class="comment">/* the child has declared a font-size, 
-        so 1em = element's font-size */</span>
-    <span class="property">width</span>: <span class="number">2</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 2 x 10px = 20px */</span>
-    <span class="property">height</span>: <span class="number">2</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 2 x 10px = 20px */</span>
-}
-
-.example-shape-outside-element {
-    width: 8rem;
-    aspect-ratio: 1;
-    background-color: var(--illustration-pink, --pre-pink);
-    float: left;
-    margin-right: 2rem;
-}
-
-/* circle shape */
-.example-shape-outside-element:first-child {
-    border-radius: 50%;
-    shape-outside: circle(50%);
-}
-
-/* diamond shape */
-.example-shape-outside-element:nth-of-type(2) {
-    shape-outside: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-    /* the property only change the relationship of adjacent elements,
-    not the geometry of the element itself */
-    /* to change the geometry of the element we use the clip-path property,
-    with the same values */
-    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-}
-
-/* ellipse shape */
-.example-shape-outside-element:nth-of-type(3) {
-    shape-outside: ellipse(35% 50% at 50% 50%);
-    clip-path: ellipse(35% 50% at 50% 50%);
+<span class="selector">.items</span> {
+    <span class="property">scroll-snap-align</span>: <span class="value">start</span>;
+    <span class="comment">/* will be at the top (start) of the container 
+        when the scrolling stops */</span>
+    <span class="property">height</span>: <span class="number">10</span><span class="unit">rem</span>;
+    <span class="property">display</span>: <span class="value">flex</span>;
+    <span class="property">justify-content</span>: <span class="value">center</span>;
+    <span class="property">align-items</span>: <span class="value">center</span>;
 }
                 </pre>
 
                 <!-- Second example Scroll snap -->
-                <h4 class="section-subtitle-example">Horizontal scroll-snap</h4>
+                <h4 style="--margin-top: 3rem" class="section-subtitle-example">Horizontal scroll-snap</h4>
 
                 <div class="info-message">
                     <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="lightbulb"
@@ -733,70 +664,41 @@
                         <li class="scroll-area">Item 3</li>
                         <li class="scroll-area">Item 4</li>
                         <li class="scroll-area">Item 5</li>
+                        <li class="scroll-area">Item 6</li>
                     </ul>
                 </div>
 
                 <pre>
-<span class="comment">/* big purple box */</span>
-<span class="selector">.parent</span> {
-    <span class="property">font-size</span>: <span class="number">20</span><span class="unit">px</span>;
+<span class="selector">.container</span> {
+    <span class="property">scroll-snap-type</span>: <span class="value">x mandatory</span>;
+    <span class="comment">/* x = vertical scroll */</span>
+    <span class="comment">/* mandatory = one scroll and the visual viewport will rest
+        on the next snap point */</span>
+    <span class="property">display</span>: <span class="value">flex</span>;
+    <span class="property">gap</span>: <span class="number">1</span><span class="unit">rem</span>;
+    <span class="property">align-items</span>: <span class="value">center</span>;
+    <span class="property">height</span>: <span class="number">12</span><span class="unit">rem</span>;
+    <span class="property">max-width</span>: <span class="number">100</span><span class="unit">%</span>;
+    <span class="property">overflow-x</span>: <span class="value">auto</span>;
 }
 
-<span class="comment">/* medium pink box */</span>
-<span class="selector">.child-one</span> {
-    <span class="comment">/* the child hasn't declared a font-size, 
-        so 1em = parent's font-size */</span>
-    <span class="property">width</span>: <span class="number">2</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 2 x 20px = 40px */</span>
-    <span class="property">height</span>: <span class="number">2</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 2 x 20px = 40px */</span>
-}
-
-<span class="comment">/* small green box */</span>
-<span class="selector">.child-two</span> {
-    <span class="property">font-size</span>: <span class="number">0.5</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 0.5 x 20px = 10px */</span>
-    <span class="comment">/* the child has declared a font-size, 
-        so 1em = element's font-size */</span>
-    <span class="property">width</span>: <span class="number">2</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 2 x 10px = 20px */</span>
-    <span class="property">height</span>: <span class="number">2</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 2 x 10px = 20px */</span>
-}
-
-.example-shape-outside-element {
-    width: 8rem;
-    aspect-ratio: 1;
-    background-color: var(--illustration-pink, --pre-pink);
-    float: left;
-    margin-right: 2rem;
-}
-
-/* circle shape */
-.example-shape-outside-element:first-child {
-    border-radius: 50%;
-    shape-outside: circle(50%);
-}
-
-/* diamond shape */
-.example-shape-outside-element:nth-of-type(2) {
-    shape-outside: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-    /* the property only change the relationship of adjacent elements,
-    not the geometry of the element itself */
-    /* to change the geometry of the element we use the clip-path property,
-    with the same values */
-    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-}
-
-/* ellipse shape */
-.example-shape-outside-element:nth-of-type(3) {
-    shape-outside: ellipse(35% 50% at 50% 50%);
-    clip-path: ellipse(35% 50% at 50% 50%);
+<span class="selector">.items</span> {
+    <span class="property">scroll-snap-align</span>: <span class="value">center</span>;
+    <span class="comment">/* will be at the center of the container 
+        when the scrolling stops */</span>
+    <span class="property">height</span>: <span class="number">10</span><span class="unit">rem</span>;
+    <span class="property">width</span>: <span class="number">50</span><span class="unit">ch</span>;
+    <span class="property">display</span>: <span class="value">flex</span>;
+    <span class="property">justify-content</span>: <span class="value">center</span>;
+    <span class="property">align-items</span>: <span class="value">center</span>;
+    <span class="property">flex</span>: <span class="number">0</span> <span class="number">0</span> <span
+            class="number">35</span><span
+                    class="unit">ch</span>;
 }
                 </pre>
 
                 <!-- SUBSECTION RESOURCES -->
-                <h3 class="section-subtitle section-resources">Scroll-snap : Further resources</h3>
+                <h4 class="section-subtitle section-resources">Scroll-snap : Further resources</h4>
                 <ul>
                     <li><a title="Practical CSS Scroll Snapping | CSS-Tricks"
                             href="https://css-tricks.com/practical-css-scroll-snapping/">Practical CSS Scroll Snapping |
@@ -910,7 +812,7 @@
 }
             </pre>
                 <!-- Second example Grid -->
-                <h4 class="section-subtitle-example section-subtitle-example-mt">CSS Grid Responsive</h4>
+                <h4 style="--margin-top: 3rem" class="section-subtitle-example">CSS Grid Responsive</h4>
                 <div class="info-message">
                     <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="lightbulb"
                         class="svg-inline--fa fa-lightbulb fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -1016,7 +918,8 @@
 }
             </pre>
                 <!-- Third example Grid -->
-                <h4 class="section-subtitle-example section-subtitle-example-mt">CSS Grid Positioning and Spanning</h4>
+                <h4 style="--margin-top: 3rem" class="section-subtitle-example">CSS Grid Positioning and Spanning
+                </h4>
                 <div id="grid-container-three">
                     <div class="grid-items">
                         <span class="grid-item-number">1</span>
@@ -1087,7 +990,8 @@
             </pre>
 
                 <!-- Fourth example Grid -->
-                <h4 class="section-subtitle-example section-subtitle-example-mt">CSS Grid Area (with Media Queries)</h4>
+                <h4 style="--margin-top: 3rem" class="section-subtitle-example">CSS Grid Area (with Media
+                    Queries)</h4>
                 <div id="grid-container-four">
                     <div class="grid-items">
                         <span class="grid-item-number">HEADER</span>
@@ -1153,7 +1057,7 @@
             </pre>
 
                 <!-- SUBSECTION RESOURCES -->
-                <h3 class="section-subtitle section-resources">CSS Grid : Further resources</h3>
+                <h4 class="section-subtitle section-resources">CSS Grid : Further resources</h4>
                 <ul>
                     <li><a href="https://thoughtbot.com/blog/concise-media-queries-with-css-grid"> Concise Media Queries
                             with CSS Grid</a></li>
@@ -1248,7 +1152,7 @@
                 </pre>
 
                 <!-- SUBSECTION RESOURCES -->
-                <h3 class="section-subtitle section-resources">Shape-outside : Further resources</h3>
+                <h4 class="section-subtitle section-resources">Shape-outside : Further resources</h4>
                 <ul>
                     <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside">
                             shape-outside - CSS: Cascading Style Sheets | MDN</a></li>
@@ -1377,7 +1281,7 @@
                 </pre>
 
                 <!-- SUBSECTION RESOURCES -->
-                <h3 class="section-subtitle section-resources">Drop-shadow : Further resources</h3>
+                <h4 class="section-subtitle section-resources">Drop-shadow : Further resources</h4>
                 <ul>
                     <li><a href="https://css-irl.info/drop-shadow-the-underrated-css-filter/">
                             CSS { In Real Life } | Drop-Shadow: The Underrated CSS Filter
