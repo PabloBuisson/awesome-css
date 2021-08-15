@@ -1021,6 +1021,19 @@
                     </div>
                 </div>
                 <pre>
+                    
+<span class="comment">/* EXAMPLES CLASSES */</span>
+<span class="selector">.example-drop-shadow</span> > <span class="tag">div</span> {
+<span class="property">width</span>: <span class="number">8</span><span class="unit">rem</span>;
+<span class="property">aspect-ratio</span>: <span class="number">1</span>;
+<span class="property">background-color</span>: <span class="function">var</span>(--illustration-green, --pre-green);
+<span class="comment">/* with drop-shadow, we use the filter property */</span>
+<span class="property">filter</span>: <span class="function">drop-shadow</span>(<span class="number">1</span><span
+    class="unit">rem</span> <span class="number">-0.25</span><span class="unit">rem</span> <span
+    class="number">0.5</span><span class="unit">rem</span> <span class="function">var</span>(--shadow-color));
+    <span class="property">display</span>: <span class="value">flex</span>;
+}
+
 <span class="comment">/* white container */</span>
 <span class="selector">#grid-container</span> {
     <span class="property">display</span>: <span class="value">grid</span>;
@@ -1093,61 +1106,38 @@
                     </p>
                 </div>
                 <pre>
-<span class="comment">/* big purple box */</span>
-<span class="selector">.parent</span> {
-    <span class="property">font-size</span>: <span class="number">20</span><span class="unit">px</span>;
+<span class="selector">.shape-outside-element</span> {
+    <span class="property">width</span>: <span class="number">8</span><span class="unit">rem</span>;
+    <span class="property">aspect-ratio</span>: <span class="number">1</span>;
+    <span class="property">background-color</span>: <span class="function">var</span>(--illustration-pink, --pre-pink);
+    <span class="property">float</span>: <span class="value">left</span>; <span class="comment">/* mandatory */</span>
+    <span class="property">margin-right</span>: <span class="number">2</span><span class="unit">rem</span>;
 }
 
-<span class="comment">/* medium pink box */</span>
-<span class="selector">.child-one</span> {
-    <span class="comment">/* the child hasn't declared a font-size, 
-        so 1em = parent's font-size */</span>
-    <span class="property">width</span>: <span class="number">2</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 2 x 20px = 40px */</span>
-    <span class="property">height</span>: <span class="number">2</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 2 x 20px = 40px */</span>
+<span class="comment">/* circle shape */</span>
+<span class="selector">.shape-outside-element<span class="tag">:</span>first-child</span> {
+    <span class="property">border-radius</span>: <span class="number">50</span><span class="unit">%</span>;
+    <span class="property">shape-outside</span>: <span class="function">circle</span>(<span
+        class="number">50</span><span
+                class="unit">%</span>);
 }
 
-<span class="comment">/* small green box */</span>
-<span class="selector">.child-two</span> {
-    <span class="property">font-size</span>: <span class="number">0.5</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 0.5 x 20px = 10px */</span>
-    <span class="comment">/* the child has declared a font-size, 
-        so 1em = element's font-size */</span>
-    <span class="property">width</span>: <span class="number">2</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 2 x 10px = 20px */</span>
-    <span class="property">height</span>: <span class="number">2</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 2 x 10px = 20px */</span>
-}
-
-.example-shape-outside-element {
-    width: 8rem;
-    aspect-ratio: 1;
-    background-color: var(--illustration-pink, --pre-pink);
-    float: left;
-    margin-right: 2rem;
-}
-
-/* circle shape */
-.example-shape-outside-element:first-child {
-    border-radius: 50%;
-    shape-outside: circle(50%);
-}
-
-/* diamond shape */
-.example-shape-outside-element:nth-of-type(2) {
-    shape-outside: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-    /* the property only change the relationship of adjacent elements,
+<span class="comment">/* diamond shape */</span>
+<span class="selector">.shape-outside-element<span class="tag">:</span>nth-of-type</span>(<span
+        class="number">2</span>) {
+    <span class="property">shape-outside</span>: <span class="function">polygon</span>(50% 0, 100% 50%, 50% 100%, 0 50%);
+    <span class="comment">/* the property only change the relationship of adjacent elements,
     not the geometry of the element itself */
     /* to change the geometry of the element we use the clip-path property,
-    with the same values */
-    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    with the same values */</span>
+    <span class="property">clip-path</span>: <span class="function">polygon</span>(50% 0, 100% 50%, 50% 100%, 0 50%);
 }
 
-/* ellipse shape */
-.example-shape-outside-element:nth-of-type(3) {
-    shape-outside: ellipse(35% 50% at 50% 50%);
-    clip-path: ellipse(35% 50% at 50% 50%);
+<span class="comment">/* ellipse shape */</span>
+<span class="selector">.shape-outside-element<span class="tag">:</span>nth-of-type</span>(<span
+        class="number">3</span>) {
+    <span class="property">shape-outside</span>: <span class="function">ellipse</span>(35% 50% <span class="tag">at</span> 50% 50%);
+    <span class="property">clip-path</span>: <span class="function">ellipse</span>(35% 50% <span class="tag">at</span> 50% 50%);
 }
                 </pre>
 
@@ -1206,77 +1196,63 @@
                     </div>
                 </div>
                 <pre>
-<span class="comment">/* big purple box */</span>
-<span class="selector">.parent</span> {
-    <span class="property">font-size</span>: <span class="number">20</span><span class="unit">px</span>;
+<span class="selector">.drop-shadow-element</span> {
+    <span class="property">width</span>: <span class="number">8</span><span class="unit">rem</span>;
+    <span class="property">aspect-ratio</span>: <span class="number">1</span>;
+    <span class="property">background-color</span>: <span class="function">var</span>(--illustration-green, --pre-green);
+    <span class="comment">/* with drop-shadow, we use the filter property */</span>
+    <span class="property">filter</span>: <span class="function">drop-shadow</span>(<span class="number">1</span><span
+            class="unit">rem</span> <span
+    class="number">-0.25</span><span class="unit">rem</span> <span class="number">0.5</span><span
+        class="unit">rem</span> <span class="function">var</span>(--shadow-color));
 }
 
-<span class="comment">/* medium pink box */</span>
-<span class="selector">.child-one</span> {
-    <span class="comment">/* the child hasn't declared a font-size, 
-        so 1em = parent's font-size */</span>
-    <span class="property">width</span>: <span class="number">2</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 2 x 20px = 40px */</span>
-    <span class="property">height</span>: <span class="number">2</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 2 x 20px = 40px */</span>
+<span class="selector">.box-shadow-element</span> {
+    <span class="property">width</span>: <span class="number">8</span><span class="unit">rem</span>;
+    <span class="property">aspect-ratio</span>: <span class="number">1</span>;
+    <span class="property">background-color</span>: <span class="function">var</span>(--illustration-green, --pre-green);
+    <span class="comment">/* the box-shadow is applied to the box container */</span>
+    <span class="property">box-shadow</span>: <span class="number">1</span><span class="unit">rem</span> <span
+    class="number">-0.25</span><span class="unit">rem</span> <span class="number">0.5</span><span
+        class="unit">rem</span> <span class="function">var</span>(--shadow-color);
 }
 
-<span class="comment">/* small green box */</span>
-<span class="selector">.child-two</span> {
-    <span class="property">font-size</span>: <span class="number">0.5</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 0.5 x 20px = 10px */</span>
-    <span class="comment">/* the child has declared a font-size, 
-        so 1em = element's font-size */</span>
-    <span class="property">width</span>: <span class="number">2</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 2 x 10px = 20px */</span>
-    <span class="property">height</span>: <span class="number">2</span><span class="unit">em</span>; 
-    <span class="comment">/* ↑ 2 x 10px = 20px */</span>
+<span class="comment">/* circle shape */</span>
+<span class="selector">.drop-shadow-circle,
+.box-shadow-circle</span> {
+    <span class="property">border-radius</span>: <span class="number">50</span><span class="unit">%</span>;
 }
 
-.example-drop-shadow>div {
-    width: 8rem;
-    aspect-ratio: 1;
-    background-color: var(--illustration-green, --pre-green);
-    /* with drop-shadow, we use the filter property */
-    filter: drop-shadow(1rem -0.25rem 0.5rem var(--shadow-color));
+<span class="comment">/* triangle shape (using gradient) */</span>
+<span class="selector">.drop-shadow-triangle,
+.box-shadow-triangle</span> {
+    <span class="property">background-color</span>: <span class="value">initial</span>;
+    <span class="property">background-image</span>: <span class="function">linear-gradient</span>(<span
+            class="number">45</span><span class="unit">deg</span>,
+    <span class="function">var</span>(--illustration-green, --pre-green) <span class="number">50</span><span
+            class="unit">%</span>,
+    <span class="function">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span
+    class="number">0</span>) <span class="number">50</span><span class="unit">%</span>);
 }
 
-.example-box-shadow>div {
-    width: 8rem;
-    aspect-ratio: 1;
-    background-color: var(--illustration-green, --pre-green);
-    /* the box-shadow is applied to the box container */
-    box-shadow: 1rem -0.25rem 0.5rem var(--shadow-color);
+<span class="comment">/* cross shape (using clip-path) */</span>
+<span class="selector">.drop-shadow-cross,
+.box-shadow-cross</span> {
+    <span class="property">display</span>: <span class="value">flex</span>;
+    <span class="property">flex-direction</span>: <span class="value">column</span>;
+    <span class="property">width</span>: <span class="number">8</span><span class="unit">rem</span>;
+    <span class="property">aspect-ratio</span>: <span class="number">1</span>;
+    <span class="property">background-color</span>: <span class="function">var</span>(--illustration-green, --pre-green);
+    <span class="comment">/* With clipped element, we lose the shadow */</span>
+    <span class="property">clip-path</span>: <span class="function">polygon</span>(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20%
+    100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
 }
 
-/* circle shape */
-.example-drop-shadow-circle,
-.example-box-shadow-circle {
-    border-radius: 50%;
-}
-
-/* triangle shape (using gradient) */
-.example-drop-shadow-triangle,
-.example-box-shadow-triangle {
-    background-color: initial;
-    background-image: linear-gradient(45deg, var(--illustration-green, --pre-green) 50%, rgba(255, 255, 255, 0) 50%);
-}
-
-/* cross shape (using clip-path) */
-.example-drop-shadow-cross,
-.example-box-shadow-cross {
-    display: flex;
-    flex-direction: column;
-    width: 8rem;
-    aspect-ratio: 1;
-    background-color: var(--illustration-green, --pre-green);
-    /* With clipped element, we lose the shadow */
-    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
-}
-
-.example-drop-shadow-container {
-    /* Solution : the drop-shadow filter is applied on the parent element */
-    filter: drop-shadow(1rem -0.25rem 0.5rem var(--shadow-color));
+<span class="selector">.drop-shadow-container</span> {
+    <span class="comment">/* Solution : the drop-shadow filter is applied on the parent element */</span>
+    <span class="property">filter</span>: <span class="function">drop-shadow</span>(<span class="number">1</span><span
+            class="unit">rem</span> <span class="number">-0.25</span><span class="unit">rem</span> <span
+            class="number">0.5</span><span class="unit">rem</span> <span class="function">var</span>(--shadow-color));
 }
                 </pre>
 

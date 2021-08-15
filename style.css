@@ -1164,7 +1164,7 @@ pre .comment {
     color: var(--pre-comment-color, #6272a4);
 }
 
-pre .property {
+pre .property, pre .function {
     color: var(--pre-property-color, #8be9fd);
 }
 
