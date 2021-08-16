@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>CSS is Awesome</title>
 </head>
 
@@ -743,35 +743,37 @@
                 </p>
                 <!-- First example Grid -->
                 <h4 class="section-subtitle-example">CSS Grid Basics</h4>
-                <div id="grid-container-one">
-                    <div class="grid-items">
-                        <span class="grid-item-number">1</span>
-                        justify-self: start;<br />
-                        align-self: start;
-                    </div>
-                    <div class="grid-items">
-                        <span class="grid-item-number">2</span>
-                        justify-self: center;<br />
-                        align-self: center;
-                    </div>
-                    <div class="grid-items">
-                        <span class="grid-item-number">3</span>
-                        justify-self: end;<br />
-                        align-self: end;
-                    </div>
-                    <div class="grid-items">
-                        <span class="grid-item-number">4</span>
-                        justify-self: stretch;</br>
-                        grid-column-start: 2;
-                    </div>
-                    <div class="grid-items">
-                        <span class="grid-item-number">5</span>
-                        new item, without properties
-                    </div>
-                    <div class="grid-items">
-                        <span class="grid-item-number">6</span>
-                        The items of this row can't be wider than the half of the container height.
-                        The items of this row can't be wider than the half of the container height.
+                <div class="example-grid">
+                    <div id="grid-container-one">
+                        <div class="grid-items">
+                            <span class="grid-item-number">1</span>
+                            justify-self: start;<br />
+                            align-self: start;
+                        </div>
+                        <div class="grid-items">
+                            <span class="grid-item-number">2</span>
+                            justify-self: center;<br />
+                            align-self: center;
+                        </div>
+                        <div class="grid-items">
+                            <span class="grid-item-number">3</span>
+                            justify-self: end;<br />
+                            align-self: end;
+                        </div>
+                        <div class="grid-items">
+                            <span class="grid-item-number">4</span>
+                            justify-self: stretch;</br>
+                            grid-column-start: 2;
+                        </div>
+                        <div class="grid-items">
+                            <span class="grid-item-number">5</span>
+                            new item, without properties
+                        </div>
+                        <div class="grid-items">
+                            <span class="grid-item-number">6</span>
+                            The items of this row can't be wider than the half of the container height.
+                            The items of this row can't be wider than the half of the container height.
+                        </div>
                     </div>
                 </div>
                 <pre>
@@ -791,22 +793,22 @@
     <span class="comment">/* 💡 ↑ gutters */</span>
 }
 
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">1</span>) {
+<span class="selector">.grid-items-one</span><span class="tag">:</span><span class="selector">nth-child</span>(<span class="number">1</span>) {
     <span class="property">justify-self</span>: <span class="value">start</span>;
     <span class="property">align-self</span>: <span class="value">start</span>;
 }
 
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">2</span>) {
+<span class="selector">.grid-items-one</span><span class="tag">:</span><span class="selector">nth-child</span>(<span class="number">2</span>) {
     <span class="property">justify-self</span>: <span class="value">center</span>;
     <span class="property">align-self</span>: <span class="value">center</span>;
 }
 
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">3</span>) {
+<span class="selector">.grid-items-one</span><span class="tag">:</span><span class="selector">nth-child</span>(<span class="number">3</span>) {
     <span class="property">justify-self</span>: <span class="value">end</span>;
     <span class="property">align-self</span>: <span class="value">end</span>;
 }
 
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">4</span>) {
+<span class="selector">.grid-items-one</span><span class="tag">:</span><span class="selector">nth-child</span>(<span class="number">4</span>) {
     <span class="property">justify-self</span>: <span class="value">stretch</span>;
     <span class="property">grid-column-start</span> <span class="number">2</span>;
 }
@@ -823,134 +825,130 @@
                     </svg>
                     <p>Resize the grid to see the changes in action !</p>
                 </div>
-                <div id="grid-container-two">
-                    <div class="grid-container-two">
-                        <div class="grid-items">
-                            <span class="grid-item-number">1</span>
-                            I'm an only child. Give me all the space I need, I deserve it
+
+                <div class="example-grid">
+                    <div id="grid-container-two">
+                        <div class="grid-container-two">
+                            <div class="grid-items">
+                                <span class="grid-item-number">1</span>
+                                I'm an only child. Give me all the space I need, I deserve it
+                            </div>
                         </div>
-                    </div>
-                    <div class="grid-container-two">
-                        <div class="grid-items grid-items-odd">
-                            <span class="grid-item-number">2</span>
-                            We are two children. Give us equal space.
-                            When it's too narrow, give us all the space, separately
+                        <div class="grid-container-two">
+                            <div class="grid-items grid-items-odd">
+                                <span class="grid-item-number">2</span>
+                                We are two children. Give us equal space.
+                                When it's too narrow, give us all the space, separately
+                            </div>
+                            <div class="grid-items grid-items-odd">
+                                <span class="grid-item-number">2</span>
+                                We are two children. Give us equal space.
+                                When it's too narrow, give us all the space, separately
+                            </div>
                         </div>
-                        <div class="grid-items grid-items-odd">
-                            <span class="grid-item-number">2</span>
-                            We are two children. Give us equal space.
-                            When it's too narrow, give us all the space, separately
+                        <div class="grid-container-two">
+                            <div class="grid-items">
+                                <span class="grid-item-number">3</span>
+                                We are three children. Give us equal space, but don't forget that we
+                                need a minimum space.
+                                When it's too narrow, give us all the space, separately
+                            </div>
+                            <div class="grid-items">
+                                <span class="grid-item-number">3</span>
+                                We are three children. Give us equal space, but don't forget that we
+                                need a minimum space.
+                                When it's too narrow, give us all the space, separately
+                            </div>
+                            <div class="grid-items">
+                                <span class="grid-item-number">3</span>
+                                I'm the third child. In some occasions, I'm left alone, and, on top of
+                                that,
+                                I can't take advantage of all the available space 😥
+                            </div>
                         </div>
-                    </div>
-                    <div class="grid-container-two">
-                        <div class="grid-items">
-                            <span class="grid-item-number">3</span>
-                            We are three children. Give us equal space, but don't forget that we need a minimum space.
-                            When it's too narrow, give us all the space, separately
-                        </div>
-                        <div class="grid-items">
-                            <span class="grid-item-number">3</span>
-                            We are three children. Give us equal space, but don't forget that we need a minimum space.
-                            When it's too narrow, give us all the space, separately
-                        </div>
-                        <div class="grid-items">
-                            <span class="grid-item-number">3</span>
-                            I'm the third child. In some occasions, I'm left alone, and, on top of that,
-                            I can't take advantage of all the available space 😥
-                        </div>
-                    </div>
-                    <div class="grid-container-two">
-                        <div class="grid-items grid-items-odd">
-                            <span class="grid-item-number">4</span>
-                            We are four children. Give us equal space, but don't forget that we need a minimum space.
-                            When it's too narrow, give us all the space, separately
-                        </div>
-                        <div class="grid-items grid-items-odd">
-                            <span class="grid-item-number">4</span>
-                            We are four children. Give us equal space, but don't forget that we need a minimum space.
-                            When it's too narrow, give us all the space, separately
-                        </div>
-                        <div class="grid-items grid-items-odd">
-                            <span class="grid-item-number">4</span>
-                            We are four children. Give us equal space, but don't forget that we need a minimum space.
-                            When it's too narrow, give us all the space, separately
-                        </div>
-                        <div class="grid-items grid-items-odd">
-                            <span class="grid-item-number">4</span>
-                            I'm the fourth child. In some occasions, I'm left alone, and, on top of that,
-                            I can't take advantage of all the available space 😥
+                        <div class="grid-container-two">
+                            <div class="grid-items grid-items-odd">
+                                <span class="grid-item-number">4</span>
+                                We are four children. Give us equal space, but don't forget that we need
+                                a minimum space.
+                                When it's too narrow, give us all the space, separately
+                            </div>
+                            <div class="grid-items grid-items-odd">
+                                <span class="grid-item-number">4</span>
+                                We are four children. Give us equal space, but don't forget that we need
+                                a minimum space.
+                                When it's too narrow, give us all the space, separately
+                            </div>
+                            <div class="grid-items grid-items-odd">
+                                <span class="grid-item-number">4</span>
+                                We are four children. Give us equal space, but don't forget that we need
+                                a minimum space.
+                                When it's too narrow, give us all the space, separately
+                            </div>
+                            <div class="grid-items grid-items-odd">
+                                <span class="grid-item-number">4</span>
+                                I'm the fourth child. In some occasions, I'm left alone, and, on top of
+                                that,
+                                I can't take advantage of all the available space 😥
+                            </div>
                         </div>
                     </div>
                 </div>
                 <pre>
 <span class="comment">/* white container */</span>
 <span class="selector">#grid-container</span> {
+    --minColWidth: <span class="number">30</span><span class="unit">ch</span>;
+    <span class="comment">/* ↑ minimum size of an element of a grid */</span>
+    <span class="property">resize</span>: <span class="value">horizontal</span>;
+    <span class="property">overflow</span>: <span class="value">scroll</span>;
+    <span class="property">width</span>: <span class="number">100</span><span class="unit">%</span>;
+}
+
+<span class="comment">/* the four grids */</span>
+<span class="selector">.grids</span> {
     <span class="property">display</span>: <span class="value">grid</span>;
-    <span class="property">grid-template-columns</span>: <span class="property">repeat</span>(<span class="number">3</span>, <span class="number">1</span><span class="unit">fr</span>);
-    <span class="comment">/* ↑ 1fr(action) 1fr 1fr => 3 columns of 33% */</span>
-    <span class="property">grid-template-rows</span>: <span class="number">8</span><span class="unit">rem</span> <span
-            class="value">auto</span> <span class="property">minmax</span>(<span class="value">auto</span>, <span
-                class="number">50</span><span
-                    class="unit">%</span>);
-    <span class="comment">/* ↑ 3 different rows */</span>
+    <span class="property">grid-template-columns</span>: <span class="function">repeat</span>(auto-fit, 
+        <span class="function">minmax</span>(<span class="function">var</span>(--minColWidth), <span class="number">1</span><span class="unit">fr</span>));
     <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
-    <span class="comment">/* ↑ gutters */</span>
-}
-
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">1</span>) {
-    <span class="property">justify-self</span>: <span class="value">start</span>;
-    <span class="property">align-self</span>: <span class="value">start</span>;
-}
-
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">2</span>) {
-    <span class="property">justify-self</span>: <span class="value">center</span>;
-    <span class="property">align-self</span>: <span class="value">center</span>;
-}
-
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">3</span>) {
-    <span class="property">justify-self</span>: <span class="value">end</span>;
-    <span class="property">align-self</span>: <span class="value">end</span>;
-}
-
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">4</span>) {
-    <span class="property">justify-self</span>: <span class="value">stretch</span>;
-    <span class="property">grid-column-start</span> <span class="number">2</span>;
+    <span class="property">margin-bottom</span>: <span class="number">0.5</span><span class="unit">rem</span>;
 }
             </pre>
                 <!-- Third example Grid -->
                 <h4 style="--margin-top: 3rem" class="section-subtitle-example">CSS Grid Positioning and Spanning
                 </h4>
-                <div id="grid-container-three">
-                    <div class="grid-items">
-                        <span class="grid-item-number">1</span>
-                        order: 0; (by default)
-                    </div>
-                    <div class="grid-items grid-items-odd">
-                        <span class="grid-item-number">2</span>
-                        order: 1;<br />
-                        grid-column: 2 / span 2;
-                    </div>
-                    <div class="grid-items">
-                        <span class="grid-item-number">3</span>
-                        grid-column: 1;<br />
-                        grid-row: 2 / 4;
-                    </div>
-                    <div class="grid-items">
-                        <span class="grid-item-number">4</span>
-                        grid-column: 3;<br />
-                        grid-row: 2;
-                    </div>
-                    <div class="grid-items grid-items-odd">
-                        <span class="grid-item-number">5</span>
-                        grid-area: 1 / 1 / 2 / 3;
-                    </div>
-                    <div class="grid-items">
-                        <span class="grid-item-number">6</span>
-                    </div>
-                    <div class="grid-items">
-                        <span class="grid-item-number">7</span>
-                        order: 2;<br />
-                        grid-column: span 3;
+                <div class="example-grid">
+                    <div id="grid-container-three">
+                        <div class="grid-items">
+                            <span class="grid-item-number">1</span>
+                            order: 0; (by default)
+                        </div>
+                        <div class="grid-items grid-items-odd">
+                            <span class="grid-item-number">2</span>
+                            order: 1;<br />
+                            grid-column: 2 / span 2;
+                        </div>
+                        <div class="grid-items">
+                            <span class="grid-item-number">3</span>
+                            grid-column: 1;<br />
+                            grid-row: 2 / 4;
+                        </div>
+                        <div class="grid-items">
+                            <span class="grid-item-number">4</span>
+                            grid-column: 3;<br />
+                            grid-row: 2;
+                        </div>
+                        <div class="grid-items grid-items-odd">
+                            <span class="grid-item-number">5</span>
+                            grid-area: 1 / 1 / 2 / 3;
+                        </div>
+                        <div class="grid-items">
+                            <span class="grid-item-number">6</span>
+                        </div>
+                        <div class="grid-items">
+                            <span class="grid-item-number">7</span>
+                            order: 2;<br />
+                            grid-column: span 3;
+                        </div>
                     </div>
                 </div>
                 <pre>
@@ -958,120 +956,194 @@
 <span class="selector">#grid-container</span> {
     <span class="property">display</span>: <span class="value">grid</span>;
     <span class="property">grid-template-columns</span>: <span class="property">repeat</span>(<span class="number">3</span>, <span class="number">1</span><span class="unit">fr</span>);
-    <span class="comment">/* ↑ 1fr(action) 1fr 1fr => 3 columns of 33% */</span>
-    <span class="property">grid-template-rows</span>: <span class="number">8</span><span class="unit">rem</span> <span
-            class="value">auto</span> <span class="property">minmax</span>(<span class="value">auto</span>, <span
-                class="number">50</span><span
-                    class="unit">%</span>);
-    <span class="comment">/* ↑ 3 different rows */</span>
-    <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
-    <span class="comment">/* ↑ gutters */</span>
+    <span class="property">width</span>: <span class="number">100</span><span class="unit">%</span>;
 }
 
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">1</span>) {
-    <span class="property">justify-self</span>: <span class="value">start</span>;
-    <span class="property">align-self</span>: <span class="value">start</span>;
+<span class="selector">.grid-items</span><span class="tag">:</span><span class="selector">nth-child</span>(<span class="number">2</span>) {
+    <span class="property">order</span>: <span class="number">1</span>;
+    <span class="property">grid-column</span>: <span class="number">2</span> / span <span class="number">2</span>;
 }
 
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">2</span>) {
-    <span class="property">justify-self</span>: <span class="value">center</span>;
-    <span class="property">align-self</span>: <span class="value">center</span>;
+<span class="selector">.grid-items</span><span class="tag">:</span><span class="selector">nth-child</span>(<span class="number">3</span>) {
+    <span class="property">grid-column</span>: <span class="number">1</span>;
+    <span class="property">grid-row</span>: <span class="number">2</span> / <span class="number">4</span>;
 }
 
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">3</span>) {
-    <span class="property">justify-self</span>: <span class="value">end</span>;
-    <span class="property">align-self</span>: <span class="value">end</span>;
+<span class="selector">.grid-items</span><span class="tag">:</span><span class="selector">nth-child</span>(<span class="number">4</span>) {
+    <span class="property">grid-column</span>: <span class="number">3</span>;
+    <span class="property">grid-row</span>: <span class="number">2</span>;
 }
 
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">4</span>) {
-    <span class="property">justify-self</span>: <span class="value">stretch</span>;
-    <span class="property">grid-column-start</span> <span class="number">2</span>;
+<span class="selector">.grid-items</span><span class="tag">:</span><span class="selector">nth-child</span>(<span class="number">5</span>) {
+    <span class="property">grid-area</span>: <span class="number">1</span> / <span class="number">1</span> / <span class="number">2</span> / <span class="number">3</span>;
+}
+
+<span class="selector">.grid-items</span><span class="tag">:</span><span class="selector">nth-child</span>(<span class="number">7</span>) {
+    <span class="property">order</span>: <span class="number">2</span>;
+    <span class="property">grid-column</span>: span <span class="number">3</span>;
 }
             </pre>
 
                 <!-- Fourth example Grid -->
                 <h4 style="--margin-top: 3rem" class="section-subtitle-example">CSS Grid Area (with Media
                     Queries)</h4>
-                <div id="grid-container-four">
-                    <div class="grid-items">
-                        <span class="grid-item-number">HEADER</span>
-                        grid-area: header;
-                    </div>
-                    <div class="grid-items grid-items-odd">
-                        <span class="grid-item-number">MAIN</span>
-                        grid-area: main;
-                    </div>
-                    <div class="grid-items">
-                        <span class="grid-item-number">SIDEBAR</span>
-                        grid-area: sidebar;
-                    </div>
-                    <div class="grid-items">
-                        <span class="grid-item-number">4</span>
-                        grid-area: 3 / 2;
-                    </div>
-                    <div class="grid-items grid-items-odd">
-                        <span class="grid-item-number">5</span>
-                        z-index: 1;<br />
-                        grid-column: footer-start / span 2;<br />
-                        grid-row-start: footer-start;
-                    </div>
-                    <div class="grid-items">
-                        <span class="grid-item-number text-right">FOOTER</span>
-                        <div class="text-right">grid-area: footer;</div>
+                <div class="example-grid">
+                    <div id="grid-container-four">
+                        <div class="grid-items">
+                            <span class="grid-item-number">HEADER</span>
+                            grid-area: header;
+                        </div>
+                        <div class="grid-items grid-items-odd">
+                            <span class="grid-item-number">MAIN</span>
+                            grid-area: main;
+                        </div>
+                        <div class="grid-items">
+                            <span class="grid-item-number">SIDEBAR</span>
+                            grid-area: sidebar;
+                        </div>
+                        <div class="grid-items">
+                            <span class="grid-item-number">4</span>
+                            grid-area: 3 / 2;
+                        </div>
+                        <div class="grid-items grid-items-odd">
+                            <span class="grid-item-number">5</span>
+                            z-index: 1;<br />
+                            grid-column: footer-start / span 2;<br />
+                            grid-row-start: footer-start;
+                        </div>
+                        <div class="grid-items">
+                            <span class="grid-item-number text-right">FOOTER</span>
+                            <div class="text-right">grid-area: footer;</div>
+                        </div>
                     </div>
                 </div>
-                <pre>
-                    
-<span class="comment">/* EXAMPLES CLASSES */</span>
-<span class="selector">.example-drop-shadow</span> > <span class="tag">div</span> {
-<span class="property">width</span>: <span class="number">8</span><span class="unit">rem</span>;
-<span class="property">aspect-ratio</span>: <span class="number">1</span>;
-<span class="property">background-color</span>: <span class="function">var</span>(--illustration-green, --pre-green);
-<span class="comment">/* with drop-shadow, we use the filter property */</span>
-<span class="property">filter</span>: <span class="function">drop-shadow</span>(<span class="number">1</span><span
-    class="unit">rem</span> <span class="number">-0.25</span><span class="unit">rem</span> <span
-    class="number">0.5</span><span class="unit">rem</span> <span class="function">var</span>(--shadow-color));
-    <span class="property">display</span>: <span class="value">flex</span>;
-}
 
-<span class="comment">/* white container */</span>
+                <pre>
+<span class="comment">/* for simplicity, we start with the minimum size first */
+/* that way, we don't have to, for bigger sizes and for some properties,
+/* reset the value to "initial" */
+/* we set the basics of the grid and then we add extra features on other sizes*/</span>
 <span class="selector">#grid-container</span> {
     <span class="property">display</span>: <span class="value">grid</span>;
-    <span class="property">grid-template-columns</span>: <span class="property">repeat</span>(<span class="number">3</span>, <span class="number">1</span><span class="unit">fr</span>);
-    <span class="comment">/* ↑ 1fr(action) 1fr 1fr => 3 columns of 33% */</span>
-    <span class="property">grid-template-rows</span>: <span class="number">8</span><span class="unit">rem</span> <span
-            class="value">auto</span> <span class="property">minmax</span>(<span class="value">auto</span>, <span
-                class="number">50</span><span
-                    class="unit">%</span>);
-    <span class="comment">/* ↑ 3 different rows */</span>
+    <span class="property">grid-template-areas</span>: <span class="string-value">
+    "header"
+    "main"
+    "sidebar"
+    "."
+    "."
+    "footer";</span>
     <span class="property">gap</span>: <span class="number">0.5</span><span class="unit">rem</span>;
-    <span class="comment">/* ↑ gutters */</span>
+    <span class="property">width</span>: <span class="number">100</span><span class="unit">%</span>;
 }
 
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">1</span>) {
-    <span class="property">justify-self</span>: <span class="value">start</span>;
-    <span class="property">align-self</span>: <span class="value">start</span>;
+<span class="selector">.grid-items</span><span class="tag">:</span><span class="selector">first-child</span> {
+    <span class="property">grid-area</span>: header;
 }
 
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">2</span>) {
-    <span class="property">justify-self</span>: <span class="value">center</span>;
-    <span class="property">align-self</span>: <span class="value">center</span>;
+<span class="selector">.grid-items</span><span class="tag">:</span><span class="selector">nth-child</span>(<span class="number">2</span>) {
+    <span class="property">grid-area</span>: main;
 }
 
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">3</span>) {
-    <span class="property">justify-self</span>: <span class="value">end</span>;
-    <span class="property">align-self</span>: <span class="value">end</span>;
+<span class="selector">.grid-items</span><span class="tag">:</span><span class="selector">nth-child</span>(<span class="number">3</span>) {
+    <span class="property">grid-area</span>: sidebar;
 }
 
-<span class="selector">.grid-items-one</span>:<span class="selector">nth-child</span>(<span class="number">4</span>) {
-    <span class="property">justify-self</span>: <span class="value">stretch</span>;
-    <span class="property">grid-column-start</span> <span class="number">2</span>;
+<span class="selector">.grid-items</span><span class="tag">:</span><span class="selector">nth-child</span>(<span class="number">4</span>) {
+    <span class="property">grid-row-start</span>: sidebar-end;
+    <span class="property">grid-column</span>: <span class="number">1</span> / <span class="number">1</span>;
+}
+
+<span class="selector">.grid-items</span><span class="tag">:</span><span class="selector">nth-child</span>(<span class="number">5</span>) {
+    <span class="property">z-index</span>: <span class="number">1</span>;
+    <span class="property">grid-row-end</span>: footer-start;
+    <span class="property">grid-column</span>: <span class="number">1</span> / <span class="number">1</span>;
+}
+
+<span class="selector">.grid-items</span><span class="tag">:</span><span class="selector">last-child</span> {
+    <span class="property">grid-area</span>: footer;
+}
+
+<span class="comment">/* tablet layout */</span>
+
+<span class="tag">@media</span> (<span class="property">min-width</span>: <span class="number">768</span><span class="unit">px</span>) {
+    <span class="selector">#grid-container</span> {
+        <span class="property">grid-template-columns</span>: auto <span class="number">30</span><span class="unit">%</span>;
+        <span class="comment">/* 30% of the container for the sidebar */</span>
+        <span class="property">grid-template-rows</span>: <span class="number">1</span><span class="unit">fr</span>;
+        <span class="property">grid-template-areas</span>: <span class="string-value">
+            "header header"
+            "main sidebar"
+            "main sidebar"
+            ".  ."
+            "footer footer"
+            "footer footer"
+            "footer footer"</span>;
+    }
+
+    <span class="selector">.grid-items</span><span class="tag">:</span><span class="selector">nth-child</span>(<span class="number">4</span>) {
+        <span class="property">grid-row-start</span>: main-end;
+        <span class="property">grid-column</span>: <span class="number">1</span> / span <span class="number">2</span>;
+    }
+
+    <span class="selector">.grid-items</span><span class="tag">:</span><span class="selector">nth-child</span>(<span class="number">5</span>) {
+        <span class="property">z-index</span>: <span class="number">1</span>;
+        <span class="property">grid-column</span>: footer-start / span <span class="number">1</span>;
+        <span class="property">grid-row</span>: <span class="number">7</span> / span <span class="number">1</span>;
+    }
+}
+
+<span class="comment">/* desktop layout */</span>
+
+<span class="tag">@media</span> (<span class="property">min-width</span>: <span class="number">1200</span><span class="unit">px</span>) {
+    <span class="selector">#grid-container</span> {
+        <span class="property">grid-template-columns</span>: <span class="function">repeat</span>(<span class="number">4</span>, <span class="number">1</span><span class="unit">fr</span>);
+        <span class="property">grid-template-rows</span>: <span class="function">repeat</span>(<span class="number">4</span>, <span class="number">1</span><span class="unit">fr</span>);
+        <span class="property">grid-template-areas</span>: <span class="string-value">
+            "header header header header"
+            "main main . sidebar"
+            "main main . sidebar"
+            "footer footer footer footer"</span>;
+    }
+
+    <span class="selector">.grid-items</span><span class="tag">:</span><span class="selector">nth-child</span>(<span class="number">4</span>) {
+        <span class="property">grid-area</span>: <span class="number">3</span> / <span class="number">2</span>;
+    }
+
+    <span class="selector">.grid-items</span><span class="tag">:</span><span class="selector">nth-child</span>(<span class="number">5</span>) {
+        <span class="property">z-index</span>: <span class="number">1</span>;
+        <span class="property">grid-column</span>: footer-start / span <span class="number">2</span>;
+        <span class="property">grid-row-start</span>: footer-start;
+    }
 }
             </pre>
 
                 <!-- SUBSECTION RESOURCES -->
                 <h4 class="section-subtitle section-resources">CSS Grid : Further resources</h4>
                 <ul>
+                    <li><a title="Learn CSS Grid - A Guide to Learning CSS Grid | Jonathan Suh"
+                            href="https://learncssgrid.com/">Learn CSS Grid - A Guide to Learning CSS Grid | Jonathan
+                            Suh</a></li>
+                    <li><a title="A Complete Guide to Grid | CSS-Tricks"
+                            href="https://css-tricks.com/snippets/css/complete-guide-grid/">A Complete Guide to Grid |
+                            CSS-Tricks</a></li>
+                    <li><a title="Solutions to Replace the 12-Column Grid | Modern CSS Solutions"
+                            href="https://moderncss.dev/solutions-to-replace-the-12-column-grid/">Solutions to Replace
+                            the 12-Column Grid | Modern CSS Solutions</a></li>
+                    <li><a title="Things I've Learned About CSS Grid Layout | CSS-Tricks"
+                            href="https://css-tricks.com/things-ive-learned-css-grid-layout/">Things I've Learned About
+                            CSS Grid Layout | CSS-Tricks</a></li>
+                    <li><a title="3 CSS Grid Techniques to Make You a Grid Convert | Modern CSS Solutions"
+                            href="https://moderncss.dev/3-css-grid-techniques-to-make-you-a-grid-convert/">3 CSS Grid
+                            Techniques to Make You a Grid Convert | Modern CSS Solutions</a></li>
+                    <li><a title="Container Query Solutions with CSS Grid and Flexbox | Modern CSS Solutions"
+                            href="https://moderncss.dev/container-query-solutions-with-css-grid-and-flexbox/">Container
+                            Query Solutions with CSS Grid and Flexbox | Modern CSS Solutions</a></li>
+                    <li><a title="CSS Frameworks Or CSS Grid: What Should I Use For My Project? — Smashing Magazine"
+                            href="https://www.smashingmagazine.com/2018/11/css-frameworks-css-grid/">CSS Frameworks Or
+                            CSS Grid: What Should I Use For My Project? — Smashing Magazine</a></li>
+                    <li><a title="Best Practices With CSS Grid Layout — Smashing Magazine"
+                            href="https://www.smashingmagazine.com/2018/04/best-practices-grid-layout/">Best Practices
+                            With CSS Grid Layout — Smashing Magazine</a></li>
                     <li><a href="https://thoughtbot.com/blog/concise-media-queries-with-css-grid"> Concise Media Queries
                             with CSS Grid</a></li>
                     <li><a href="https://gridbyexample.com/examples/">Grid by Example - Usage examples of CSS

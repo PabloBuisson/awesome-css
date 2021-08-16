@@ -835,6 +835,10 @@ header {
     color: hsl(36, 100%, 18%);
 }
 
+.example-grid {
+    margin-bottom: 2rem;
+}
+
 #grid-container-one {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -968,7 +972,7 @@ header {
     grid-area: footer;
 }
 
-/* tablets */
+/* tablet layout */
 
 @media (min-width: 768px) {
     #grid-container-four {
@@ -997,7 +1001,7 @@ header {
     }
 }
 
-/* desktop */
+/* desktop layout */
 
 @media (min-width: 1200px) {
     #grid-container-four {
@@ -1168,6 +1172,6 @@ pre .property, pre .function {
     color: var(--pre-property-color, #8be9fd);
 }
 
-pre .attribute-value {
+pre .attribute-value, pre .string-value {
     color: var(--pre-attribute-value-color, #f1fa8c);
 }

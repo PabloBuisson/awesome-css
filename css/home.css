@@ -1,0 +1,212 @@
+/* HOME SECTION */
+
+header {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+#container-color-theme {
+    display: flex;
+    align-items: center;
+}
+
+#container-color-theme label {
+    color: var(--description-text-color, black);
+}
+
+#container-color-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: black;
+    padding: 0 2rem;
+}
+
+.btn-color-theme {
+    aspect-ratio: 1;
+    width: 2rem;
+    border: 0.25rem solid white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-color-theme-selected {
+    border: 0.25rem solid hsl(var(--hue), 90%, 90%);
+}
+
+#btn-orange-theme {
+    background-color: hsl(32, 60%, 60%);
+}
+
+#btn-green-theme {
+    background-color: hsl(132, 60%, 60%);
+}
+
+#btn-user-theme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    width: 2.25rem;
+    background-color: hsl(var(--hue), 5%, 90%);
+    border-radius: 3rem;
+}
+
+.fa-plus {
+    color: var(--constrast-color, black);
+    width: 1em;
+}
+
+#slider-color-theme {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+#slider-shade {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 2rem;
+    background: -webkit-gradient(linear, left top, right top, from(red), color-stop(17%, #ff0), color-stop(33%, lime), color-stop(50%, cyan), color-stop(66%, blue), color-stop(83%, #f0f), to(red));
+    background: linear-gradient(to right, red 0%, #ff0 17%, lime 33%, cyan 50%, blue 66%, #f0f 83%, red 100%);
+    border-radius: 0.5rem;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+#slider-shade::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 2px solid var(--description-text-color);
+    border-radius: 1rem;
+    height: 2.5rem;
+    width: 0.5rem;
+    background: transparent;
+    cursor: pointer;
+}
+
+#slider-shade::-moz-range-thumb {
+    width: 0.5rem;
+    height: 120%;
+    background: transparent;
+    cursor: pointer;
+    border: 2px solid var(--description-text-color);
+}
+
+#slider-color-theme label {
+    display: block;
+    width: 100%;
+    color: var(--description-text-color, black);
+}
+
+#slider-color-theme input {
+    width: 100%;
+}
+
+#container-light-theme {
+    height: 100%;
+    font-size: 26px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 0.5ch;
+    padding-right: 1rem;
+}
+
+#btn-theme {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    font: inherit;
+    position: relative;
+    height: 34px;
+    line-height: 34px;
+    /* center icon */
+    cursor: pointer;
+    display: flex;
+    /* align label and toggle */
+    gap: 0.5ch;
+}
+
+#slider-theme {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 60px;
+    border-radius: 34px;
+    background-color: var(--background-color-toggle);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+#slider-theme::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+#icon-light-mode {
+    font-size: inherit;
+}
+
+#btn-theme[aria-pressed="true"] #slider-theme {
+    background-color: var(--background-color-toggle);
+}
+
+#btn-theme[aria-pressed="true"] #slider-theme::before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+#section-home {
+    scroll-margin-top: var(--header-height);
+    height: calc(100vh - var(--header-height));
+    background-color: var(--background-color);
+    display: grid;
+    place-content: center;
+    text-align: center;
+    position: relative;
+}
+
+#scroll-button {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2rem;
+    font-size: 1.4rem;
+}
+
+.bouncing-hand {
+    margin-left: 0.5rem;
+    display: inline-block;
+    animation: bounce 1s ease infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-1rem);
+    }
+}
+
+/* Respecting motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .bouncing-hand {
+        animation: none;
+    }
+}

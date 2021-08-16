@@ -1,0 +1,116 @@
+/* SECTION RELATIVE UNITS */
+
+.example-em-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    font-size: 20px;
+    border-radius: 4px;
+    background-color: var(--illustration-purple, hsl(270, 57%, 38%));
+}
+
+.example-em-child-one {
+    width: 2em;
+    height: 2em;
+    margin-right: 10px;
+    border-radius: 2px;
+    background-color: var(--illustration-pink, --pre-pink);
+}
+
+.example-em-child-two {
+    width: 2em;
+    height: 2em;
+    font-size: 0.5em;
+    border-radius: 2px;
+    background-color: var(--illustration-green, hsl(150, 80%, 65%));
+}
+
+.example-rem-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 12.5rem;
+    height: 12.5rem;
+    margin: auto;
+    border-radius: 4px;
+    background-color: var(--illustration-purple, hsl(270, 57%, 38%));
+}
+
+.example-rem-child-one {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.5rem;
+    border-radius: 2px;
+    background-color: var(--illustration-pink, --pre-pink);
+}
+
+.example-rem-child-two {
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 2px;
+    background-color: var(--illustration-green, hsl(150, 80%, 65%));
+}
+
+.example-viewport-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 19vw;
+    height: 19vw;
+    margin: auto;
+    border-radius: 4px;
+    background-color: var(--illustration-purple, hsl(270, 57%, 38%));
+}
+
+.example-viewport-child-one {
+    width: 4vw;
+    height: 4vw;
+    margin-right: 0.5rem;
+    border-radius: 2px;
+    background-color: var(--illustration-pink, --pre-pink);
+}
+
+.example-viewport-child-two {
+    width: 2vmax;
+    height: 2vmax;
+    border-radius: 2px;
+    background-color: var(--illustration-green, hsl(150, 80%, 65%));
+}
+
+.example-ch-one {
+    padding: 1rem;
+    margin: auto;
+    max-width: 50ch;
+    border-radius: 4px;
+    color: hsl(270, 30%, 90%);
+    background-color: var(--illustration-purple);
+}
+
+.example-ch-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-ch-buttons .example-ch-button-one {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    min-width: 20ch;
+    border-radius: 4px;
+    color: hsl(150, 70%, 20%);
+    background-color: var(--illustration-green, lightgreen);
+}
+
+.example-ch-buttons .example-ch-button-two {
+    padding: 1rem;
+    margin-top: 0;
+    min-width: 20ch;
+    border-radius: 4px;
+    color: hsl(150, 70%, 20%);
+    background-color: var(--illustration-green, lightgreen);
+}
