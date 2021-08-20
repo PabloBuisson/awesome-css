@@ -1,16 +1,21 @@
 /* HOME SECTION */
 
 header {
-    height: var(--header-height);
+    min-height: var(--header-height);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
     z-index: 2;
+    padding: 2rem 2rem;
 }
 
 #container-color-theme {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 #container-color-theme label {
@@ -22,7 +27,7 @@ header {
     align-items: center;
     gap: 0.75rem;
     color: black;
-    padding: 0 2rem;
+    /* padding-bottom: 2rem; */
 }
 
 .btn-color-theme {
@@ -58,6 +63,10 @@ header {
 .fa-plus {
     color: var(--constrast-color, black);
     width: 1em;
+}
+
+#container-user-theme {
+    /* padding-bottom: 2rem; */
 }
 
 #slider-color-theme {

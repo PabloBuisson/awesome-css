@@ -48,8 +48,8 @@
     --code-background-color: hsla(var(--hue), 30%, 100%, 0.6);
     --warning-background-color: var(--code-background-color);
     --code-color: hsl(var(--hue), 60%, 40%);
-    --nav-dot-color: var(--constrast-color);
-    --nav-dot-selected: white;
+    --nav-dot-color: white;
+    --nav-dot-selected: var(--constrast-color);
 }
 
 :root[theme="dark"] {
@@ -79,13 +79,21 @@
 html {
     color: var(--title-color);
     /* font-size: calc(1rem + 0.5vw); */
-    font-family: sans-serif, Arial, Helvetica;
+    /* font-family: sans-serif, Arial, Helvetica; */
+    /* font-family: 'Manrope', sans-serif; */
+    /* font-family: 'Comfortaa', cursive; */
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Quicksand', sans-serif; */
     scroll-behavior: smooth;
 }
 
 h1 {
     font-size: calc(3rem + 2vw);
     color: var(--title-color);
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Balsamiq Sans', cursive;
 }
 
 a {
@@ -208,6 +216,7 @@ nav span {
 
 nav .nav-label {
     display: inline-block;
+    color: var(--nav-dot-selected);
     margin-left: 1rem;
     opacity: 0;
     transform-origin: -50%;
@@ -241,7 +250,7 @@ nav .nav-dot {
 /* PRE */
 
 pre {
-    width: var(--max-width-container, 70ch);
+    width: 100%;
     overflow-x: auto;
     padding: 1em;
     margin: auto;
