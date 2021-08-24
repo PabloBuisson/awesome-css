@@ -1,5 +1,9 @@
 /* SECTION LAYOUT */
 
+.grid-container {
+    overflow-y: auto;
+}
+
 .grid-items .grid-item-number {
     display: block;
     margin-bottom: 0.5rem;
