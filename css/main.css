@@ -48,7 +48,7 @@
     --code-background-color: hsla(var(--hue), 30%, 100%, 0.6);
     --warning-background-color: var(--code-background-color);
     --code-color: hsl(var(--hue), 60%, 40%);
-    --nav-dot-color: white;
+    --nav-dot-color: hsl(var(--hue), 60%, 65%);
     --nav-dot-selected: var(--constrast-color);
 }
 
