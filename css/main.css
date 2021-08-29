@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 /* GENERAL */
 
 @import './section.css';
@@ -10,6 +17,7 @@
 *,
 ::before,
 ::after {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -71,6 +79,7 @@
 }
 
 html {
+    font-size: 1.125rem;
     color: var(--title-color);
     /* font-size: calc(1rem + 0.5vw); */
     /* font-family: sans-serif, Arial, Helvetica; */
@@ -86,13 +95,18 @@ h1 {
     color: var(--title-color);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: 'Balsamiq Sans', cursive;
 }
 
 a {
     color: var(--title-color);
+    -webkit-text-decoration-line: underline;
     text-decoration-line: underline;
+    -webkit-text-decoration-color: var(--main-color, black);
     text-decoration-color: var(--main-color, black);
     text-underline-offset: 5px;
     text-decoration-thickness: 1px;
@@ -127,6 +141,7 @@ code {
 
 .visually-hidden:not(:focus):not(:active) {
     clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(100%);
     clip-path: inset(100%);
     height: 1px;
     overflow: hidden;
@@ -136,7 +151,11 @@ code {
 }
 
 .info-message {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 1.25rem;
     color: hsl(195, 60%, 20%);
@@ -152,6 +171,8 @@ code {
 }
 
 .info-message .fa-lightbulb {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 1rem;
     flex: 0 0 1rem;
     width: 1rem;
     margin: 0 1rem;
@@ -172,8 +193,15 @@ nav {
     position: fixed;
     top: var(--header-height, 0);
     bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     z-index: 1;
     margin: 0;
@@ -195,6 +223,8 @@ nav a {
 }
 
 nav a:hover span {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
 }
 
@@ -207,6 +237,8 @@ nav a.selected-nav .nav-dot {
 }
 
 nav span {
+    -webkit-transform: scale(0.6);
+    -ms-transform: scale(0.6);
     transform: scale(0.6);
 }
 
@@ -215,8 +247,14 @@ nav .nav-label {
     color: var(--nav-dot-selected);
     margin-left: 1rem;
     opacity: 0;
+    -webkit-transform-origin: -50%;
+    -ms-transform-origin: -50%;
     transform-origin: -50%;
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.2s;
+    transition: opacity 0.5s, -webkit-transform 0.2s;
+    -o-transition: transform 0.2s, opacity 0.5s;
     transition: transform 0.2s, opacity 0.5s;
+    transition: transform 0.2s, opacity 0.5s, -webkit-transform 0.2s;
 }
 
 nav .nav-dot {
@@ -226,7 +264,11 @@ nav .nav-dot {
     width: 0.8rem;
     border-radius: 50%;
     background-color: var(--nav-dot-color);
+    -webkit-transition: background-color 0.5s, -webkit-transform 0.5s;
+    transition: background-color 0.5s, -webkit-transform 0.5s;
+    -o-transition: transform 0.5s, background-color 0.5s;
     transition: transform 0.5s, background-color 0.5s;
+    transition: transform 0.5s, background-color 0.5s, -webkit-transform 0.5s;
 }
 
 .example {
@@ -301,11 +343,18 @@ pre .string-value {
     }
 
     .info-message {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
     }
 
     .info-message .fa-lightbulb {
+        -webkit-box-flex: initial;
+        -ms-flex: initial;
         flex: initial;
     }
 

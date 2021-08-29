@@ -1,6 +1,14 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 /* SECTIONS */
 
 .section {
+    display: -ms-grid;
     display: grid;
     place-content: center;
     min-height: 100vh;
@@ -17,8 +25,10 @@
 }
 
 .section-container {
+    display: -ms-grid;
     display: grid;
     place-content: center;
+    -ms-grid-columns: minmax(0, 1fr);
     grid-template-columns: minmax(0, 1fr);
     max-width: var(--max-width-container, 70ch);
 }
@@ -105,13 +115,23 @@
     cursor: pointer;
     background-color: var(--constrast-color);
     color: white;
+    -webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, .11),
+        0 1px 3px rgba(0, 0, 0, .08);
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11),
         0 1px 3px rgba(0, 0, 0, .08);
+    -webkit-transition: -webkit-transform;
+    transition: -webkit-transform;
+    -o-transition: transform;
     transition: transform;
+    transition: transform, -webkit-transform;
 }
 
 .section button:hover {
+    -webkit-transform: translateY(-1px);
+    -ms-transform: translateY(-1px);
     transform: translateY(-1px);
+    -webkit-box-shadow: 0 7px 14px rgba(50, 50, 50, .1),
+        0 3px 6px rgba(0, 0, 0, .08);
     box-shadow: 0 7px 14px rgba(50, 50, 50, .1),
         0 3px 6px rgba(0, 0, 0, .08);
 }
@@ -128,6 +148,8 @@
     height: 0.2em;
     width: 0.8em;
     top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
@@ -143,6 +165,8 @@
     height: 0.2em;
     width: 0.8em;
     border-radius: 0.3em;
+    -webkit-transform: rotate(90deg) translateX(-12.5%);
+    -ms-transform: rotate(90deg) translateX(-12.5%);
     transform: rotate(90deg) translateX(-12.5%);
 }
 

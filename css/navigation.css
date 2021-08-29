@@ -1,6 +1,14 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 /* SECTION NAVIGATION */
 
 .container-scroll-y {
+    -ms-scroll-snap-type: y proximity;
     scroll-snap-type: y proximity;
     /* y = horizontal scroll */
     /* mandatory = one scroll and the visual viewport will rest on the next snap point */
@@ -13,8 +21,14 @@
 
 .scroll-area {
     height: 10rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     scroll-snap-align: start;
     color: white;
@@ -23,6 +37,8 @@
 .container-scroll-x .scroll-area {
     width: 50ch;
     scroll-snap-align: center;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 35ch;
     flex: 0 0 35ch;
 }
 
@@ -44,11 +60,16 @@
 }
 
 .container-scroll-x {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 1rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     height: 12rem;
     max-width: 100%;
+    -ms-scroll-snap-type: x mandatory;
     scroll-snap-type: x mandatory;
     overflow-x: auto;
     background-color: white;
