@@ -45,7 +45,7 @@
     right: auto;
     left: 0;
     top: auto;
-    bottom: 0.4em;
+    bottom: 40%;
     z-index: -1;
     background: var(--decorative-color, #ffc862);
     content: "";

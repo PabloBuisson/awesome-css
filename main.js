@@ -18,6 +18,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
     // activate highlight on current navigation
     checkCurrentNavigation();
+
+
+    // get the height of the header to place the big title
+    const header = document.querySelector("#header");
+    const headerHeight = header.offsetHeight;
+    document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
 });
 
 

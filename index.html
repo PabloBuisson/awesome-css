@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="With modern CSS, we can easily create responsive and reactive layouts. I listed my favorite CSS features and
+        properties we can use to that end.">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Poppins&family=Quicksand:wght@500&display=swap"
         rel="stylesheet">
-    <title>CSS is Awesome</title>
+    <title>CSS is awesome</title>
 </head>
 
 <body>
@@ -29,7 +32,7 @@
         </ul>
     </nav>
     <main>
-        <header>
+        <header id="header">
             <div id="container-color-theme">
                 <div id="container-color-buttons">
                     <label>Themes :</label>
@@ -80,10 +83,10 @@
 
         <!-- SECTION MOTIVES -->
         <section id="section-summary" class="section section-odd">
-            <h2 class="section-title">A dive into CSS awesome functionalities</h2>
+            <h2 class="section-title">A dive into CSS awesome features</h2>
             <div class="section-description">
                 <p>With this website, I wanted to highlight my favorite things we can do with CSS today.
-                    The list is not finished - there is a lot of amazing things we 
+                    The list is not finished - there is a lot of amazing things we
                     can do with CSS nowadays and in the future - but I think it's a good start. Happy reading !
                 </p>
             </div>
@@ -103,15 +106,15 @@
                 <h2 class="section-title">Relative units</h2>
                 <div class="section-description">
                     <p>Relative units are one of the main powerful features of CSS :
-                        thank to them, we can easily display responsive and accessible layout.
+                        thanks to them, we can easily display responsive and accessible layouts.
                         Let's review the most used and interesting relative units.
                     </p>
                 </div>
 
                 <!-- SUBSECTION EM -->
                 <h3 class="section-subtitle">EM</h3>
-                <p>An <code>em</code> is equal to the <strong>font-size of an element</strong> or
-                    the font-size of that element’s nearest ancestor.
+                <p>An <code>em</code> is equal to the <strong>font size of an element</strong> or
+                    the font size of that element’s nearest ancestor.
                 </p>
                 <p>For example, we know that <code>1em</code> refers to the font size.
                     So if the parent's font-size value of an element is <code>16px</code>,
@@ -134,8 +137,8 @@
 
 <span class="comment">/* medium pink box */</span>
 <span class="selector">.child-one</span> {
-    <span class="comment">/* the child hasn't declared a font-size, 
-        so 1em = parent's font-size */</span>
+    <span class="comment">/* the child hasn't declared a font size, 
+        so 1em = parent's font size */</span>
     <span class="property">width</span>: <span class="number">2</span><span class="unit">em</span>; 
     <span class="comment">/* ↑ 2 x 20px = 40px */</span>
     <span class="property">height</span>: <span class="number">2</span><span class="unit">em</span>; 
@@ -146,8 +149,8 @@
 <span class="selector">.child-two</span> {
     <span class="property">font-size</span>: <span class="number">0.5</span><span class="unit">em</span>; 
     <span class="comment">/* ↑ 0.5 x 20px = 10px */</span>
-    <span class="comment">/* the child has declared a font-size, 
-        so 1em = element's font-size */</span>
+    <span class="comment">/* the child has declared a font size, 
+        so 1em = element's font size */</span>
     <span class="property">width</span>: <span class="number">2</span><span class="unit">em</span>; 
     <span class="comment">/* ↑ 2 x 10px = 20px */</span>
     <span class="property">height</span>: <span class="number">2</span><span class="unit">em</span>; 
@@ -158,13 +161,13 @@
 
                 <h4 class="section-subtitle-summary">When should we use em ?</h4>
                 <p>As you can see with the example above, the <code>em</code> unit can be tricky.
-                    It best to use <code>em</code> for typography and spacing on textual components, like
+                    It's best to use <code>em</code> for typography and spacing on textual components, like
                     a button or input fields.</p>
 
                 <!-- SUBSECTION REM -->
                 <h3 class="section-subtitle">REM</h3>
                 <p>The unit <code>rem</code> stands for <em>root em</em>.</p>
-                <p>By "root", it means that <code>1rem</code> equals the <strong>font size of the html element</strong>
+                <p>By "root", it means that <code>1rem</code> equals the <strong>font size of the HTML element</strong>
                     (which for most browsers has a default value of <code>16px</code>).</p>
                 <button type="button" onclick="displayExample(this, 'example-rem')">Show me an
                     example</button>
@@ -197,12 +200,13 @@
                 </pre>
                 </div>
                 <h4 class="section-subtitle-summary">When should we use rem ?</h4>
-                <p>Unlike the <code>em</code> unit, the <code>rem</code> unit is a global and constant unit.
+                <p>Unlike the <code>em</code> unit, the <code>rem</code> unit is global and constant.
                     It means that its value will not change, no matter how deeply the element is nested.</p>
-                <p>For that reason, it best to use <code>rem</code> for properties that will allow elements to keep the
+                <p>For that reason, it's best to use <code>rem</code> for properties that will allow elements to keep
+                    the
                     same
                     proportion
-                    on every viewports : font-size, spacing, box size, etc.</p>
+                    on every viewports : font size, spacing, box size, etc.</p>
 
                 <!-- SUBSECTION VH, VW, VMIN, VMAX -->
                 <h3 class="section-subtitle">VH, VW, VMIN & VMAX</h3>
@@ -262,11 +266,11 @@
                 </div>
                 <h4 class="section-subtitle-summary">When should we use viewport units ?</h4>
                 <p>Viewport units are useful for creating elements that will occupy a constant
-                    portion of the screen. For example, it can be useful for displaying full-height
-                    homepage (with <code>100vh</code>), or to ensure that a certain element stay visible on the screen.
+                    portion of the screen. For example, it can be useful for displaying a full-height
+                    homepage (with <code>100vh</code>), or to ensure that a certain element stays visible on the screen.
                 </p>
                 <p>Viewport units can also be combined with the <code>calc()</code> function, to allow, for example,
-                    font-size to scale in response of a change in the window size.</p>
+                    font size to scale in response to a change in the window size.</p>
                 <p>Overall, <strong>viewport units are ideal for creating proportionate and responsive
                         elements</strong>.
                 </p>
@@ -276,15 +280,15 @@
                 <p>The <code>ch</code> unit is less used and known than the aforementioned units,
                     but could be just as much useful. It represents <strong>the width of the "0" character of the
                         selected font</strong>.</p>
-                <p>So <code>1ch</code> equals to roughly one character. How can we use this information, then ? Well,
-                    one
+                <p>So <code>1ch</code> equals roughly one character. How can we use this information, then ? Well,
+                    we
                     can use the <code>ch</code> unit to set a max-width or
-                    a min-width, for readibility and consistency.</p>
+                    a min-width, for readability and consistency.</p>
                 <button type="button" onclick="displayExample(this, 'example-ch')">Show me an
                     example</button>
                 <div class="example d-none" id="example-ch">
                     <div class="example-illustration">
-                        <div class="example-ch-one">This is a very long text that use the ch unit to set a max-width to
+                        <div class="example-ch-one">This is a very long text that uses the ch unit to set a max-width to
                             its
                             box container. Lorem
                             ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at tempus lacus. Pellentesque
@@ -309,8 +313,8 @@
                 </pre>
                 </div>
                 <h4 class="section-subtitle-summary">When should we use the ch unit ?</h4>
-                <p>The <code>ch</code> unit comes handy for setting a max-width or a min-width.
-                    Used with paragraphs and articles, it improves readibility : the optimal line length for a body text
+                <p>The <code>ch</code> unit comes in handy for setting a max-width or a min-width.
+                    Used with paragraphs and articles, it improves readability : the optimal line length for a body text
                     is
                     believed to be between 50 and 75 characters.
                     Like the above examples, the <code>ch</code> unit can also be used to set a min-width to buttons or
@@ -332,32 +336,35 @@
 <span class="comment">/* media queries in pixels */</span>
 <span class="selector">@media</span> (<span class="property">min-width</span> <span class="number">960</span><span
         class="unit">px</span>) {
-  <span class="tag">:</span><span class="selector">root</span> {
-    <span class="comment">/* ↓ Upscale by 25% at 960px */</span>
-    <span class="property">font-size</span>: <span class="number">125</span><span class="unit">%</span>;
-  }
+    <span class="tag">:</span><span class="selector">root</span> {
+        <span class="comment">/* ↓ Upscale by 25% at 960px */</span>
+        <span class="property">font-size</span>: <span class="number">125</span><span class="unit">%</span>;
+    }
 }
 
 <span class="tag">h2</span> {
-  <span class="comment">/* ↓ 2.5 × the root font-size */</span>
-  <span class="property">font-size</span>: <span class="number">2.5</span><span class="unit">rem</span>;
+    <span class="comment">/* ↓ 2.5 × the root font-size */</span>
+    <span class="property">font-size</span>: <span class="number">2.5</span><span class="unit">rem</span>;
 }
 
 <span class="tag">h2 strong</span> {
-  <span class="comment">/* ↓ now 1.125 × 2.5rem */</span>
-  <span class="property">font-size</span>: <span class="number">1.125</span><span class="unit">em</span>;
+    <span class="comment">/* ↓ now 1.125 × 2.5rem */</span>
+    <span class="property">font-size</span>: <span class="number">1.125</span><span class="unit">em</span>;
 }
 
-<span class="selector">.big-button</span> {
-  <span class="comment">/* ↓ clamp(min-value, preferred value, max-value) */</span>
-  <span class="property">font-size</span>: <span class="property">clamp</span>(<span class="number">1.5</span><span
+<span class="selector">.big-responsive-button</span> {
+    <span class="comment">/* ↓ clamp(min-value, preferred value, max-value) */</span>
+    <span class="property">font-size</span>: <span class="property">clamp</span>(<span class="number">1.5</span><span
     class="unit">rem</span>, <span class="number">3</span><span class="unit">vw</span>, <span
         class="number">2.5</span><span class="unit">rem</span>);
+    <span class="comment">/* ↓ responsive properties (will adapt to button's font size) */</span>
+    <span class="property">padding</span>: <span class="number">1.5</span><span class="unit">em</span>;
+    <span class="property">border-radius</span>: <span class="number">1.5</span><span class="unit">em</span>;
 }
 
 <span class="tag">article</span>, <span class="tag">p</span> {
-  <span class="comment">/* ↓ better readability */</span>
-  <span class="property">max-width</span>: <span class="number">60</span><span class="unit">ch</span>;
+    <span class="comment">/* ↓ better readability */</span>
+    <span class="property">max-width</span>: <span class="number">60</span><span class="unit">ch</span>;
 }
 </pre>
 
@@ -389,9 +396,9 @@
                 <h2 class="section-title">Variables</h2>
                 <div class="section-description">
                     <p>
-                        Variables are powerful sidekick.
+                        Variables are powerful sidekicks.
                         It gives us the power of sharing and customize reusable code
-                        and the ability to adapt user interface on user interactions.
+                        and the ability the ability to adapt the user interface to user interactions.
                     </p>
                 </div>
 
@@ -613,8 +620,8 @@
 
                 <!-- SUBSECTION SCROLL-SNAP -->
                 <h3 class="section-subtitle">Scroll snap</h3>
-                <p>CSS Scroll snap give us the power to control how elements of a container
-                    will respond to scroll. It's particulary useful with touch devices,
+                <p>CSS Scroll snap gives us the power to control how elements of a container
+                    will respond to scroll. It's particularly useful with touch devices,
                     to create a seamless scrolling experience with items that can be swiped.
                 </p>
 
@@ -648,11 +655,11 @@
 
                 <pre>
 <span class="selector">.container</span> {
-    <span class="property">scroll-snap-type</span>: <span class="value">y mandatory</span>;
+    <span class="property">scroll-snap-type</span>: <span class="value">y proximity</span>;
     <span class="comment">/* y = horizontal scroll */
-        /* proximity = if the user is in a range of proximity
-        (a few hundred pixels of a snap point),
-        the visual viewport will rest on the next snap point */</span>
+    /* proximity = if the user is in a range of proximity
+    (a few hundred pixels of a snap point),
+    the visual viewport will rest on the next snap point */</span>
     <span class="property">height</span>: <span class="number">20</span><span class="unit">rem</span>;
     <span class="property">overflow</span>: <span class="value">auto</span>;
 }
@@ -747,7 +754,7 @@
                 <h2 class="section-title">Layout</h2>
                 <div class="section-description">
                     <p>
-                        Modern CSS give us tools to easily display responsive and customized layout,
+                        Modern CSS gives us tools to easily display responsive and customized layouts,
                         without the help of CSS libraries.
                         Flexbox and Grid are the most powerful ones.
                     </p>
@@ -759,9 +766,9 @@
                 <p>CSS Grid Layout is a tool released in 2017.
                     It's a <strong>two-dimensional grid-based layout system</strong> and was created to solve a common
                     problem :
-                    how to control every region of a page, without the need of "hacking" solutions.
+                    how to control every region of a page, without the need for "hacking" solutions.
                 </p>
-                <p>I won't dive in every feature of the CSS Grid Layout, but I will show you some examples,
+                <p>I won't dive into every feature of the CSS Grid Layout, but I will show you some examples,
                     along with comments.
                 </p>
                 <p>If you want to learn the basics of CSS Grid Layout, I highly recommend this tutorial :
@@ -887,7 +894,7 @@
                             </div>
                             <div class="grid-items">
                                 <span class="grid-item-number">3</span>
-                                I'm the third child. In some occasions, I'm left alone, and, on top of
+                                I'm the third child. On some occasions, I'm left alone, and, on top of
                                 that,
                                 I can't take advantage of all the available space 😥
                             </div>
@@ -913,7 +920,7 @@
                             </div>
                             <div class="grid-items grid-items-odd">
                                 <span class="grid-item-number">4</span>
-                                I'm the fourth child. In some occasions, I'm left alone, and, on top of
+                                I'm the fourth child. On some occasions, I'm left alone, and, on top of
                                 that,
                                 I can't take advantage of all the available space 😥
                             </div>
@@ -1046,9 +1053,9 @@
 
                 <pre>
 <span class="comment">/* for simplicity, we start with the minimum size first */
-/* that way, we don't have to, for bigger sizes and for some properties,
+/* that way, we don't have to, for bigger sizes and some properties,
 /* reset the value to "initial" */
-/* we set the basics of the grid and then we add extra features on other sizes*/</span>
+/* we set the basics of the grid and then we add extra features on other viewports*/</span>
 <span class="selector">#grid-container</span> {
     <span class="property">display</span>: <span class="value">grid</span>;
     <span class="property">grid-template-areas</span>: <span class="string-value">
@@ -1224,7 +1231,7 @@
 <span class="selector">.shape-outside-element<span class="tag">:</span>nth-of-type</span>(<span
         class="number">2</span>) {
     <span class="property">shape-outside</span>: <span class="function">polygon</span>(50% 0, 100% 50%, 50% 100%, 0 50%);
-    <span class="comment">/* the property only change the relationship of adjacent elements,
+    <span class="comment">/* the property only changes the relationship of adjacent elements,
     not the geometry of the element itself */
     /* to change the geometry of the element we use the clip-path property,
     with the same values */</span>
