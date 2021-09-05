@@ -109,7 +109,7 @@ function setTheme(isButtonPressed, themeName, themeMessage) {
 window.addEventListener("scroll", checkCurrentNavigation);
 
 function checkCurrentNavigation() {
-    const navLinks = document.querySelectorAll("nav ul li a");
+    const navLinks = document.querySelectorAll(".nav-bullets a");
     const scrollFromTop = window.scrollY;
     const halfOfWindow = document.documentElement.clientHeight / 2;
 

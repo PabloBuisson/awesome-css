@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="With modern CSS, we can easily create responsive and reactive layouts. I listed my favorite CSS features and
+    <meta name="description" content="With modern CSS, we can easily create responsive and reactive layouts. I listed my favorite CSS features and
         properties we can use to that end.">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,61 +17,60 @@
 </head>
 
 <body>
-    <nav aria-label="Main menu">
+    <nav aria-label="Main menu" class="nav-bullets">
         <ul>
-            <li><a href="#section-home"><span class="nav-dot"></span><span class="nav-label">Home</span></a></li>
-            <li><a href="#section-summary"><span class="nav-dot"></span><span class="nav-label">Summary</span></a></li>
-            <li><a href="#section-relative-units"><span class="nav-dot"></span><span class="nav-label">Relative
+            <li><a href="#section-home"><span class="nav-bullet"></span><span class="nav-label">Home</span></a></li>
+            <li><a href="#section-summary"><span class="nav-bullet"></span><span class="nav-label">Summary</span></a></li>
+            <li><a href="#section-relative-units"><span class="nav-bullet"></span><span class="nav-label">Relative
                         units</span></a></li>
-            <li><a href="#section-variables"><span class="nav-dot"></span><span class="nav-label">Variables</span></a>
+            <li><a href="#section-variables"><span class="nav-bullet"></span><span class="nav-label">Variables</span></a>
             </li>
-            <li><a href="#section-navigation"><span class="nav-dot"></span><span class="nav-label">Navigation</span></a>
+            <li><a href="#section-navigation"><span class="nav-bullet"></span><span class="nav-label">Navigation</span></a>
             </li>
-            <li><a href="#section-layout"><span class="nav-dot"></span><span class="nav-label">Layout</span></a></li>
+            <li><a href="#section-layout"><span class="nav-bullet"></span><span class="nav-label">Layout</span></a></li>
         </ul>
     </nav>
-    <main>
-        <header id="header">
-            <div id="container-color-theme">
-                <div id="container-color-buttons">
-                    <label>Themes :</label>
-                    <button type="button" id="btn-orange-theme" data-color="32" class="btn-color-theme"
-                        onclick="changeColorTheme(32)" title="Select orange theme">
-                        <span class="visually-hidden">Select orange theme</span>
-                    </button>
-                    <button type="button" id="btn-green-theme" data-color="132" class="btn-color-theme"
-                        onclick="changeColorTheme(132)" title="Select green theme">
-                        <span class="visually-hidden">Select green theme</span>
-                    </button>
-                    <button type="button" id="btn-user-theme" class="btn-color-theme"
-                        title="Select your own color theme" onclick="displayUserTheme()">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus"
-                            class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 448 512">
-                            <path fill="currentColor"
-                                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
-                            </path>
-                        </svg>
-                        <span class="visually-hidden">Select your own color</span>
-                    </button>
-                </div>
-                <div id="container-user-theme" class="d-none">
-                    <div id="slider-color-theme">
-                        <label for="slider-shade">Pick a color :</label>
-                        <input type="range" name="slider-shade" id="slider-shade" min="0" max="360">
-                    </div>
-                </div>
-            </div>
-            <div id="container-light-theme">
-                <button id="btn-theme" type="button" aria-pressed="false" aria-label="Activate dark mode"
-                    title="Activate dark mode">
-                    <span id="icon-light-mode" aria-hidden="true">🌞</span>
-                    <span id="slider-theme" aria-hidden="true"></span>
-                    🌙
+    <header id="header">
+        <div id="container-color-theme">
+            <div id="container-color-buttons">
+                <label>Themes :</label>
+                <button type="button" id="btn-orange-theme" data-color="32" class="btn-color-theme"
+                    onclick="changeColorTheme(32)" title="Select orange theme">
+                    <span class="visually-hidden">Select orange theme</span>
+                </button>
+                <button type="button" id="btn-green-theme" data-color="132" class="btn-color-theme"
+                    onclick="changeColorTheme(132)" title="Select green theme">
+                    <span class="visually-hidden">Select green theme</span>
+                </button>
+                <button type="button" id="btn-user-theme" class="btn-color-theme" title="Select your own color theme"
+                    onclick="displayUserTheme()">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus"
+                        class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                            d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                        </path>
+                    </svg>
+                    <span class="visually-hidden">Select your own color</span>
                 </button>
             </div>
-        </header>
-
+            <div id="container-user-theme" class="d-none">
+                <div id="slider-color-theme">
+                    <label for="slider-shade">Pick a color :</label>
+                    <input type="range" name="slider-shade" id="slider-shade" min="0" max="360">
+                </div>
+            </div>
+        </div>
+        <div id="container-light-theme">
+            <button id="btn-theme" type="button" aria-pressed="false" aria-label="Activate dark mode"
+                title="Activate dark mode">
+                <span id="icon-light-mode" aria-hidden="true">🌞</span>
+                <span id="slider-theme" aria-hidden="true"></span>
+                🌙
+            </button>
+        </div>
+    </header>
+    <main>
         <!-- SECTION HOME -->
         <section id="section-home">
             <h1>CSS IS AWESOME</h1>
@@ -1376,7 +1374,11 @@
             </div>
         </section>
     </main>
-
+    <footer class="footer">
+        <span>Made by Pablo Buisson</span>
+        <a href="http://">pablo.buisson.fr</a>
+        <a href="http://">Github</a>
+    </footer>
     <script src="main.js"></script>
 </body>
 

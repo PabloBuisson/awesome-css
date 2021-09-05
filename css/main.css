@@ -56,14 +56,14 @@
     --code-background-color: hsla(var(--hue), 30%, 100%, 0.6);
     --warning-background-color: var(--code-background-color);
     --code-color: hsl(var(--hue), 60%, 40%);
-    --nav-dot-color: hsl(var(--hue), 60%, 65%);
-    --nav-dot-selected: var(--constrast-color);
+    --nav-bullet-color: hsl(var(--hue), 60%, 65%);
+    --nav-bullet-selected: var(--constrast-color);
 }
 
 :root[theme="dark"] {
     --main-color: hsl(var(--hue), 100%, 50%);
     --constrast-color: hsl(var(--hue), 60%, 40%);
-    --dark-color: hsl(var(--hue), 86%, 12%);
+    --dark-color: hsl(var(--hue), 40%, 10%);
     --decorative-color: hsl(var(--hue), 100%, 45%);
     --background-color: hsl(var(--hue), 20%, 20%);
     --background-color-odd: hsl(var(--hue), 20%, 16%);
@@ -74,8 +74,8 @@
     --code-background-color: hsla(var(--hue), 40%, 12%);
     --warning-background-color: var(--code-background-color);
     --code-color: hsl(var(--hue), 30%, 86%);
-    --nav-dot-color: var(--main-color);
-    --nav-dot-selected: white;
+    --nav-bullet-color: var(--main-color);
+    --nav-bullet-selected: white;
 }
 
 html {
@@ -179,7 +179,7 @@ code {
 }
 
 ul {
-    line-height: 2;
+    line-height: 1.5;
 }
 
 li::marker {
@@ -189,7 +189,7 @@ li::marker {
 
 /* NAV */
 
-nav {
+.nav-bullets {
     position: fixed;
     top: var(--header-height, 0);
     bottom: 0;
@@ -209,11 +209,11 @@ nav {
     line-height: 1.5;
 }
 
-nav ul {
+/* .nav ul {
     overflow: auto;
-}
+} */
 
-nav a {
+.nav-bullets a {
     font-size: 1rem;
     position: relative;
     display: block;
@@ -222,29 +222,29 @@ nav a {
     text-decoration: none;
 }
 
-nav a:hover span {
+.nav-bullets a:hover span {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
 }
 
-nav a:hover .nav-label {
+.nav-bullets a:hover .nav-label {
     opacity: 1;
 }
 
-nav a.selected-nav .nav-dot {
-    background-color: var(--nav-dot-selected);
+.nav-bullets a.selected-nav .nav-bullet {
+    background-color: var(--nav-bullet-selected);
 }
 
-nav span {
+.nav-bullets span {
     -webkit-transform: scale(0.6);
     -ms-transform: scale(0.6);
     transform: scale(0.6);
 }
 
-nav .nav-label {
+.nav-bullets .nav-label {
     display: inline-block;
-    color: var(--nav-dot-selected);
+    color: var(--nav-bullet-selected);
     margin-left: 1rem;
     opacity: 0;
     -webkit-transform-origin: -50%;
@@ -257,13 +257,13 @@ nav .nav-label {
     transition: transform 0.2s, opacity 0.5s, -webkit-transform 0.2s;
 }
 
-nav .nav-dot {
+.nav-bullets .nav-bullet {
     display: inline-block;
     position: relative;
     height: 0.8rem;
     width: 0.8rem;
     border-radius: 50%;
-    background-color: var(--nav-dot-color);
+    background-color: var(--nav-bullet-color);
     -webkit-transition: background-color 0.5s, -webkit-transform 0.5s;
     transition: background-color 0.5s, -webkit-transform 0.5s;
     -o-transition: transform 0.5s, background-color 0.5s;
@@ -277,6 +277,15 @@ nav .nav-dot {
 
 .example-illustration {
     padding: 1rem 0 2rem 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: var(--dark-color);
+    padding: 1rem 2rem;
 }
 
 /* UTILS */

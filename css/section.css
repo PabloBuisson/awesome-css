@@ -16,6 +16,10 @@
     overflow: hidden;
 }
 
+.section:last-child {
+    padding-bottom: 8rem;
+}
+
 .section-odd {
     background-color: var(--background-color-odd, grey);
 }
