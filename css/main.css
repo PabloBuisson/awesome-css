@@ -24,7 +24,7 @@
 }
 
 :root {
-    --hue: 36;
+    --hue: 336;
     --header-height: 90px;
     --background-color-toggle: hsl(var(--hue), 5%, 80%);
     --warning-color: hsl(17, 100%, 40%);
@@ -45,7 +45,7 @@
 :root[theme="light"] {
     --main-color: hsl(var(--hue), 100%, 50%);
     --constrast-color: hsl(var(--hue), 60%, 40%);
-    --dark-color: hsl(var(--hue), 80%, 20%);
+    --dark-color: hsl(var(--hue), 20%, 70%);
     --decorative-color: hsl(var(--hue), 100%, 50%);
     --background-color: hsl(var(--hue), 31%, 86%);
     --background-color-odd: hsl(var(--hue), 36%, 91%);
@@ -284,6 +284,7 @@ li::marker {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 1rem;
+    font-size: 0.875rem;
     background-color: var(--dark-color);
     padding: 1rem 2rem;
 }

@@ -8,13 +8,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
         // change the variable "hue" of the :root
         document.documentElement.style.setProperty('--hue', hue);
         hightlightButtonTheme(hue);
+    } else {
+        hightlightButtonTheme(336);
     }
 
     // enable light theme
-    if (localStorage.getItem("light-theme") === "dark") {
-        setTheme(true, "dark", activateLightModeMessage);
-    } else {
+    // the dark theme is enabled by default
+    if (localStorage.getItem("light-theme") === "light") {
         setTheme(false, "light", activateDarkModeMessage);
+    } else {
+        setTheme(true, "dark", activateLightModeMessage);
     }
     // activate highlight on current navigation
     checkCurrentNavigation();

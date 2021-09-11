@@ -20,12 +20,15 @@
     <nav aria-label="Main menu" class="nav-bullets">
         <ul>
             <li><a href="#section-home"><span class="nav-bullet"></span><span class="nav-label">Home</span></a></li>
-            <li><a href="#section-summary"><span class="nav-bullet"></span><span class="nav-label">Summary</span></a></li>
+            <li><a href="#section-summary"><span class="nav-bullet"></span><span class="nav-label">Summary</span></a>
+            </li>
             <li><a href="#section-relative-units"><span class="nav-bullet"></span><span class="nav-label">Relative
                         units</span></a></li>
-            <li><a href="#section-variables"><span class="nav-bullet"></span><span class="nav-label">Variables</span></a>
+            <li><a href="#section-variables"><span class="nav-bullet"></span><span
+                        class="nav-label">Variables</span></a>
             </li>
-            <li><a href="#section-navigation"><span class="nav-bullet"></span><span class="nav-label">Navigation</span></a>
+            <li><a href="#section-navigation"><span class="nav-bullet"></span><span
+                        class="nav-label">Navigation</span></a>
             </li>
             <li><a href="#section-layout"><span class="nav-bullet"></span><span class="nav-label">Layout</span></a></li>
         </ul>
@@ -34,13 +37,21 @@
         <div id="container-color-theme">
             <div id="container-color-buttons">
                 <label>Themes :</label>
-                <button type="button" id="btn-orange-theme" data-color="32" class="btn-color-theme"
-                    onclick="changeColorTheme(32)" title="Select orange theme">
+                <button type="button" data-color="32" class="btn-color-theme"
+                    style="--color: 32;" onclick="changeColorTheme(32)" title="Select orange theme">
                     <span class="visually-hidden">Select orange theme</span>
                 </button>
-                <button type="button" id="btn-green-theme" data-color="132" class="btn-color-theme"
-                    onclick="changeColorTheme(132)" title="Select green theme">
-                    <span class="visually-hidden">Select green theme</span>
+                <button type="button" data-color="207" class="btn-color-theme"
+                    style="--color: 207;" onclick="changeColorTheme(207)" title="Select blue theme">
+                    <span class="visually-hidden">Select blue theme</span>
+                </button>
+                <button type="button" data-color="279" class="btn-color-theme"
+                    style="--color: 279;" onclick="changeColorTheme(279)" title="Select purple theme">
+                    <span class="visually-hidden">Select purple theme</span>
+                </button>
+                <button type="button" data-color="336" class="btn-color-theme"
+                    style="--color: 336;" onclick="changeColorTheme(336)" title="Select burgundy theme">
+                    <span class="visually-hidden">Select burgundy theme</span>
                 </button>
                 <button type="button" id="btn-user-theme" class="btn-color-theme" title="Select your own color theme"
                     onclick="displayUserTheme()">
@@ -62,8 +73,8 @@
             </div>
         </div>
         <div id="container-light-theme">
-            <button id="btn-theme" type="button" aria-pressed="false" aria-label="Activate dark mode"
-                title="Activate dark mode">
+            <button id="btn-theme" type="button" aria-pressed="true" aria-label="Activate light mode"
+                title="Activate light mode">
                 <span id="icon-light-mode" aria-hidden="true">🌞</span>
                 <span id="slider-theme" aria-hidden="true"></span>
                 🌙
@@ -1376,8 +1387,9 @@
     </main>
     <footer class="footer">
         <span>Made by Pablo Buisson</span>
-        <a href="http://">pablo.buisson.fr</a>
-        <a href="http://">Github</a>
+        <a title="Pablo Buisson - French software developer and Web developer" href="https://www.pablobuisson.fr/">Main
+            site</a>
+        <a title="Pablo Buisson activity in GitHub" href="https://github.com/PabloBuisson">GitHub</a>
     </footer>
     <script src="main.js"></script>
 </body>
