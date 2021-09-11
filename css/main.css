@@ -47,12 +47,12 @@
     --constrast-color: hsl(var(--hue), 60%, 40%);
     --dark-color: hsl(var(--hue), 20%, 70%);
     --decorative-color: hsl(var(--hue), 100%, 50%);
-    --background-color: hsl(var(--hue), 31%, 86%);
-    --background-color-odd: hsl(var(--hue), 36%, 91%);
+    --background-color: hsl(var(--hue), 28%, 86%);
+    --background-color-odd: hsl(var(--hue), 20%, 88%);
     --title-color: hsl(var(--hue), 90%, 10%);
     --text-color: hsl(var(--hue), 90%, 10%);
     --description-text-color: hsl(var(--hue), 90%, 20%);
-    --description-background-color: hsl(var(--hue), 10%, 96%);
+    --description-background-color: hsl(var(--hue), 30%, 93%);
     --code-background-color: hsla(var(--hue), 30%, 100%, 0.6);
     --warning-background-color: var(--code-background-color);
     --code-color: hsl(var(--hue), 60%, 40%);
