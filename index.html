@@ -36,34 +36,36 @@
     <header id="header">
         <div id="container-color-theme">
             <div id="container-color-buttons">
-                <label>Themes :</label>
-                <button type="button" data-color="32" class="btn-color-theme"
-                    style="--color: 32;" onclick="changeColorTheme(32)" title="Select orange theme">
-                    <span class="visually-hidden">Select orange theme</span>
-                </button>
-                <button type="button" data-color="207" class="btn-color-theme"
-                    style="--color: 207;" onclick="changeColorTheme(207)" title="Select blue theme">
-                    <span class="visually-hidden">Select blue theme</span>
-                </button>
-                <button type="button" data-color="279" class="btn-color-theme"
-                    style="--color: 279;" onclick="changeColorTheme(279)" title="Select purple theme">
-                    <span class="visually-hidden">Select purple theme</span>
-                </button>
-                <button type="button" data-color="336" class="btn-color-theme"
-                    style="--color: 336;" onclick="changeColorTheme(336)" title="Select burgundy theme">
-                    <span class="visually-hidden">Select burgundy theme</span>
-                </button>
-                <button type="button" id="btn-user-theme" class="btn-color-theme" title="Select your own color theme"
-                    onclick="displayUserTheme()">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus"
-                        class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512">
-                        <path fill="currentColor"
-                            d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
-                        </path>
-                    </svg>
-                    <span class="visually-hidden">Select your own color</span>
-                </button>
+                    <label>Themes :</label>
+                <div id="row-color-buttons">
+                    <button type="button" data-color="32" class="btn-color-theme" style="--color: 32;"
+                        onclick="changeColorTheme(32)" title="Select orange theme">
+                        <span class="visually-hidden">Select orange theme</span>
+                    </button>
+                    <button type="button" data-color="207" class="btn-color-theme" style="--color: 207;"
+                        onclick="changeColorTheme(207)" title="Select blue theme">
+                        <span class="visually-hidden">Select blue theme</span>
+                    </button>
+                    <button type="button" data-color="279" class="btn-color-theme" style="--color: 279;"
+                        onclick="changeColorTheme(279)" title="Select purple theme">
+                        <span class="visually-hidden">Select purple theme</span>
+                    </button>
+                    <button type="button" data-color="336" class="btn-color-theme" style="--color: 336;"
+                        onclick="changeColorTheme(336)" title="Select burgundy theme">
+                        <span class="visually-hidden">Select burgundy theme</span>
+                    </button>
+                    <button type="button" id="btn-user-theme" class="btn-color-theme"
+                        title="Select your own color theme" onclick="displayUserTheme()">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus"
+                            class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                            </path>
+                        </svg>
+                        <span class="visually-hidden">Select your own color</span>
+                    </button>
+                </div>
             </div>
             <div id="container-user-theme" class="d-none">
                 <div id="slider-color-theme">
@@ -451,12 +453,12 @@
 <span class="tag">:</span><span class="selector">root</span> {
     <span class="comment">/* Here are the global variables, 
         shared with all elements of the document /*</span>
-    --hue: <span class="value">36</span>;
+    --hue: <span class="value">336</span>;
     <span class="comment">/* we declare a main color, a number between 0 and 360 /*</span>
     ...
 }
 
-<span class="tag">:</span><span class="selector">root</span>[theme="light"] {
+<span class="tag">:</span><span class="selector">root</span>[<span class="selector">theme</span><span class="tag">=</span><span class="string-value">"dark"</span>] {
     <span class="comment">/* we then use the variable in the HSL representation */</span>
     --main-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), <span
         class="number">100</span><span class="unit">%</span>, <span class="number">50</span><span class="unit">%</span>);
@@ -466,7 +468,7 @@
     <span class="comment">/* we can change the saturation or the lightness
         to create different shades */</span>
     --dark-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), <span
-        class="number">80</span><span class="unit">%</span>, <span class="number">20</span><span class="unit">%</span>);
+        class="number">40</span><span class="unit">%</span>, <span class="number">10</span><span class="unit">%</span>);
     ...
 }
 
@@ -493,12 +495,12 @@
                 </div>
                 <pre>
 <span class="tag">:</span><span class="selector">root</span> {
-    --hue: <span class="number">36</span>; <span class="comment">/* main color, 36 by default */</span>
-    <span class="comment">/* 💡 the value change when the user choose another color */</span>
+    --hue: <span class="number">336</span>; <span class="comment">/* main color, 336 by default */</span>
+    <span class="comment">/* 💡 the value changes when the user chooses another color */</span>
     ...
 }
 
-<span class="tag">:</span><span class="selector">root</span>[theme="light"] {
+<span class="tag">:</span><span class="selector">root</span>[<span class="selector">theme</span><span class="tag">=</span><span class="string-value">"light"</span>] {
     --background-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), <span
         class="number">35</span><span class="unit">%</span>, <span class="number">82</span><span class="unit">%</span>);
     <span class="comment">/* ↑ 💡 backgroud is light */</span>
@@ -508,7 +510,7 @@
     ...
 }
 
-<span class="tag">:</span><span class="selector">root</span>[theme="dark"] {
+<span class="tag">:</span><span class="selector">root</span>[<span class="selector">theme</span><span class="tag">=</span><span class="string-value">"dark"</span>] {
     --background-color: <span class="property">hsl</span>(<span class="property">var</span>(--hue), <span
         class="number">20</span><span class="unit">%</span>, <span class="number">20</span><span class="unit">%</span>);
     <span class="comment">/* ↑ 💡 background is dark */</span>
@@ -579,7 +581,7 @@
                 <pre>
 <span class="comment">/* I want to add more margin-top to this subtitle */</span>
 <span class="comment">/* I pass the new margin-top with the inline style */</span>
-&#60<span class="tag">h2</span> <span class="selector">style</span>=<span class="attribute-value">"--margin-top: 5rem"</span>
+&#60<span class="tag">h2</span> <span class="selector">style</span>=<span class="attribute-value">"--margin-top: 5rem;"</span>
     <span class="selector">class</span>=<span class="attribute-value">"subtitle"</span>&#62
     Awesome Subtitle
 &#60/<span class="tag">h2</span>&#62
@@ -1064,7 +1066,8 @@
 <span class="comment">/* for simplicity, we start with the minimum size first */
 /* that way, we don't have to, for bigger sizes and some properties,
 /* reset the value to "initial" */
-/* we set the basics of the grid and then we add extra features on other viewports*/</span>
+/* we set the basics of the grid and then 
+   we add extra features on other viewports */</span>
 <span class="selector">#grid-container</span> {
     <span class="property">display</span>: <span class="value">grid</span>;
     <span class="property">grid-template-areas</span>: <span class="string-value">
@@ -1275,25 +1278,25 @@
                     container box. The drop-shadow function is used with the filter property.
                 </p>
 
-                <div class="example-illustration">
+                <div class="example-illustration" style="padding-top: 2rem;">
                     <div class="example-drop-shadow-vs">
                         <figure class="example-drop-shadow">
                             <div class="example-drop-shadow-circle"></div>
-                            <figcaption>Drop-shadow circle</figcaption>
+                            <figcaption class="text-center">Drop-shadow circle</figcaption>
                         </figure>
                         <figure class="example-box-shadow">
                             <div class="example-box-shadow-circle"></div>
-                            <figcaption>Box-shadow circle</figcaption>
+                            <figcaption class="text-center">Box-shadow circle</figcaption>
                         </figure>
                     </div>
                     <div class="example-drop-shadow-vs">
                         <figure class="example-drop-shadow">
                             <div class="example-drop-shadow-triangle"></div>
-                            <figcaption>Drop-shadow triangle (using gradient)</figcaption>
+                            <figcaption class="text-center">Drop-shadow triangle (using gradient)</figcaption>
                         </figure>
                         <figure class="example-box-shadow">
                             <div class="example-box-shadow-triangle"></div>
-                            <figcaption>Box-shadow triangle (using gradient)</figcaption>
+                            <figcaption class="text-center">Box-shadow triangle (using gradient)</figcaption>
                         </figure>
                     </div>
                     <div class="example-drop-shadow-vs">
@@ -1301,11 +1304,11 @@
                             <div class="example-drop-shadow-container">
                                 <div class="example-drop-shadow-cross"></div>
                             </div>
-                            <figcaption>Drop-shadow cross (using clip-path)</figcaption>
+                            <figcaption class="text-center">Drop-shadow cross (using clip-path)</figcaption>
                         </figure>
                         <figure class="example-box-shadow-clip">
                             <div class="example-box-shadow-cross"></div>
-                            <figcaption>Box-shadow cross (using clip-path)</figcaption>
+                            <figcaption class="text-center">Box-shadow cross (using clip-path)</figcaption>
                         </figure>
                     </div>
                 </div>

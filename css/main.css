@@ -139,6 +139,10 @@ code {
     text-align: right !important;
 }
 
+.text-center {
+    text-align: center !important;
+}
+
 .visually-hidden:not(:focus):not(:active) {
     clip: rect(0 0 0 0);
     -webkit-clip-path: inset(100%);
