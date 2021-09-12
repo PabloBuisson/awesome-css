@@ -81,12 +81,7 @@
 html {
     font-size: 1.125rem;
     color: var(--title-color);
-    /* font-size: calc(1rem + 0.5vw); */
-    /* font-family: sans-serif, Arial, Helvetica; */
-    /* font-family: 'Manrope', sans-serif; */
-    /* font-family: 'Comfortaa', cursive; */
     font-family: 'Poppins', sans-serif;
-    /* font-family: 'Quicksand', sans-serif; */
     scroll-behavior: smooth;
 }
 
@@ -99,7 +94,7 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: 'Balsamiq Sans', cursive;
+    font-family: 'Balsamiq Sans', cursive, sans-serif;
 }
 
 a {
