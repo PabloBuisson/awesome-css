@@ -1,4 +1,11 @@
-/* SECTION LAYOUT */
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+/* SECTION LAYOUT (⚠ NOT PREFIXED) */
 
 .grid-container {
     overflow-y: auto;
@@ -240,11 +247,13 @@
     not the geometry of the element itself */
     /* to change the geometry of the element we use the clip-path property,
     with the same values */
+    -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
     clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
 }
 
 .example-shape-outside-element:nth-of-type(3) {
     shape-outside: ellipse(35% 50% at 50% 50%);
+    -webkit-clip-path: ellipse(35% 50% at 50% 50%);
     clip-path: ellipse(35% 50% at 50% 50%);
 }
 
@@ -257,9 +266,15 @@
 
 .example-drop-shadow-vs {
     --shadow-color: hsl(150, 80%, 30%);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 5rem;
     margin-bottom: 5rem;
@@ -271,9 +286,18 @@
 
 .example-drop-shadow,
 .example-box-shadow {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 1rem;
 }
@@ -282,6 +306,7 @@
     width: 8rem;
     aspect-ratio: 1;
     background-color: var(--illustration-green, --pre-green);
+    -webkit-filter: drop-shadow(1rem -0.25rem 0.5rem var(--shadow-color));
     filter: drop-shadow(1rem -0.25rem 0.5rem var(--shadow-color));
 }
 
@@ -289,6 +314,7 @@
     width: 8rem;
     aspect-ratio: 1;
     background-color: var(--illustration-green, --pre-green);
+    -webkit-box-shadow: 1rem -0.25rem 0.5rem var(--shadow-color);
     box-shadow: 1rem -0.25rem 0.5rem var(--shadow-color);
 }
 
@@ -300,31 +326,48 @@
 .example-drop-shadow .example-drop-shadow-triangle,
 .example-box-shadow .example-box-shadow-triangle {
     background-color: initial;
+    background-image: -o-linear-gradient(45deg, var(--illustration-green, --pre-green) 50%, rgba(255, 255, 255, 0) 50%);
     background-image: linear-gradient(45deg, var(--illustration-green, --pre-green) 50%, rgba(255, 255, 255, 0) 50%);
 }
 
 .example-drop-shadow-clip,
 .example-box-shadow-clip {
     /* With clipped element, we lose the shadow */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 1rem;
 }
 
 .example-drop-shadow-container {
     /* With clipped element, the drop-shadow filter is applied on the parent element */
+    -webkit-filter: drop-shadow(1rem -0.25rem 0.5rem var(--shadow-color));
     filter: drop-shadow(1rem -0.25rem 0.5rem var(--shadow-color));
 }
 
 .example-drop-shadow-cross,
 .example-box-shadow-cross {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     width: 8rem;
     aspect-ratio: 1;
     background-color: var(--illustration-green, --pre-green);
+    -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
     clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
 }
 
