@@ -1,14 +1,14 @@
 # CSS IS AWESOME
 
-With this website, I wanted to highlight my favorite things we can do with CSS today. The list is not finished - there is a lot of amazing things we can do with CSS nowadays and in the future - but I think it's a good start.
+I wanted to highlight my **favorite things we can do with CSS today**. The list is not finished - there is a lot of amazing things we can do with CSS nowadays and in the future - but I think it's a good start. Head to [https://awesome-css.pablobuisson.fr/](https://awesome-css.pablobuisson.fr/) to discover the list !
 
 ## :rocket: Goals of the project
 
-* Try and provide examples of some of the exciting functionalities of modern CSS
-* Use relative units and modern CSS to build a responsive website
-* Add a dark mode
-* Add color themes
-* Add a bullets navigation
+* Try and provide examples of some of the **exciting functionalities** of modern CSS
+* Use **relative units** and modern CSS to build a responsive website
+* Add a **dark mode**
+* Add **color themes**
+* Add a vertical **bullet navigation**
 * Write in english :uk:
 
 ## :dart: Presentation of the project
