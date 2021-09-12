@@ -100,7 +100,7 @@
 .section-description {
     margin-bottom: 0.5rem;
     background-color: var(--description-background-color, white);
-    padding: 1rem 1rem 0.5rem 1rem;
+    padding: 1rem 1rem 0.5rem 1.5rem;
     border-radius: 0.25rem;
     border-left: 6px solid var(--main-color, black);
 }
