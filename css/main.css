@@ -279,8 +279,13 @@ li::marker {
 }
 
 .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 1rem;
     font-size: 0.875rem;
@@ -345,6 +350,8 @@ pre .string-value {
         font-size: 0.875rem;
     }
 }
+
+/* MEDIA QUERIES */
 
 @media (max-width: 768px) {
     :root {
