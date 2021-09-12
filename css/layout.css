@@ -333,3 +333,23 @@
         grid-template-rows: auto auto minmax(auto, 50%);
     }
 }
+
+/* fallback for older browers */
+@supports not (aspect-ratio: 1) {
+    .example-shape-outside-element {
+        height: 8rem;
+    }
+
+    .example-drop-shadow>div {
+        height: 8rem;
+    }
+
+    .example-box-shadow>div {
+        height: 8rem;
+    }
+
+    .example-drop-shadow-cross,
+    .example-box-shadow-cross {
+        height: 8rem;
+    }
+}

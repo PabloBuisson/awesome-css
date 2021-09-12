@@ -280,3 +280,14 @@ header {
         animation: none;
     }
 }
+
+/* fallback for older browers */
+@supports not (aspect-ratio: 1) {
+    .btn-color-theme {
+        height: 2rem;
+    }
+
+    #btn-user-theme {
+        height: 2.25rem;
+    }
+}
