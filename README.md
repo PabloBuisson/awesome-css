@@ -1,17 +1,24 @@
 # CSS IS AWESOME
 
-Un projet énumérant toutes les possibilités offertes par les fonctionnalités du CSS moderne.
+With this website, I wanted to highlight my favorite things we can do with CSS today. The list is not finished - there is a lot of amazing things we can do with CSS nowadays and in the future - but I think it's a good start.
 
-## :rocket: Objectifs du projet
+## :rocket: Goals of the project
 
-* Découvrir les possibilités du CSS moderne
-* Créer une site responsive en utilisant les unités relatives
-* Ajouter un mode nuit
-* Présenter un design attrayant et intuitif
+* Try and provide examples of some of the exciting functionalities of modern CSS
+* Use relative units and modern CSS to build a responsive website
+* Add a dark mode
+* Add color themes
+* Add a bullets navigation
+* Write in english :uk:
 
-## :dart: Présentation du projet
+## :dart: Presentation of the project
 
-* TODO
+* Each section of the website describes a list of functionalities or properties binds to a "module" of CSS :   
+   * Relative units
+   * Variables
+   * Navigation
+   * Layout
+* Each subsection is aimed to present a functionality by providing a short explanation, illustrated examples, and source code of the examples.
 
 ## :iphone: Images
 
@@ -19,7 +26,7 @@ Un projet énumérant toutes les possibilités offertes par les fonctionnalités
 
 ## :package: Packages
 
-* Pas de packages pour ce projet
+* No packages for this project
 
 ## :pushpin: Technologies
 
