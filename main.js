@@ -45,9 +45,11 @@ function changeColorTheme(hue) {
 
 // change color theme with the slider
 const slider = document.querySelector('#slider-shade');
-slider.addEventListener('input', function () {
-    console.log(this.value);
-    changeColorTheme(this.value);
+slider.addEventListener('input', function (event) {
+    // prevent document to call the function on restored tab
+    if (event.cancelable) {
+        changeColorTheme(this.value);
+    }
 });
 
 // display slider
