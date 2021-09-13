@@ -45,9 +45,10 @@ function changeColorTheme(hue) {
 
 // change color theme with the slider
 const slider = document.querySelector('#slider-shade');
+const containerSlider = document.querySelector('#container-user-theme');
 slider.addEventListener('input', function (event) {
     // prevent document to call the function on restored tab
-    if (event.cancelable) {
+    if (!containerSlider.classList.contains("d-none")) {
         changeColorTheme(this.value);
     }
 });
