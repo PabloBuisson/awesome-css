@@ -230,6 +230,8 @@ header {
     place-content: center;
     text-align: center;
     position: relative;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 #scroll-button {
@@ -292,5 +294,14 @@ header {
 
     #btn-user-theme {
         height: 2.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #scroll-button {
+        display: block;
+        position: initial;
+        margin-top: 5rem;
+        margin-left: 50%;
     }
 }

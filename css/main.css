@@ -85,7 +85,7 @@ html {
     scroll-behavior: smooth;
 }
 
-h1 {
+#main-title {
     font-size: calc(3rem + 2vw);
     color: var(--title-color);
 }
