@@ -165,13 +165,14 @@ header {
 }
 
 #btn-theme {
+    --btn-theme-height: 34px;
     border: 0;
     padding: 0;
     background: transparent;
     font: inherit;
     position: relative;
-    height: 34px;
-    line-height: 34px;
+    height: var(--btn-theme-height);
+    line-height: var(--btn-theme-height);
     /* center icon */
     cursor: pointer;
     display: -webkit-box;
@@ -181,12 +182,21 @@ header {
     gap: 0.5ch;
 }
 
+#icon-light-mode {
+    transform: translateY(-3px);
+    margin-right: 4px
+}
+
+#icon-dark-mode {
+    transform: translateY(-2px);
+}
+
 #slider-theme {
     position: relative;
     display: inline-block;
     height: 100%;
-    width: 60px;
-    border-radius: 34px;
+    width: calc(var(--btn-theme-height) + 26px);
+    border-radius: var(--btn-theme-height);
     background-color: var(--background-color-toggle);
     -webkit-transition: 0.4s;
     -o-transition: 0.4s;
@@ -196,8 +206,8 @@ header {
 #slider-theme::before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: calc(var(--btn-theme-height) - 8px);
+    width: calc(var(--btn-theme-height) - 8px);
     left: 4px;
     bottom: 4px;
     border-radius: 50%;
@@ -205,10 +215,6 @@ header {
     -webkit-transition: 0.4s;
     -o-transition: 0.4s;
     transition: 0.4s;
-}
-
-#icon-light-mode {
-    font-size: inherit;
 }
 
 #btn-theme[aria-pressed="true"] #slider-theme {
@@ -298,6 +304,25 @@ header {
 }
 
 @media (max-width: 576px) {
+
+    #btn-theme {
+        --btn-theme-height: 28px;
+    }
+
+    #icon-light-mode {
+        transform: translateY(-2px);
+        margin-right: 2px;
+    }
+
+    #icon-dark-mode {
+        transform: translateY(-1px);
+    }
+
+    #moon-icon,
+    #sun-icon {
+        height: 30px;
+    }
+
     #scroll-button {
         display: block;
         position: initial;
