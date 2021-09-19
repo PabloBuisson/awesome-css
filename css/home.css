@@ -188,6 +188,8 @@ header {
 
 .svg-icon-light {
     height: 2.25rem;
+    -webkit-transform: translateY(-0.125rem);
+    -ms-transform: translateY(-0.125rem);
     transform: translateY(-0.125rem);
 }
 
