@@ -22,7 +22,7 @@ I wanted to highlight my **favorite things we can do with CSS today**. The list 
 
 ## :iphone: Images
 
-* TODO
+![A website about modern CSS functionalities](https://www.pablobuisson.fr/wp-content/uploads/2021/10/awesome-css-home.png)
 
 ## :package: Packages
 
